@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatCounter } from "@/components/site/StatCounter";
 import { CtaBand } from "@/components/site/CtaBand";
+import { LocationMap } from "@/components/site/LocationMap";
 import { INDUSTRIES, TESTIMONIALS, FAQS } from "@/components/site/data";
 import { useReveal } from "@/hooks/use-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -286,6 +287,7 @@ function HomePage() {
         </div>
       </section>
 
+      <LocationMap />
       <CtaBand />
     </>
   );
