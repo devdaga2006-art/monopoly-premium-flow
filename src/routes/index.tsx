@@ -41,7 +41,7 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative -mt-24 md:-mt-32 min-h-[100svh] flex items-center overflow-hidden">
+      <section className="relative -mt-28 md:-mt-36 min-h-[100svh] flex items-center overflow-hidden">
         <img
           src={heroImg}
           alt="Premium polymer pellets cascading"
