@@ -96,7 +96,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <main className="pt-24 md:pt-32 min-h-screen">
+      <main className="pt-28 md:pt-36 min-h-screen">
         <Outlet />
       </main>
       <Footer />
