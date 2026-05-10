@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact MONOPOLYMERS — Get a Quote" },
       { name: "description", content: "Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry." },
       { property: "og:title", content: "Contact MONOPOLYMERS" },
-      { property: "og:description", content: "Get in touch for bulk polymer enquiries — Mumbai, Vasai, and Maharashtra-wide service." },
+      { property: "og:description", content: "Get in touch for bulk polymer enquiries — Mumbai, Vasai, and India-wide service." },
     ],
   }),
   component: ContactPage,
@@ -118,7 +118,7 @@ function ContactPage() {
                   <div>
                     <div className="text-sm text-white/60">Offices</div>
                     <div className="font-semibold">Mumbai · Vasai</div>
-                    <div className="text-sm text-white/60 mt-1">Warehouses across Maharashtra</div>
+                    <div className="text-sm text-white/60 mt-1">Warehouses across India</div>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ function ContactPage() {
             <div className="rounded-2xl overflow-hidden border border-border shadow-card">
               <iframe
                 title="MONOPOLYMERS Mumbai location"
-                src="https://www.google.com/maps?q=Mumbai,Maharashtra,India&output=embed"
+                src="https://www.google.com/maps?q=Mumbai,India,India&output=embed"
                 className="w-full h-[320px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

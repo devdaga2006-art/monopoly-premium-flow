@@ -15,7 +15,7 @@ export function CtaBand() {
               </h3>
               <p className="mt-4 text-white/70 max-w-lg">
                 Partner with India's trusted polymer distributor. Bulk orders, consistent quality,
-                Maharashtra-wide reach — backed by 30 years of relationships.
+                India-wide reach — backed by 30 years of relationships.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">

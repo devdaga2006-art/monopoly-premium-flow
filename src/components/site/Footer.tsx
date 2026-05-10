@@ -51,11 +51,11 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-white/70">
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-              <span><strong className="block text-white">Mumbai HQ</strong>Maharashtra, India</span>
+              <span><strong className="block text-white">Mumbai HQ</strong>India</span>
             </li>
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-              <span><strong className="block text-white">Vasai Office</strong>Maharashtra, India</span>
+              <span><strong className="block text-white">Vasai Office</strong>India</span>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between text-xs text-white/50 gap-2">
           <p>© {new Date().getFullYear()} MONOPOLYMERS. All rights reserved.</p>
-          <p>Polymer & Plastic Raw Material Distribution · Maharashtra, India</p>
+          <p>Polymer & Plastic Raw Material Distribution · India</p>
         </div>
       </div>
     </footer>

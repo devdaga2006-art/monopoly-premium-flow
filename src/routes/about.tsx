@@ -27,7 +27,7 @@ const VALUES = [
 const TIMELINE = [
   { y: "1970s", t: "Family Roots", d: "The Daga family enters the plastic industry, building decades of expertise." },
   { y: "1996", t: "MONOPOLYMERS Founded", d: "Mr. Jitendra Daga and Mr. Manoj Daga establish the company in Mumbai." },
-  { y: "2000s", t: "Customer Network Grows", d: "Trusted by hundreds of manufacturers across Maharashtra." },
+  { y: "2000s", t: "Customer Network Grows", d: "Trusted by hundreds of manufacturers across India." },
   { y: "2010s", t: "Infrastructure Expansion", d: "Multiple warehouses opened across the state to support high-volume supply." },
   { y: "Today", t: "₹100Cr+ Enterprise", d: "1000+ active customers, growing turnover, and a next-generation team." },
 ];
@@ -44,7 +44,7 @@ function AboutPage() {
           <p className="mt-6 text-lg text-white/80 max-w-3xl leading-relaxed">
             MONOPOLYMERS was founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga,
             building on a deep family heritage in India's plastic industry. Three decades later,
-            we serve 1000+ industrial customers and stand among Maharashtra's most trusted polymer
+            we serve 1000+ industrial customers and stand among India's most trusted polymer
             distributors.
           </p>
         </div>
@@ -93,7 +93,7 @@ function AboutPage() {
 
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Our Journey" title="From a Mumbai trading desk to a Maharashtra-wide distributor" />
+          <SectionHeading eyebrow="Our Journey" title="From a Mumbai trading desk to a India-wide distributor" />
           <div className="mt-14 relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
             {TIMELINE.map((t, i) => (
