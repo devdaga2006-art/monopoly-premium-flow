@@ -9,9 +9,9 @@ export const Route = createFileRoute("/infrastructure")({
   head: () => ({
     meta: [
       { title: "Infrastructure & Logistics — MONOPOLYMERS" },
-      { name: "description", content: "Two corporate offices in Mumbai and Vasai, plus multiple warehouses across Maharashtra. Built for fast, reliable polymer distribution." },
+      { name: "description", content: "Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution." },
       { property: "og:title", content: "Infrastructure & Logistics — MONOPOLYMERS" },
-      { property: "og:description", content: "Strategic warehouses and logistics network across Maharashtra, designed for high-volume polymer distribution." },
+      { property: "og:description", content: "Strategic warehouses and logistics network across India, designed for high-volume polymer distribution." },
       { property: "og:image", content: warehouseImg },
     ],
   }),
@@ -20,15 +20,15 @@ export const Route = createFileRoute("/infrastructure")({
 
 const OFFICES = [
   { t: "Mumbai — Head Office", d: "Our corporate headquarters and primary commercial hub for South & Central India operations." },
-  { t: "Vasai — Operations Office", d: "Strategic operations and logistics command center supporting Maharashtra-wide distribution." },
+  { t: "Vasai — Operations Office", d: "Strategic operations and logistics command center supporting India-wide distribution." },
 ];
 
 const CAPS = [
-  { icon: Warehouse, t: "Multiple Warehouses", d: "Strategically located stocking points across Maharashtra." },
+  { icon: Warehouse, t: "Multiple Warehouses", d: "Strategically located stocking points across India." },
   { icon: Truck, t: "Modern Fleet", d: "Reliable transport partners and dedicated logistics capacity." },
   { icon: Clock, t: "Same-day Dispatch", d: "Bulk orders dispatched the same or next working day." },
   { icon: ShieldCheck, t: "Inventory Reliability", d: "Healthy stock buffers prevent supply disruptions for our customers." },
-  { icon: MapPin, t: "Regional Coverage", d: "Door delivery across Maharashtra's industrial belts." },
+  { icon: MapPin, t: "Regional Coverage", d: "Door delivery across India's industrial belts." },
   { icon: Building2, t: "Two Corporate Offices", d: "Mumbai HQ and Vasai operations office." },
 ];
 
@@ -42,7 +42,7 @@ function InfraPage() {
             Built for <span className="text-primary">scale, speed, and reliability.</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-2xl">
-            Two corporate offices and multiple strategically located warehouses across Maharashtra
+            Two corporate offices and multiple strategically located warehouses across India
             — engineered to keep your production line running.
           </p>
         </div>
@@ -55,7 +55,7 @@ function InfraPage() {
             <SectionHeading
               align="left"
               eyebrow="Our Offices"
-              title="Two corporate offices powering Maharashtra-wide distribution"
+              title="Two corporate offices powering India-wide distribution"
             />
             <div className="mt-8 grid gap-4">
               {OFFICES.map((o) => (

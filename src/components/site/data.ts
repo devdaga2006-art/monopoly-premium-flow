@@ -32,7 +32,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Their warehousing strength across Maharashtra is a game changer for us. We get same-day dispatches and never have to worry about stock for our consumer goods plant.",
+      "Their warehousing strength across India is a game changer for us. We get same-day dispatches and never have to worry about stock for our consumer goods plant.",
     name: "Priya Iyer",
     role: "Supply Chain Manager",
     company: "Consumer Appliances Group",
@@ -61,15 +61,15 @@ export const FAQS = [
   },
   {
     q: "Where are your warehouses located?",
-    a: "Our offices are in Mumbai and Vasai, supported by multiple strategically located warehouses across Maharashtra to ensure fast dispatch and reliable supply.",
+    a: "Our offices are in Mumbai and Vasai, supported by multiple strategically located warehouses across India to ensure fast dispatch and reliable supply.",
   },
   {
     q: "How long has MONOPOLYMERS been in business?",
     a: "MONOPOLYMERS was founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga, building on a family legacy of more than 50 years in the plastic industry.",
   },
   {
-    q: "Do you supply across Maharashtra?",
-    a: "Yes. We deliver across Maharashtra and serve large industrial buyers throughout the region with same-day or next-day dispatch capability.",
+    q: "Do you supply across India?",
+    a: "Yes. We deliver across India and serve large industrial buyers throughout the region with same-day or next-day dispatch capability.",
   },
   {
     q: "How can businesses contact your team?",

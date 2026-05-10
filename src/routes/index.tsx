@@ -16,9 +16,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "MONOPOLYMERS — Trusted Polymer Distribution Since 1996" },
-      { name: "description", content: "Bulk polymer & plastic raw material distribution in Maharashtra. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai." },
+      { name: "description", content: "Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai." },
       { property: "og:title", content: "MONOPOLYMERS — Trusted Polymer Distribution Since 1996" },
-      { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across Maharashtra, and 1000+ B2B customers." },
+      { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across India, and 1000+ B2B customers." },
       { property: "og:image", content: heroImg },
     ],
   }),
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 const WHY = [
   { icon: Users, title: "1000+ Customers", desc: "Trusted by manufacturers across India for decades." },
   { icon: TrendingUp, title: "₹100Cr+ Turnover", desc: "A growing enterprise with proven scale and stability." },
-  { icon: Warehouse, title: "Multiple Warehouses", desc: "Strategic stocking points across Maharashtra." },
+  { icon: Warehouse, title: "Multiple Warehouses", desc: "Strategic stocking points across India." },
   { icon: Truck, title: "Fast Dispatch", desc: "Same-day & next-day delivery for bulk orders." },
   { icon: ShieldCheck, title: "Consistent Quality", desc: "Sourced from leading global polymer producers." },
   { icon: Award, title: "30+ Year Relationships", desc: "Customers who have grown with us for 3 decades." },
@@ -64,7 +64,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               A 50+ year family legacy in plastics. 1000+ industrial customers. ₹100Cr+ in
-              annual turnover. Strategic warehousing across Maharashtra — built for high-volume,
+              annual turnover. Strategic warehousing across India — built for high-volume,
               high-trust B2B supply.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -196,12 +196,12 @@ function HomePage() {
             <SectionHeading
               align="left"
               eyebrow="Infrastructure"
-              title="Strategic logistics across Maharashtra"
+              title="Strategic logistics across India"
               subtitle="Two corporate offices and multiple warehouses positioned for fastest possible dispatch — so your production line never waits."
             />
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Warehouse, t: "Multiple Warehouses", d: "Strategically located across Maharashtra." },
+                { icon: Warehouse, t: "Multiple Warehouses", d: "Strategically located across India." },
                 { icon: Truck, t: "Fast Dispatch", d: "Same-day & next-day for bulk orders." },
                 { icon: Clock, t: "On-Time Delivery", d: "Industry-leading delivery consistency." },
                 { icon: ShieldCheck, t: "Quality Assured", d: "Sourced from reputed manufacturers." },
