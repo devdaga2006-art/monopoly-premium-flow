@@ -136,21 +136,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-20 bg-muted/40 border-y border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="By the numbers" title="Scale that speaks for itself" />
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
-            <StatCounter value={1000} suffix="+" label="Customers" />
-            <StatCounter value={50} suffix="+" label="Years Legacy" />
-            <StatCounter value={100} prefix="₹" suffix="Cr+" label="Turnover" />
-            <StatCounter value={30} suffix="+" label="Yr Relationships" />
-            <StatCounter value={5} suffix="+" label="Warehouses" />
-            <StatCounter value={1996} label="Established" />
-          </div>
-        </div>
-      </section>
-
       {/* INDUSTRIES */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
