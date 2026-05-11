@@ -98,13 +98,13 @@ function AboutPage() {
             <SectionHeading
               align="left"
               eyebrow="Recognition"
-              title="Honoured by HMEL for 2 Million MT Polymer Sales"
-              subtitle="A proud milestone for MONOPOLYMERS — recognised by HMEL (HPCL-Mittal Energy Limited) for achieving 2 Million MT polymer sales in 2024–25. A testament to three decades of trust, scale, and partnership with India's leading producers."
+              title="Recognised by HMEL for contributing to 2 Million MT Polymer Sales"
+              subtitle="A proud moment for MONOPOLYMERS — honoured by HMEL (HPCL-Mittal Energy Limited) as a valued channel partner for our contribution towards their 2 Million MT polymer sales milestone in 2024–25. A reflection of three decades of trust and partnership with India's leading producers."
             />
             <ul className="mt-8 space-y-3">
               {[
-                "2 Million MT polymer sales milestone",
-                "Recognition from HMEL — a leading Indian polymer producer",
+                "Valued contributor to HMEL's 2 Million MT sales milestone",
+                "Recognised as a trusted channel partner",
                 "Reflects scale, consistency, and long-term partnerships",
                 "Backed by 1000+ active industrial customers",
               ].map((p) => (
