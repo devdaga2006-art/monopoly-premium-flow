@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import founders from "@/assets/founders.jpg";
+import hmelRecognition from "@/assets/hmel-recognition.jpg";
 import { CheckCircle2, Heart, Sparkles, Handshake, Trophy } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
