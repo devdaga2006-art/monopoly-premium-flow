@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyUsRouteImport } from './routes/why-us'
+import { Route as ProductsRouteImport } from './routes/products'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WhyUsRoute = WhyUsRouteImport.update({
   id: '/why-us',
   path: '/why-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InfrastructureRoute = InfrastructureRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/products': typeof ProductsRoute
   '/why-us': typeof WhyUsRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/products': typeof ProductsRoute
   '/why-us': typeof WhyUsRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/products': typeof ProductsRoute
   '/why-us': typeof WhyUsRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industries'
     | '/infrastructure'
+    | '/products'
     | '/why-us'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industries'
     | '/infrastructure'
+    | '/products'
     | '/why-us'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industries'
     | '/infrastructure'
+    | '/products'
     | '/why-us'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   IndustriesRoute: typeof IndustriesRoute
   InfrastructureRoute: typeof InfrastructureRoute
+  ProductsRoute: typeof ProductsRoute
   WhyUsRoute: typeof WhyUsRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/why-us'
       fullPath: '/why-us'
       preLoaderRoute: typeof WhyUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/infrastructure': {
@@ -182,8 +202,19 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   IndustriesRoute: IndustriesRoute,
   InfrastructureRoute: InfrastructureRoute,
+  ProductsRoute: ProductsRoute,
   WhyUsRoute: WhyUsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

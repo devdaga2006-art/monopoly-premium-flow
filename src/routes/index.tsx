@@ -74,7 +74,7 @@ function HomePage() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/5 backdrop-blur border-white/30 text-white hover:bg-white hover:text-charcoal text-base">
-                <Link to="/industries">Explore Products</Link>
+                <Link to="/products">Explore Products</Link>
               </Button>
             </div>
 
