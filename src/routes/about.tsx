@@ -93,6 +93,37 @@ function AboutPage() {
       </section>
 
       <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <SectionHeading
+              align="left"
+              eyebrow="Recognition"
+              title="Honoured by HMEL for 2 Million MT Polymer Sales"
+              subtitle="A proud milestone for MONOPOLYMERS — recognised by HMEL (HPCL-Mittal Energy Limited) for achieving 2 Million MT polymer sales in 2024–25. A testament to three decades of trust, scale, and partnership with India's leading producers."
+            />
+            <ul className="mt-8 space-y-3">
+              {[
+                "2 Million MT polymer sales milestone",
+                "Recognition from HMEL — a leading Indian polymer producer",
+                "Reflects scale, consistency, and long-term partnerships",
+                "Backed by 1000+ active industrial customers",
+              ].map((p) => (
+                <li key={p} className="flex gap-3"><CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" /><span>{p}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div className="order-1 lg:order-2 flex justify-center">
+            <img
+              src={hmelRecognition}
+              alt="HMEL recognition award to MONOPOLYMERS for 2 Million MT polymer sales in 2024-25"
+              loading="lazy"
+              className="rounded-3xl shadow-elegant w-full max-w-md object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Our Journey" title="From a Mumbai trading desk to a India-wide distributor" />
           <div className="mt-14 relative">
