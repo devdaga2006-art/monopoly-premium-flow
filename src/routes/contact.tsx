@@ -106,11 +106,11 @@ function ContactPage() {
                     <div className="font-semibold group-hover:text-primary transition-colors">+91 93262 87420</div>
                   </div>
                 </a>
-                <a href="mailto:info@monopolymers.in" className="flex items-center gap-4 group">
+                <a href="mailto:monopolymers@yahoo.com" className="flex items-center gap-4 group">
                   <div className="h-12 w-12 rounded-xl bg-red-gradient flex items-center justify-center"><Mail className="h-6 w-6" /></div>
                   <div>
                     <div className="text-sm text-white/60">Email</div>
-                    <div className="font-semibold group-hover:text-primary transition-colors">info@monopolymers.in</div>
+                    <div className="font-semibold group-hover:text-primary transition-colors">monopolymers@yahoo.com</div>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">
