@@ -40,7 +40,6 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-              <a href="mailto:info@monopolymers.in" className="block hover:text-primary">info@monopolymers.in</a>
               <a href="mailto:monopolymers@yahoo.com" className="block hover:text-primary">monopolymers@yahoo.com</a>
             </li>
           </ul>
