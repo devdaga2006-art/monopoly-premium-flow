@@ -6,9 +6,9 @@ import { INDUSTRIES } from "@/components/site/data";
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries We Serve — MONOPOLYMERS" },
+      { title: "Industries We Serve, MONOPOLYMERS" },
       { name: "description", content: "We supply polymers to packaging, automotive, consumer goods, infrastructure, agriculture, electrical and more across India." },
-      { property: "og:title", content: "Industries We Serve — MONOPOLYMERS" },
+      { property: "og:title", content: "Industries We Serve, MONOPOLYMERS" },
       { property: "og:description", content: "Mission-critical polymer raw materials for India's leading manufacturers across 10+ industries." },
     ],
   }),

@@ -8,9 +8,9 @@ import { CheckCircle2, Heart, Sparkles, Handshake, Trophy } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About MONOPOLYMERS — A 50-Year Family Legacy in Polymers" },
+      { title: "About MONOPOLYMERS, A 50-Year Family Legacy in Polymers" },
       { name: "description", content: "Founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga. A family legacy of more than 50 years in India's plastic industry." },
-      { property: "og:title", content: "About MONOPOLYMERS — A 50-Year Family Legacy" },
+      { property: "og:title", content: "About MONOPOLYMERS, A 50-Year Family Legacy" },
       { property: "og:description", content: "Three decades of polymer distribution, built on ethics, consistency, and long-term customer relationships." },
       { property: "og:image", content: founders },
     ],
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 const VALUES = [
   { icon: Heart, t: "Relationships First", d: "30+ year customer relationships built on trust and accountability." },
   { icon: Sparkles, t: "Consistent Quality", d: "Sourced from leading global producers, every single batch." },
-  { icon: Handshake, t: "Ethical Pricing", d: "Transparent, fair pricing — no surprises, ever." },
+  { icon: Handshake, t: "Ethical Pricing", d: "Transparent, fair pricing, no surprises, ever." },
   { icon: Trophy, t: "Operational Excellence", d: "Fast dispatch, reliable supply, professional service." },
 ];
 
@@ -59,13 +59,13 @@ function AboutPage() {
               align="left"
               eyebrow="Our Founders"
               title="Two generations. One unwavering commitment."
-              subtitle="What started as a small Mumbai-based polymer trading firm in 1996 has grown into a ₹100Cr+ enterprise — guided by the same values the founders began with: integrity, consistency, and care for every customer."
+              subtitle="What started as a small Mumbai-based polymer trading firm in 1996 has grown into a ₹100Cr+ enterprise, guided by the same values the founders began with: integrity, consistency, and care for every customer."
             />
             <ul className="mt-8 space-y-3">
               {[
-                "Mr. Jitendra K. Daga — Co-founder",
-                "Mr. Manoj K. Daga — Co-founder",
-                "Mr. Dev J. Daga — Next-generation leadership",
+                "Mr. Jitendra K. Daga, Co-founder",
+                "Mr. Manoj K. Daga, Co-founder",
+                "Mr. Dev J. Daga, Next-generation leadership",
                 "A combined 50+ years in the plastic industry",
               ].map((p) => (
                 <li key={p} className="flex gap-3"><CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" /><span>{p}</span></li>
@@ -99,7 +99,7 @@ function AboutPage() {
               align="left"
               eyebrow="Recognition"
               title="Recognised by HMEL for contributing to 2 Million MT Polymer Sales"
-              subtitle="A proud moment for MONOPOLYMERS — honoured by HMEL (HPCL-Mittal Energy Limited) as a valued channel partner for our contribution towards their 2 Million MT polymer sales milestone in 2024–25. A reflection of three decades of trust and partnership with India's leading producers."
+              subtitle="A proud moment for MONOPOLYMERS, honoured by HMEL (HPCL-Mittal Energy Limited) as a valued channel partner for our contribution towards their 2 Million MT polymer sales milestone in 2024–25. A reflection of three decades of trust and partnership with India's leading producers."
             />
             <ul className="mt-8 space-y-3">
               {[

@@ -8,9 +8,9 @@ import { Building2, Warehouse, Truck, Clock, MapPin, ShieldCheck } from "lucide-
 export const Route = createFileRoute("/infrastructure")({
   head: () => ({
     meta: [
-      { title: "Infrastructure & Logistics — MONOPOLYMERS" },
+      { title: "Infrastructure & Logistics, MONOPOLYMERS" },
       { name: "description", content: "Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution." },
-      { property: "og:title", content: "Infrastructure & Logistics — MONOPOLYMERS" },
+      { property: "og:title", content: "Infrastructure & Logistics, MONOPOLYMERS" },
       { property: "og:description", content: "Strategic warehouses and logistics network across India, designed for high-volume polymer distribution." },
       { property: "og:image", content: warehouseImg },
     ],
@@ -19,8 +19,8 @@ export const Route = createFileRoute("/infrastructure")({
 });
 
 const OFFICES = [
-  { t: "Mumbai — Head Office", d: "Our corporate headquarters and primary commercial hub for South & Central India operations." },
-  { t: "Vasai — Operations Office", d: "Strategic operations and logistics command center supporting India-wide distribution." },
+  { t: "Mumbai, Head Office", d: "Our corporate headquarters and primary commercial hub for South & Central India operations." },
+  { t: "Vasai, Operations Office", d: "Strategic operations and logistics command center supporting India-wide distribution." },
 ];
 
 const CAPS = [
@@ -43,7 +43,7 @@ function InfraPage() {
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-2xl">
             Two corporate offices and multiple strategically located warehouses across India
-            — engineered to keep your production line running.
+           , engineered to keep your production line running.
           </p>
         </div>
       </section>

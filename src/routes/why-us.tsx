@@ -7,8 +7,8 @@ import { Users, TrendingUp, Warehouse, Truck, ShieldCheck, Award, Clock, Heart }
 export const Route = createFileRoute("/why-us")({
   head: () => ({
     meta: [
-      { title: "Why Choose MONOPOLYMERS — Trusted Polymer Distributor" },
-      { name: "description", content: "1000+ customers, ₹100Cr+ turnover, 30+ year relationships, multiple warehouses, on-time delivery — built for high-volume B2B." },
+      { title: "Why Choose MONOPOLYMERS, Trusted Polymer Distributor" },
+      { name: "description", content: "1000+ customers, ₹100Cr+ turnover, 30+ year relationships, multiple warehouses, on-time delivery, built for high-volume B2B." },
       { property: "og:title", content: "Why Choose MONOPOLYMERS" },
       { property: "og:description", content: "What makes us India's most trusted polymer distribution partner." },
     ],
@@ -18,13 +18,13 @@ export const Route = createFileRoute("/why-us")({
 
 const POINTS = [
   { icon: Users, t: "1000+ Active Customers", d: "Manufacturers across India trust us as their primary polymer source." },
-  { icon: TrendingUp, t: "₹100Cr+ Turnover", d: "A growing enterprise — proof of scale, stability, and momentum." },
+  { icon: TrendingUp, t: "₹100Cr+ Turnover", d: "A growing enterprise, proof of scale, stability, and momentum." },
   { icon: Award, t: "30+ Year Relationships", d: "Customers who have grown alongside us for three decades." },
   { icon: Warehouse, t: "Strategic Warehousing", d: "Multiple warehouses across India for fast, reliable supply." },
   { icon: Truck, t: "On-time Delivery", d: "Industry-leading delivery consistency, even for bulk orders." },
   { icon: ShieldCheck, t: "Industry Expertise", d: "50+ years of family experience deeply embedded in plastics." },
   { icon: Clock, t: "Quick Response", d: "Sales team responds within hours on working days." },
-  { icon: Heart, t: "Founder Accountability", d: "Direct access to the Daga family — every order matters." },
+  { icon: Heart, t: "Founder Accountability", d: "Direct access to the Daga family, every order matters." },
 ];
 
 function WhyPage() {
