@@ -15,9 +15,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MONOPOLYMERS — Trusted Polymer Distribution Since 1996" },
+      { title: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
       { name: "description", content: "Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai." },
-      { property: "og:title", content: "MONOPOLYMERS — Trusted Polymer Distribution Since 1996" },
+      { property: "og:title", content: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
       { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across India, and 1000+ B2B customers." },
       { property: "og:image", content: heroImg },
     ],
@@ -65,7 +65,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               A 50+ year family legacy in plastics. 1000+ industrial customers. ₹100Cr+ in
-              annual turnover. Strategic warehousing across India — built for high-volume,
+              annual turnover. Strategic warehousing across India, built for high-volume,
               high-trust B2B supply.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -115,7 +115,7 @@ function HomePage() {
               align="left"
               eyebrow="Our Story"
               title="Three decades of polymer expertise. Built on a 50-year family legacy."
-              subtitle="Founded in Mumbai in 1996 by Mr. Jitendra Daga and Mr. Manoj Daga, MONOPOLYMERS carries forward a family heritage of more than five decades in the plastic industry — earning the trust of 1000+ industrial customers across India."
+              subtitle="Founded in Mumbai in 1996 by Mr. Jitendra Daga and Mr. Manoj Daga, MONOPOLYMERS carries forward a family heritage of more than five decades in the plastic industry, earning the trust of 1000+ industrial customers across India."
             />
             <ul className="mt-8 space-y-3">
               {[
@@ -198,7 +198,7 @@ function HomePage() {
               align="left"
               eyebrow="Infrastructure"
               title="Strategic logistics across India"
-              subtitle="Two corporate offices and multiple warehouses positioned for fastest possible dispatch — so your production line never waits."
+              subtitle="Two corporate offices and multiple warehouses positioned for fastest possible dispatch, so your production line never waits."
             />
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {[

@@ -14,7 +14,7 @@ export function LocationMap() {
         <SectionHeading
           eyebrow="Visit Us"
           title="Find Us"
-          subtitle="Drop by our Vasai East facility — strategically located for fast dispatch across India."
+          subtitle="Drop by our Vasai East facility, strategically located for fast dispatch across India."
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">

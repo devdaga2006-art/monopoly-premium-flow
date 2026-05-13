@@ -7,9 +7,9 @@ import { FAQS } from "@/components/site/data";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — MONOPOLYMERS" },
+      { title: "FAQ, MONOPOLYMERS" },
       { name: "description", content: "Answers to common questions about our polymer products, supply, warehouses, and B2B services." },
-      { property: "og:title", content: "FAQ — MONOPOLYMERS" },
+      { property: "og:title", content: "FAQ, MONOPOLYMERS" },
       { property: "og:description", content: "Find answers about our polymer supply, bulk orders, industries served, and more." },
     ],
   }),

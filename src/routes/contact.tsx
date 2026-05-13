@@ -10,10 +10,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact MONOPOLYMERS — Get a Quote" },
+      { title: "Contact MONOPOLYMERS, Get a Quote" },
       { name: "description", content: "Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry." },
       { property: "og:title", content: "Contact MONOPOLYMERS" },
-      { property: "og:description", content: "Get in touch for bulk polymer enquiries — Mumbai, Vasai, and India-wide service." },
+      { property: "og:description", content: "Get in touch for bulk polymer enquiries, Mumbai, Vasai, and India-wide service." },
     ],
   }),
   component: ContactPage,
@@ -48,7 +48,7 @@ function ContactPage() {
             Let's talk <span className="text-primary">polymers.</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-2xl">
-            Bulk enquiries, partnership conversations, or just a quick question — our team responds fast.
+            Bulk enquiries, partnership conversations, or just a quick question, our team responds fast.
           </p>
         </div>
       </section>
@@ -88,7 +88,7 @@ function ContactPage() {
                 <Input placeholder="Phone *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
                 <Input placeholder="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               </div>
-              <Textarea rows={5} placeholder="Tell us about your requirement — polymer type, grade, quantity…" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+              <Textarea rows={5} placeholder="Tell us about your requirement, polymer type, grade, quantity…" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
               <Button type="submit" size="lg" className="w-full bg-red-gradient hover:opacity-95">
                 Send Enquiry via WhatsApp
               </Button>

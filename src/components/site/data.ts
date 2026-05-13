@@ -49,7 +49,7 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "What products does MONOPOLYMERS supply?",
-    a: "We distribute a wide portfolio of plastic raw materials including PP, PE (HDPE/LDPE/LLDPE), PVC, PS, ABS, engineering plastics, and specialty polymers — sourced from leading global and Indian producers.",
+    a: "We distribute a wide portfolio of plastic raw materials including PP, PE (HDPE/LDPE/LLDPE), PVC, PS, ABS, engineering plastics, and specialty polymers, sourced from leading global and Indian producers.",
   },
   {
     q: "Which industries do you serve?",
@@ -77,6 +77,6 @@ export const FAQS = [
   },
   {
     q: "What makes MONOPOLYMERS different from competitors?",
-    a: "Three decades of customer retention, a 50+ year family legacy in plastics, strong logistics & warehousing, ethical pricing, and personal accountability from the founding family — every order, every time.",
+    a: "Three decades of customer retention, a 50+ year family legacy in plastics, strong logistics & warehousing, ethical pricing, and personal accountability from the founding family, every order, every time.",
   },
 ] as const;

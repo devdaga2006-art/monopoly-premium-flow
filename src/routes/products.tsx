@@ -23,9 +23,9 @@ const PRODUCTS = [
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Polymer Grades We Supply | MONOPOLYMERS" },
-      { name: "description", content: "PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic and PET — supplied across India by MONOPOLYMERS." },
-      { property: "og:title", content: "Products — Polymer Grades We Supply | MONOPOLYMERS" },
+      { title: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
+      { name: "description", content: "PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic and PET, supplied across India by MONOPOLYMERS." },
+      { property: "og:title", content: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
       { property: "og:description", content: "Full range of commodity and engineering polymers supplied to manufacturers across India." },
     ],
   }),
@@ -42,7 +42,7 @@ function ProductsPage() {
             Polymer grades we <span className="text-primary">supply.</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-2xl">
-            From commodity polyolefins to high-performance engineering plastics — sourced from
+            From commodity polyolefins to high-performance engineering plastics, sourced from
             trusted producers and delivered across India.
           </p>
         </div>
