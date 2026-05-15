@@ -50,7 +50,7 @@ function InfraPage() {
 
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
-          <img src={warehouseImg} alt="Warehouse" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
+          <img src={warehouseImg} alt="MONOPOLYMERS regional polymer warehouse interior" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
           <div>
             <SectionHeading
               align="left"
@@ -93,7 +93,7 @@ function InfraPage() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <img src={logisticsImg} alt="Logistics" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
+          <img src={logisticsImg} alt="MONOPOLYMERS logistics fleet delivering polymer raw materials" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
         </div>
       </section>
 

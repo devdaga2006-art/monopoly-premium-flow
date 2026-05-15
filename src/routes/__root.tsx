@@ -77,6 +77,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/acf13eb9-dfdc-4d7f-8c83-bc41d33a3ffb/id-preview-37922952--1a00f9da-b2bf-41d9-86b9-2a680679e641.lovable.app-1778567900819.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://monopoly-premium-flow.lovable.app/#organization",
+              name: "MONOPOLYMERS",
+              url: "https://monopoly-premium-flow.lovable.app/",
+              logo: "https://monopoly-premium-flow.lovable.app/favicon.ico",
+              foundingDate: "1996",
+              description:
+                "Trusted distributor of plastic raw materials and polymers in India since 1996.",
+              address: [
+                { "@type": "PostalAddress", addressLocality: "Mumbai", addressCountry: "IN" },
+                { "@type": "PostalAddress", addressLocality: "Vasai", addressCountry: "IN" },
+              ],
+              contactPoint: [
+                { "@type": "ContactPoint", telephone: "+91-93225-19925", contactType: "sales", areaServed: "IN" },
+                { "@type": "ContactPoint", telephone: "+91-93220-60428", contactType: "sales", areaServed: "IN" },
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://monopoly-premium-flow.lovable.app/#website",
+              url: "https://monopoly-premium-flow.lovable.app/",
+              name: "MONOPOLYMERS",
+              publisher: { "@id": "https://monopoly-premium-flow.lovable.app/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

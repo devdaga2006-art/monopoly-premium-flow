@@ -28,6 +28,27 @@ export const Route = createFileRoute("/products")({
       { property: "og:title", content: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
       { property: "og:description", content: "Full range of commodity and engineering polymers supplied to manufacturers across India." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Polymer grades supplied by MONOPOLYMERS",
+          itemListElement: PRODUCTS.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Product",
+              name: `${p.name} (${p.code})`,
+              description: p.desc,
+              category: "Polymer raw material",
+              brand: { "@type": "Brand", name: "MONOPOLYMERS" },
+            },
+          })),
+        }),
+      },
+    ],
   }),
   component: ProductsPage,
 });

@@ -12,6 +12,20 @@ export const Route = createFileRoute("/faq")({
       { property: "og:title", content: "FAQ, MONOPOLYMERS" },
       { property: "og:description", content: "Find answers about our polymer supply, bulk orders, industries served, and more." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   }),
   component: FaqPage,
 });
