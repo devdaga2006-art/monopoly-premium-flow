@@ -15,6 +15,25 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact MONOPOLYMERS" },
       { property: "og:description", content: "Get in touch for bulk polymer enquiries, Mumbai, Vasai, and India-wide service." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "MONOPOLYMERS",
+          url: "https://monopoly-premium-flow.lovable.app/contact",
+          telephone: ["+91-93225-19925", "+91-93220-60428", "+91-90045-00225"],
+          email: "monopolymers@yahoo.com",
+          address: [
+            { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "Maharashtra", addressCountry: "IN" },
+            { "@type": "PostalAddress", addressLocality: "Vasai", addressRegion: "Maharashtra", addressCountry: "IN" },
+          ],
+          areaServed: "IN",
+          priceRange: "$$",
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });
