@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 const PRODUCTS = [
   { code: "PP", name: "Polypropylene", desc: "Versatile thermoplastic for packaging, automotive parts, textiles, and consumer goods." },
@@ -48,6 +49,7 @@ export const Route = createFileRoute("/products")({
           })),
         }),
       },
+      breadcrumbJsonLd("Products", "/products"),
     ],
   }),
   component: ProductsPage,

@@ -4,6 +4,7 @@ import { CtaBand } from "@/components/site/CtaBand";
 import founders from "@/assets/founders.jpg";
 import hmelRecognition from "@/assets/hmel-recognition.jpg";
 import { CheckCircle2, Heart, Sparkles, Handshake, Trophy } from "lucide-react";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: "Three decades of polymer distribution, built on ethics, consistency, and long-term customer relationships." },
       { property: "og:image", content: founders },
     ],
+    scripts: [breadcrumbJsonLd("About", "/about")],
   }),
   component: AboutPage,
 });

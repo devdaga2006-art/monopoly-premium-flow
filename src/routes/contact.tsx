@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -33,6 +34,7 @@ export const Route = createFileRoute("/contact")({
           priceRange: "$$",
         }),
       },
+      breadcrumbJsonLd("Contact", "/contact"),
     ],
   }),
   component: ContactPage,
