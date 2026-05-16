@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FAQS } from "@/components/site/data";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/faq")({
           })),
         }),
       },
+      breadcrumbJsonLd("FAQ", "/faq"),
     ],
   }),
   component: FaqPage,
