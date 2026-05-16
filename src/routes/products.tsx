@@ -49,6 +49,7 @@ export const Route = createFileRoute("/products")({
           })),
         }),
       },
+      breadcrumbJsonLd("Products", "/products"),
     ],
   }),
   component: ProductsPage,
