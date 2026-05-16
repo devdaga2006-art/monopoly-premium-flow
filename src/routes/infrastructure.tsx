@@ -4,6 +4,7 @@ import { CtaBand } from "@/components/site/CtaBand";
 import warehouseImg from "@/assets/warehouse.jpg";
 import logisticsImg from "@/assets/logistics.jpg";
 import { Building2, Warehouse, Truck, Clock, MapPin, ShieldCheck } from "lucide-react";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/infrastructure")({
   head: () => ({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/infrastructure")({
       { property: "og:description", content: "Strategic warehouses and logistics network across India, designed for high-volume polymer distribution." },
       { property: "og:image", content: warehouseImg },
     ],
+    scripts: [breadcrumbJsonLd("Infrastructure", "/infrastructure")],
   }),
   component: InfraPage,
 });
