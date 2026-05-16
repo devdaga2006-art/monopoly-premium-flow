@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatCounter } from "@/components/site/StatCounter";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Users, TrendingUp, Warehouse, Truck, ShieldCheck, Award, Clock, Heart } from "lucide-react";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/why-us")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/why-us")({
       { property: "og:title", content: "Why Choose MONOPOLYMERS" },
       { property: "og:description", content: "What makes us India's most trusted polymer distribution partner." },
     ],
+    scripts: [breadcrumbJsonLd("Why Us", "/why-us")],
   }),
   component: WhyPage,
 });
