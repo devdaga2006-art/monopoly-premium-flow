@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { INDUSTRIES } from "@/components/site/data";
+import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/industries")({
       { property: "og:title", content: "Industries We Serve, MONOPOLYMERS" },
       { property: "og:description", content: "Mission-critical polymer raw materials for India's leading manufacturers across 10+ industries." },
     ],
+    scripts: [breadcrumbJsonLd("Industries", "/industries")],
   }),
   component: IndustriesPage,
 });
