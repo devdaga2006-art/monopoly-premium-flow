@@ -33,9 +33,14 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-[88px] md:h-[104px] flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 shrink-0 h-full" onClick={() => setOpen(false)}>
-          <img src={logo} alt="MONOPOLYMERS company logo" className="h-full w-auto" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
+        <Link to="/" className="flex items-center shrink-0 -my-2" onClick={() => setOpen(false)} aria-label="MONOPOLYMERS home">
+          <img
+            src={logo}
+            alt="MONOPOLYMERS company logo"
+            className="block h-12 sm:h-14 lg:h-16 w-auto object-contain select-none"
+            draggable={false}
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
