@@ -176,3 +176,41 @@ function PolymerDetailPage() {
     </>
   );
 }
+
+function PolymerDetailSkeleton() {
+  return (
+    <>
+      <section className="bg-hero-gradient text-white py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="h-4 w-24 bg-white/20 rounded" />
+          <div className="mt-6 flex items-center gap-5">
+            <div className="h-16 w-20 rounded-2xl bg-white/20" />
+            <div className="flex-1">
+              <div className="h-3 w-28 bg-white/20 rounded" />
+              <div className="mt-3 h-10 w-3/4 bg-white/20 rounded" />
+            </div>
+          </div>
+          <div className="mt-8 space-y-3">
+            <div className="h-4 w-full bg-white/15 rounded" />
+            <div className="h-4 w-11/12 bg-white/15 rounded" />
+            <div className="h-4 w-2/3 bg-white/15 rounded" />
+          </div>
+        </div>
+      </section>
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 animate-pulse">
+          {[0, 1].map((i) => (
+            <div key={i}>
+              <div className="h-8 w-48 bg-muted rounded mb-6" />
+              <div className="space-y-3">
+                {[0, 1, 2, 3].map((j) => (
+                  <div key={j} className="h-4 w-full bg-muted rounded" />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
