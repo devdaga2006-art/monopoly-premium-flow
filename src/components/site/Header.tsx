@@ -35,7 +35,7 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <img src={logo} alt="MONOPOLYMERS company logo" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="MONOPOLYMERS company logo" className="h-14 md:h-16 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
