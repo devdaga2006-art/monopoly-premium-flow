@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import ogContact from "@/assets/og-contact.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,7 +16,10 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry." },
       { property: "og:title", content: "Contact MONOPOLYMERS" },
       { property: "og:description", content: "Get in touch for bulk polymer enquiries, Mumbai, Vasai, and India-wide service." },
+      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/contact" },
+      { property: "og:image", content: ogContact },
     ],
+    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/contact" }],
     scripts: [
       {
         type: "application/ld+json",

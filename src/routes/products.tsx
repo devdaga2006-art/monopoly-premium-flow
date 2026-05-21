@@ -1,25 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import { POLYMERS } from "@/data/products";
+import ogProducts from "@/assets/og-products.jpg";
 
-const PRODUCTS = [
-  { code: "PP", name: "Polypropylene", desc: "Versatile thermoplastic for packaging, automotive parts, textiles, and consumer goods." },
-  { code: "LDPE", name: "Low-Density Polyethylene", desc: "Flexible film, liners, squeeze bottles, and general-purpose packaging applications." },
-  { code: "LLDPE", name: "Linear Low-Density Polyethylene", desc: "Tough stretch films, agricultural films, and heavy-duty liners." },
-  { code: "HDPE", name: "High-Density Polyethylene", desc: "Rigid containers, pipes, blow-moulded bottles, and crates." },
-  { code: "ABS", name: "Acrylonitrile Butadiene Styrene", desc: "Impact-resistant engineering plastic for appliances, automotive, and electronics." },
-  { code: "EVA", name: "Ethylene-Vinyl Acetate", desc: "Flexible, rubber-like polymer used in footwear, foams, and hot-melt adhesives." },
-  { code: "HIPS", name: "High-Impact Polystyrene", desc: "Tough styrenic plastic for refrigerator liners, signage, and disposables." },
-  { code: "GPPS", name: "General-Purpose Polystyrene", desc: "Crystal-clear styrenic ideal for cosmetic packaging and disposables." },
-  { code: "PC", name: "Polycarbonate", desc: "Transparent, high-impact engineering plastic for lighting, electronics, and safety." },
-  { code: "PVC", name: "Polyvinyl Chloride", desc: "Versatile resin for pipes, profiles, cables, and flexible applications." },
-  { code: "TPR", name: "Thermoplastic Rubber", desc: "Soft-touch elastomer for grips, seals, footwear, and over-moulding." },
-  { code: "PA", name: "Polyamide (Nylon)", desc: "High-performance engineering polymer for automotive, electrical, and industrial parts." },
-  { code: "POM", name: "Polyoxymethylene (Acetal)", desc: "Stiff, low-friction engineering plastic for precision gears and mechanical parts." },
-  { code: "Acrylic", name: "PMMA", desc: "Optically clear, weather-resistant polymer for signage, displays, and lighting." },
-  { code: "PET", name: "Polyethylene Terephthalate", desc: "Clear, strong polymer for bottles, fibres, and food-grade packaging." },
-];
+const URL = "https://monopoly-premium-flow.lovable.app/products";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -28,7 +15,10 @@ export const Route = createFileRoute("/products")({
       { name: "description", content: "PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic and PET, supplied across India by MONOPOLYMERS." },
       { property: "og:title", content: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
       { property: "og:description", content: "Full range of commodity and engineering polymers supplied to manufacturers across India." },
+      { property: "og:url", content: URL },
+      { property: "og:image", content: ogProducts },
     ],
+    links: [{ rel: "canonical", href: URL }],
     scripts: [
       {
         type: "application/ld+json",
@@ -36,15 +26,17 @@ export const Route = createFileRoute("/products")({
           "@context": "https://schema.org",
           "@type": "ItemList",
           name: "Polymer grades supplied by MONOPOLYMERS",
-          itemListElement: PRODUCTS.map((p, i) => ({
+          itemListElement: POLYMERS.map((p, i) => ({
             "@type": "ListItem",
             position: i + 1,
+            url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
             item: {
               "@type": "Product",
-              name: `${p.name} (${p.code})`,
-              description: p.desc,
+              name: p.fullName,
+              description: p.shortDesc,
               category: "Polymer raw material",
               brand: { "@type": "Brand", name: "MONOPOLYMERS" },
+              url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
             },
           })),
         }),
@@ -75,14 +67,22 @@ function ProductsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Our portfolio" title="Commodity & engineering polymers" />
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRODUCTS.map((p) => (
-              <div key={p.code} className="group bg-card border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-elegant transition-all">
-                <div className="inline-flex items-center justify-center min-w-14 h-14 px-3 rounded-xl bg-red-gradient text-white font-display font-bold text-lg shadow-elegant group-hover:scale-105 transition-transform">
+            {POLYMERS.map((p) => (
+              <Link
+                key={p.slug}
+                to="/products/$slug"
+                params={{ slug: p.slug }}
+                className="group bg-card border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-elegant transition-all flex flex-col"
+              >
+                <div className="inline-flex items-center justify-center min-w-14 h-14 px-3 rounded-xl bg-red-gradient text-white font-display font-bold text-lg shadow-elegant group-hover:scale-105 transition-transform self-start">
                   {p.code}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-charcoal">{p.name}</h3>
-                <p className="mt-2 text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
+                <p className="mt-2 text-muted-foreground leading-relaxed flex-1">{p.shortDesc}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
+                  View details <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>

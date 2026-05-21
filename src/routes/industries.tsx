@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { INDUSTRIES } from "@/components/site/data";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import ogIndustries from "@/assets/og-industries.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -11,7 +12,10 @@ export const Route = createFileRoute("/industries")({
       { name: "description", content: "We supply polymers to packaging, automotive, consumer goods, infrastructure, agriculture, electrical and more across India." },
       { property: "og:title", content: "Industries We Serve, MONOPOLYMERS" },
       { property: "og:description", content: "Mission-critical polymer raw materials for India's leading manufacturers across 10+ industries." },
+      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/industries" },
+      { property: "og:image", content: ogIndustries },
     ],
+    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/industries" }],
     scripts: [breadcrumbJsonLd("Industries", "/industries")],
   }),
   component: IndustriesPage,

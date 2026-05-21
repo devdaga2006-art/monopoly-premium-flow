@@ -19,8 +19,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai." },
       { property: "og:title", content: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
       { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across India, and 1000+ B2B customers." },
+      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/" },
       { property: "og:image", content: heroImg },
     ],
+    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
