@@ -77,7 +77,7 @@ export const Route = createFileRoute("/products/$slug")({
 });
 
 function PolymerDetailPage() {
-  const { polymer: p } = Route.useLoaderData();
+  const { polymer: p } = Route.useLoaderData() as { polymer: Polymer };
   const related = POLYMERS.filter((x) => x.slug !== p.slug).slice(0, 4);
 
   return (
