@@ -38,7 +38,7 @@ export function Header() {
           <img
             src={logo}
             alt="MONOPOLYMERS company logo"
-            className="block h-20 sm:h-28 lg:h-36 w-auto object-contain select-none -my-6 sm:-my-8 lg:-my-10"
+            className="block h-28 sm:h-28 lg:h-36 w-auto object-contain select-none -my-10 sm:-my-8 lg:-my-10"
             draggable={false}
           />
         </Link>
