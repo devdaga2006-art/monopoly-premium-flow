@@ -33,9 +33,9 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-1 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <img src={logo} alt="MONOPOLYMERS company logo" className="h-20 md:h-24 w-auto" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-[88px] md:h-[104px] flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 shrink-0 h-full" onClick={() => setOpen(false)}>
+          <img src={logo} alt="MONOPOLYMERS company logo" className="h-full w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
