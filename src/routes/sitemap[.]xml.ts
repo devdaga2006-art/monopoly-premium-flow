@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { POLYMERS } from "@/data/products";
 
 const BASE_URL = "https://monopoly-premium-flow.lovable.app";
 
@@ -22,6 +23,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/why-us", changefreq: "monthly", priority: "0.7" },
           { path: "/faq", changefreq: "monthly", priority: "0.6" },
           { path: "/contact", changefreq: "monthly", priority: "0.8" },
+          ...POLYMERS.map((p) => ({
+            path: `/products/${p.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
         ];
 
         const urls = entries.map(
