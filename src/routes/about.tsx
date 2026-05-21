@@ -13,8 +13,10 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga. A family legacy of more than 50 years in India's plastic industry." },
       { property: "og:title", content: "About MONOPOLYMERS, A 50-Year Family Legacy" },
       { property: "og:description", content: "Three decades of polymer distribution, built on ethics, consistency, and long-term customer relationships." },
+      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/about" },
       { property: "og:image", content: founders },
     ],
+    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/about" }],
     scripts: [
       {
         type: "application/ld+json",
