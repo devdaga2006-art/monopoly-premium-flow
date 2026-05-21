@@ -21,6 +21,20 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across India, and 1000+ B2B customers." },
       { property: "og:image", content: heroImg },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.slice(0, 5).map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
