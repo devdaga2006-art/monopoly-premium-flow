@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2, Factory, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/CtaBand";
-import { POLYMERS, getPolymerBySlug } from "@/data/products";
+import { POLYMERS, getPolymerBySlug, type Polymer } from "@/data/products";
 
 const SITE = "https://monopoly-premium-flow.lovable.app";
 
