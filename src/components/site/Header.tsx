@@ -34,11 +34,11 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
-        <Link to="/" className="flex items-center shrink-0 -my-2" onClick={() => setOpen(false)} aria-label="MONOPOLYMERS home">
+        <Link to="/" className="flex items-center shrink-0" onClick={() => setOpen(false)} aria-label="MONOPOLYMERS home">
           <img
             src={logo}
             alt="MONOPOLYMERS company logo"
-            className="block h-12 sm:h-14 lg:h-16 w-auto object-contain select-none"
+            className="block h-20 sm:h-28 lg:h-36 w-auto object-contain select-none -my-6 sm:-my-8 lg:-my-10"
             draggable={false}
           />
         </Link>
