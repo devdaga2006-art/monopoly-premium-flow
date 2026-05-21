@@ -73,6 +73,8 @@ export const Route = createFileRoute("/products/$slug")({
       </Button>
     </div>
   ),
+  pendingComponent: PolymerDetailSkeleton,
+  pendingMs: 100,
   component: PolymerDetailPage,
 });
 
