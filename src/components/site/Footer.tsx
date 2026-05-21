@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="bg-charcoal text-charcoal-foreground mt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="bg-white rounded-lg p-3 inline-block">
-            <img src={logo} alt="MONOPOLYMERS company logo" className="h-10 w-auto" />
+          <div className="bg-white rounded-lg p-3 inline-flex items-center">
+            <img src={logo} alt="MONOPOLYMERS company logo" className="block h-10 sm:h-12 w-auto object-contain" />
           </div>
           <p className="mt-4 text-sm text-white/70 leading-relaxed">
             Trusted polymer & plastic raw material distribution since 1996. A family legacy of
