@@ -64,6 +64,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "8_kqC06NtAxslcIQqiCGZFw1W26EEk08K0X5TAuSX8A" },
       { title: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
       { name: "description", content: "MONOPOLYMERS is a leading distributor of plastic raw materials & polymers since 1996. 1000+ customers, ₹100Cr+ turnover, warehouses across India." },
       { name: "author", content: "MONOPOLYMERS" },
