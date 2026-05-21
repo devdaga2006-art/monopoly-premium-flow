@@ -12,7 +12,9 @@ export const Route = createFileRoute("/faq")({
       { name: "description", content: "Answers to common questions about our polymer products, supply, warehouses, and B2B services." },
       { property: "og:title", content: "FAQ, MONOPOLYMERS" },
       { property: "og:description", content: "Find answers about our polymer supply, bulk orders, industries served, and more." },
+      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/faq" },
     ],
+    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/faq" }],
     scripts: [
       {
         type: "application/ld+json",
