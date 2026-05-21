@@ -1,16 +1,39 @@
 # MONOPOLYMERS
 
-> Trusted distributor of plastic raw materials and polymers in India since 1996. 1000+ B2B customers, ₹100Cr+ turnover, multiple warehouses across India.
+> Trusted distributor of plastic raw materials and polymers in India since 1996. 1000+ B2B customers, ₹100Cr+ annual turnover, multiple warehouses across India.
 
-MONOPOLYMERS is a Mumbai-based polymer distribution company founded in 1996 by the Daga family, building on a 50+ year family legacy in plastics. We supply commodity and engineering polymers (PP, PE, PVC, ABS, PC, PA, POM, PET, and more) to manufacturers across packaging, automotive, consumer goods, infrastructure, agriculture, electrical, and other industries.
+MONOPOLYMERS is a Mumbai-based polymer distribution company founded in 1996 by Mr. Jitendra Daga and Mr. Manoj Daga, building on a 50+ year Daga family legacy in India's plastic industry. The company supplies commodity and engineering polymers to manufacturers across packaging, automotive, consumer goods, infrastructure, agriculture, and electrical industries.
+
+## Key facts
+
+- Founded: 1996, Mumbai, India
+- Founders: Mr. Jitendra Daga and Mr. Manoj Daga
+- Family legacy: 50+ years in the plastic industry
+- Customers: 1000+ active B2B manufacturers across India
+- Annual turnover: ₹100 Crore+
+- Offices: Mumbai and Vasai
+- Warehousing: Multiple strategic warehouses across India
+- Dispatch: Same-day and next-day for bulk orders
+- Customer retention: Long-term relationships of 30+ years
+- Phone: +91-93225-19925, +91-93220-60428, +91-90045-00225
+- Email: monopolymers@yahoo.com
+
+## Products supplied
+
+Commodity polymers: PP (Polypropylene), LDPE, LLDPE, HDPE, PVC, GPPS, HIPS, EVA, PET.
+Engineering polymers: ABS, PC (Polycarbonate), PA (Nylon), POM (Acetal), PMMA (Acrylic), TPR.
+
+## Industries served
+
+Packaging, automotive, consumer goods, infrastructure and construction, agriculture, electrical and electronics, household and appliances, and industrial manufacturing.
 
 ## Pages
 
 - [Home](/): Company overview, stats, industries, and testimonials.
-- [About](/about): Founders, history, and the family legacy behind MONOPOLYMERS.
-- [Products](/products): Polymer grades we supply (PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic, PET).
-- [Industries](/industries): Sectors we serve, packaging, automotive, consumer goods, infrastructure, and more.
+- [About](/about): Founders, family history, and 50-year legacy behind MONOPOLYMERS.
+- [Products](/products): Full polymer grade list (PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic, PET).
+- [Industries](/industries): Sectors we serve in detail.
 - [Infrastructure](/infrastructure): Offices, warehouses, and logistics network across India.
 - [Why Us](/why-us): Differentiators, customer base, and track record.
-- [FAQ](/faq): Common questions about products, bulk supply, and service.
+- [FAQ](/faq): Common questions about products, bulk supply, MOQs, and service.
 - [Contact](/contact): Phone, WhatsApp, and enquiry form for the founding directors.
