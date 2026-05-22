@@ -25,6 +25,12 @@ export function Footer() {
             <li><Link to="/why-us" className="hover:text-primary">Why Choose Us</Link></li>
             <li><Link to="/faq" className="hover:text-primary">FAQ</Link></li>
           </ul>
+          <h4 className="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Service Areas</h4>
+          <ul className="mt-4 space-y-2 text-sm text-white/70">
+            <li><Link to="/locations/$slug" params={{ slug: "mumbai" }} className="hover:text-primary">Supplier in Mumbai</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "daman" }} className="hover:text-primary">Supplier in Daman</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "gujarat" }} className="hover:text-primary">Supplier in Gujarat</Link></li>
+          </ul>
         </div>
 
         <div>
