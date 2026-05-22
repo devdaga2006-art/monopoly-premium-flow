@@ -158,11 +158,11 @@ export const POLYMERS: Polymer[] = [
   {
     slug: "polyoxymethylene-pom-acetal",
     code: "POM",
-    name: "Polyoxymethylene (Acetal)",
-    fullName: "Polyoxymethylene / Acetal (POM)",
-    shortDesc: "Stiff, low-friction engineering plastic for precision gears and mechanical parts.",
+    name: "Polyoxymethylene (Acetal / Delrin)",
+    fullName: "Polyoxymethylene / Acetal / Delrin (POM)",
+    shortDesc: "Stiff, low-friction engineering plastic granules for precision gears and mechanical parts. Also known as Delrin.",
     longDesc:
-      "POM (Acetal) is a high-stiffness, low-friction engineering thermoplastic ideal for precision components. Common in automotive fuel systems, plumbing fittings, and consumer mechanism parts.",
+      "POM (Acetal), commonly known by the brand name Delrin, is a high-stiffness, low-friction engineering thermoplastic ideal for precision components. MONOPOLYMERS supplies POM / Delrin granules in bulk for automotive fuel systems, plumbing fittings, and consumer mechanism parts.",
     applications: ["Precision gears", "Automotive fuel system parts", "Plumbing fittings", "Zippers & clips", "Conveyor components"],
     properties: ["High stiffness & strength", "Low coefficient of friction", "Excellent dimensional stability", "Good fatigue resistance"],
     industries: ["Automotive", "Industrial", "Consumer Goods"],
