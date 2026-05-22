@@ -137,7 +137,7 @@ function LocationPage() {
           <aside className="bg-card border border-border rounded-2xl p-7 h-fit">
             <h3 className="text-lg font-semibold text-charcoal">Industries served in {l.city}</h3>
             <ul className="mt-4 space-y-2">
-              {l.industries.map((i) => (
+              {l.industries.map((i: string) => (
                 <li key={i} className="text-muted-foreground">• {i}</li>
               ))}
             </ul>
