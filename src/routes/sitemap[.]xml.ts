@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { POLYMERS } from "@/data/products";
+import { LOCATIONS } from "@/data/locations";
 
 const BASE_URL = "https://monopoly-premium-flow.lovable.app";
 
