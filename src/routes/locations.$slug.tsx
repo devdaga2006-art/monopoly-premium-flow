@@ -121,7 +121,7 @@ function LocationPage() {
           <div className="lg:col-span-2">
             <SectionHeading eyebrow="Why us" title={`Bulk polymer supply in ${l.city}`} />
             <ul className="mt-8 space-y-4">
-              {l.highlights.map((h) => (
+              {l.highlights.map((h: string) => (
                 <li key={h} className="flex gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                   <span className="text-charcoal leading-relaxed">{h}</span>
