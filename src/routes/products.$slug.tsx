@@ -94,7 +94,26 @@ function PolymerDetailPage() {
     <>
       <section className="bg-hero-gradient text-white py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <Link to="/products" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm">
+          <Breadcrumb>
+            <BreadcrumbList className="text-white/70">
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="hover:text-white">
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-white/40" />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild className="hover:text-white">
+                  <Link to="/products">Products</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-white/40" />
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-white">{p.fullName}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <Link to="/products" className="mt-4 inline-flex items-center gap-2 text-white/70 hover:text-white text-sm">
             <ArrowLeft className="h-4 w-4" /> All products
           </Link>
           <div className="mt-6 flex items-center gap-5">
