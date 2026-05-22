@@ -105,6 +105,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "ContactPoint", telephone: "+91-93225-19925", contactType: "sales", areaServed: "IN" },
                 { "@type": "ContactPoint", telephone: "+91-93220-60428", contactType: "sales", areaServed: "IN" },
               ],
+              areaServed: [
+                { "@type": "State", name: "Maharashtra" },
+                { "@type": "State", name: "Gujarat" },
+                { "@type": "AdministrativeArea", name: "Daman and Diu" },
+                { "@type": "City", name: "Mumbai" },
+                { "@type": "Country", name: "India" },
+              ],
+              knowsAbout: [
+                "Plastic raw materials",
+                "Plastic granules",
+                "Polymer distribution",
+                "Polypropylene (PP)",
+                "LDPE", "LLDPE", "HDPE", "PVC", "PET", "GPPS", "HIPS",
+                "ABS", "Polycarbonate (PC)", "Nylon (PA)",
+                "POM / Acetal / Delrin", "PMMA / Acrylic", "EVA", "TPR", "TPE",
+              ],
             },
             {
               "@type": "WebSite",
