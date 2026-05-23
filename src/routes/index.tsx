@@ -77,9 +77,9 @@ function HomePage() {
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               Established 1996 · Mumbai
             </div>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance">
+            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
               <span className="block">MONOPOLYMERS</span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 mt-2">
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 mt-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Trusted Polymer Distributors <span className="text-primary">Since 1996</span>
               </span>
             </h1>
