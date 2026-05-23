@@ -78,8 +78,10 @@ function HomePage() {
               Established 1996 · Mumbai
             </div>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance">
-              Trusted Polymer Distribution{" "}
-              <span className="text-primary">Since 1996.</span>
+              <span className="block">MONOPOLYMERS</span>
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 mt-2">
+                Trusted Polymer Distributors <span className="text-primary">Since 1996</span>
+              </span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               A 50+ year family legacy in plastics. 1000+ industrial customers. ₹100Cr+ in
