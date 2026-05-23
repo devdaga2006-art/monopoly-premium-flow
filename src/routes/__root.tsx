@@ -176,6 +176,7 @@ function RootComponent() {
       <Footer />
       <WhatsAppFab />
       <CallFab />
+      <ThemeToggle />
       <Toaster />
     </QueryClientProvider>
   );
