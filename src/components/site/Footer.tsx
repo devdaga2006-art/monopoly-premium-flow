@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-[oklch(0.145_0_0)] text-white mt-24">
+    <footer className="bg-charcoal text-charcoal-foreground mt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="bg-white rounded-lg p-3 inline-flex items-center">

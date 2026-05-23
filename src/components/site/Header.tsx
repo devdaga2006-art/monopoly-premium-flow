@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -58,7 +57,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
           <a
             href="tel:+919322519925"
             className="hidden xl:inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-primary"
@@ -68,23 +67,15 @@ export function Header() {
           <Button asChild className="bg-red-gradient text-primary-foreground hover:opacity-95 shadow-elegant">
             <Link to="/contact">Get a Quote</Link>
           </Button>
-          <ThemeToggle />
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <button
-            className="p-2 text-foreground"
-            onClick={() => setOpen((o) => !o)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-          <div className="md:hidden">
-            <ThemeToggle />
-          </div>
-        </div>
-
-
+        <button
+          className="lg:hidden p-2 text-foreground"
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
       {open && (

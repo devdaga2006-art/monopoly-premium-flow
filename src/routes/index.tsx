@@ -67,8 +67,8 @@ function HomePage() {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/60 to-charcoal/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/55 to-charcoal/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
         <div aria-hidden className="granules-overlay" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32 md:py-40 w-full">
@@ -77,13 +77,13 @@ function HomePage() {
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               Established 1996 · Mumbai
             </div>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
+            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] text-balance">
               <span className="block">MONOPOLYMERS</span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 mt-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white/90 mt-2">
                 Trusted Polymer Distributors <span className="text-primary">Since 1996</span>
               </span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
               A 50+ year family legacy in plastics. 1000+ industrial customers. ₹100Cr+ in
               annual turnover. Strategic warehousing across India, built for high-volume,
               high-trust B2B supply.
@@ -107,8 +107,8 @@ function HomePage() {
                 ["1996", "Established"],
               ].map(([v, l]) => (
                 <div key={l} className="border-l-2 border-primary pl-3">
-                  <div className="text-2xl md:text-3xl font-bold text-white font-display drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">{v}</div>
-                  <div className="text-xs text-white/70 uppercase tracking-wider drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">{l}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white font-display">{v}</div>
+                  <div className="text-xs text-white/60 uppercase tracking-wider">{l}</div>
                 </div>
               ))}
             </div>
