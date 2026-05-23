@@ -65,16 +65,13 @@ export function Header() {
           >
             <Phone className="h-4 w-4" /> +91 93225 19925
           </a>
-          <ThemeToggle />
           <Button asChild className="bg-red-gradient text-primary-foreground hover:opacity-95 shadow-elegant">
             <Link to="/contact">Get a Quote</Link>
           </Button>
+          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <div className="md:hidden">
-            <ThemeToggle />
-          </div>
           <button
             className="p-2 text-foreground"
             onClick={() => setOpen((o) => !o)}
@@ -82,7 +79,11 @@ export function Header() {
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+          <div className="md:hidden">
+            <ThemeToggle />
+          </div>
         </div>
+
 
       </div>
 
