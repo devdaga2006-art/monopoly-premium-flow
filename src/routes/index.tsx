@@ -83,7 +83,7 @@ function HomePage() {
                 Trusted Polymer Distributors <span className="text-primary">Since 1996</span>
               </span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               A 50+ year family legacy in plastics. 1000+ industrial customers. ₹100Cr+ in
               annual turnover. Strategic warehousing across India, built for high-volume,
               high-trust B2B supply.
@@ -107,8 +107,8 @@ function HomePage() {
                 ["1996", "Established"],
               ].map(([v, l]) => (
                 <div key={l} className="border-l-2 border-primary pl-3">
-                  <div className="text-2xl md:text-3xl font-bold text-white font-display">{v}</div>
-                  <div className="text-xs text-white/60 uppercase tracking-wider">{l}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white font-display drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">{v}</div>
+                  <div className="text-xs text-white/70 uppercase tracking-wider drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">{l}</div>
                 </div>
               ))}
             </div>
