@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const NAV = [
   { to: "/", label: "Home" },
