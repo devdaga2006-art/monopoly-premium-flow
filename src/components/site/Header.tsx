@@ -84,15 +84,6 @@ export function Header() {
           </button>
         </div>
 
-        <button
-          className="hidden"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Toggle menu"
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
       {open && (
