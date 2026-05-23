@@ -92,9 +92,11 @@
   --primary: oklch(0.52 0.22 27);            /* #CC0000 brand red */
   --primary-foreground: oklch(1 0 0);
   --primary-glow: oklch(0.58 0.23 27);
-  --charcoal: oklch(0.145 0 0);
-  --charcoal-foreground: oklch(0.98 0 0);
+  /* In dark mode, charcoal flips to light so text-charcoal stays readable */
+  --charcoal: oklch(0.93 0 0);
+  --charcoal-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.22 0 0);              /* #2A2A2A */
+
   --secondary-foreground: oklch(0.93 0 0);
   --muted: oklch(0.2 0 0);                   /* #141414 */
   --muted-foreground: oklch(0.72 0 0);
