@@ -8,7 +8,7 @@
     "build": "node scripts/generate-sitemap.mjs && vite build",
     "build:dev": "node scripts/generate-sitemap.mjs && vite build --mode development",
     "preview": "vite preview",
-    "deploy:netlify": "netlify deploy --dir=dist/client --prod",
+    "deploy:netlify": "netlify deploy --dir=dist --prod",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
