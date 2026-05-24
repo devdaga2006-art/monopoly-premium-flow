@@ -4,7 +4,7 @@ import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
-const NAV = [
+const NAV: { to: string; label: string; end?: boolean }[] = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/industries", label: "Industries" },
@@ -12,7 +12,7 @@ const NAV = [
   { to: "/why-us", label: "Why Us" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
