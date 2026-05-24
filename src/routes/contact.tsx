@@ -47,7 +47,7 @@ export const Route = createFileRoute("/contact")({
 const CONTACTS = [
   { name: "Mr. Jitendra K. Daga", role: "Co-founder & Director", phone: "+91 93225 19925", tel: "+919322519925" },
   { name: "Mr. Manoj K. Daga", role: "Co-founder & Director", phone: "+91 93220 60428", tel: "+919322060428" },
-  { name: "Mr. Dev J. Daga", role: "Director", phone: "+91 90045 00225", tel: "+919004500225" },
+  { name: "Mr. Dev J. Daga", role: "Director", phone: "+91 90045 02225", tel: "+919004502225" },
 ];
 
 function ContactPage() {
