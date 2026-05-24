@@ -1,45 +1,16 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Truck, Warehouse, Users, TrendingUp, ShieldCheck, Award, Clock } from "lucide-react";
 import heroImg from "@/assets/hero-pellets.jpg";
 import warehouseImg from "@/assets/warehouse.jpg";
 import logisticsImg from "@/assets/logistics.jpg";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { StatCounter } from "@/components/site/StatCounter";
 import { CtaBand } from "@/components/site/CtaBand";
 import { LocationMap } from "@/components/site/LocationMap";
 import { INDUSTRIES, TESTIMONIALS, FAQS } from "@/components/site/data";
 import { useReveal } from "@/hooks/use-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
-      { name: "description", content: "Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai." },
-      { property: "og:title", content: "MONOPOLYMERS, Trusted Polymer Distribution Since 1996" },
-      { property: "og:description", content: "Leading polymer distributor with 50+ year family legacy, multiple warehouses across India, and 1000+ B2B customers." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/" },
-      { property: "og:image", content: heroImg },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQS.slice(0, 5).map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }),
-      },
-    ],
-  }),
-  component: HomePage,
-});
+import { Seo } from "@/lib/Seo";
 
 const WHY = [
   { icon: Users, title: "1000+ Customers", desc: "Trusted by manufacturers across India for decades." },
@@ -50,12 +21,31 @@ const WHY = [
   { icon: Award, title: "30+ Year Relationships", desc: "Customers who have grown with us for 3 decades." },
 ];
 
-function HomePage() {
+export default function HomePage() {
   const aboutRef = useReveal<HTMLDivElement>();
   const industriesRef = useReveal<HTMLDivElement>();
 
   return (
     <>
+      <Seo
+        title="MONOPOLYMERS, Trusted Polymer Distribution Since 1996"
+        description="Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai."
+        canonical="https://monopoly-premium-flow.lovable.app/"
+        ogUrl="https://monopoly-premium-flow.lovable.app/"
+        ogImage={heroImg}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.slice(0, 5).map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          },
+        ]}
+      />
+
       {/* HERO */}
       <section className="relative -mt-[88px] md:-mt-[104px] min-h-[100svh] flex items-center overflow-hidden">
         <img

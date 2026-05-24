@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -8,41 +7,7 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogContact from "@/assets/og-contact.jpg";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact MONOPOLYMERS, Get a Quote" },
-      { name: "description", content: "Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry." },
-      { property: "og:title", content: "Contact MONOPOLYMERS" },
-      { property: "og:description", content: "Get in touch for bulk polymer enquiries, Mumbai, Vasai, and India-wide service." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/contact" },
-      { property: "og:image", content: ogContact },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/contact" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "MONOPOLYMERS",
-          url: "https://monopoly-premium-flow.lovable.app/contact",
-          telephone: ["+91-93225-19925", "+91-93220-60428", "+91-90045-00225"],
-          email: "monopolymers@yahoo.com",
-          address: [
-            { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "Maharashtra", addressCountry: "IN" },
-            { "@type": "PostalAddress", addressLocality: "Vasai", addressRegion: "Maharashtra", addressCountry: "IN" },
-          ],
-          areaServed: "IN",
-          priceRange: "$$",
-        }),
-      },
-      breadcrumbJsonLd("Contact", "/contact"),
-    ],
-  }),
-  component: ContactPage,
-});
+import { Seo } from "@/lib/Seo";
 
 const CONTACTS = [
   { name: "Mr. Jitendra K. Daga", role: "Co-founder & Director", phone: "+91 93225 19925", tel: "+919322519925" },
@@ -50,7 +15,7 @@ const CONTACTS = [
   { name: "Mr. Dev J. Daga", role: "Director", phone: "+91 90045 02225", tel: "+919004502225" },
 ];
 
-function ContactPage() {
+export default function ContactPage() {
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", message: "" });
 
   const onSubmit = (e: React.FormEvent) => {
@@ -66,6 +31,30 @@ function ContactPage() {
 
   return (
     <>
+      <Seo
+        title="Contact MONOPOLYMERS, Get a Quote"
+        description="Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry."
+        canonical="https://monopoly-premium-flow.lovable.app/contact"
+        ogUrl="https://monopoly-premium-flow.lovable.app/contact"
+        ogImage={ogContact}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "MONOPOLYMERS",
+            url: "https://monopoly-premium-flow.lovable.app/contact",
+            telephone: ["+91-93225-19925", "+91-93220-60428", "+91-90045-00225"],
+            email: "monopolymers@yahoo.com",
+            address: [
+              { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "Maharashtra", addressCountry: "IN" },
+              { "@type": "PostalAddress", addressLocality: "Vasai", addressRegion: "Maharashtra", addressCountry: "IN" },
+            ],
+            areaServed: "IN",
+            priceRange: "$$",
+          },
+          breadcrumbJsonLd("Contact", "/contact"),
+        ]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Contact</span>

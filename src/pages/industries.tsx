@@ -1,29 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { INDUSTRIES } from "@/components/site/data";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogIndustries from "@/assets/og-industries.jpg";
+import { Seo } from "@/lib/Seo";
 
-export const Route = createFileRoute("/industries")({
-  head: () => ({
-    meta: [
-      { title: "Industries We Serve, MONOPOLYMERS" },
-      { name: "description", content: "We supply polymers to packaging, automotive, consumer goods, infrastructure, agriculture, electrical and more across India." },
-      { property: "og:title", content: "Industries We Serve, MONOPOLYMERS" },
-      { property: "og:description", content: "Mission-critical polymer raw materials for India's leading manufacturers across 10+ industries." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/industries" },
-      { property: "og:image", content: ogIndustries },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/industries" }],
-    scripts: [breadcrumbJsonLd("Industries", "/industries")],
-  }),
-  component: IndustriesPage,
-});
-
-function IndustriesPage() {
+export default function IndustriesPage() {
   return (
     <>
+      <Seo
+        title="Industries We Serve, MONOPOLYMERS"
+        description="We supply polymers to packaging, automotive, consumer goods, infrastructure, agriculture, electrical and more across India."
+        canonical="https://monopoly-premium-flow.lovable.app/industries"
+        ogUrl="https://monopoly-premium-flow.lovable.app/industries"
+        ogImage={ogIndustries}
+        jsonLd={[breadcrumbJsonLd("Industries", "/industries")]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Industries</span>

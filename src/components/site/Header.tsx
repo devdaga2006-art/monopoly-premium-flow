@@ -1,18 +1,18 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
-const NAV = [
-  { to: "/", label: "Home" },
+const NAV: { to: string; label: string; end?: boolean }[] = [
+  { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/industries", label: "Industries" },
   { to: "/infrastructure", label: "Infrastructure" },
   { to: "/why-us", label: "Why Us" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,15 +45,18 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-1">
           {NAV.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-              activeProps={{ className: "px-3 py-2 text-sm font-semibold text-primary" }}
-              activeOptions={{ exact: n.to === "/" }}
+              end={n.end}
+              className={({ isActive }) =>
+                isActive
+                  ? "px-3 py-2 text-sm font-semibold text-primary"
+                  : "px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              }
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -82,16 +85,19 @@ export function Header() {
         <div className="lg:hidden bg-background border-t border-border">
           <div className="px-4 py-4 flex flex-col gap-1">
             {NAV.map((n) => (
-              <Link
+              <NavLink
                 key={n.to}
                 to={n.to}
-                className="px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted"
+                end={n.end}
                 onClick={() => setOpen(false)}
-                activeProps={{ className: "px-3 py-3 rounded-md text-base font-semibold text-primary bg-accent" }}
-                activeOptions={{ exact: n.to === "/" }}
+                className={({ isActive }) =>
+                  isActive
+                    ? "px-3 py-3 rounded-md text-base font-semibold text-primary bg-accent"
+                    : "px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted"
+                }
               >
                 {n.label}
-              </Link>
+              </NavLink>
             ))}
             <Button asChild className="mt-2 bg-red-gradient text-primary-foreground">
               <Link to="/contact" onClick={() => setOpen(false)}>Get a Quote</Link>

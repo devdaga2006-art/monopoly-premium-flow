@@ -1,51 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import founders from "@/assets/founders.jpg";
 import hmelRecognition from "@/assets/hmel-recognition.jpg";
 import { CheckCircle2, Heart, Sparkles, Handshake, Trophy } from "lucide-react";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About MONOPOLYMERS, A 50-Year Family Legacy in Polymers" },
-      { name: "description", content: "Founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga. A family legacy of more than 50 years in India's plastic industry." },
-      { property: "og:title", content: "About MONOPOLYMERS, A 50-Year Family Legacy" },
-      { property: "og:description", content: "Three decades of polymer distribution, built on ethics, consistency, and long-term customer relationships." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/about" },
-      { property: "og:image", content: founders },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/about" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          name: "About MONOPOLYMERS",
-          url: "https://monopoly-premium-flow.lovable.app/about",
-          mainEntity: {
-            "@type": "Organization",
-            name: "MONOPOLYMERS",
-            foundingDate: "1996",
-            foundingLocation: { "@type": "Place", name: "Mumbai, India" },
-            founder: [
-              { "@type": "Person", name: "Jitendra Daga", jobTitle: "Founding Director" },
-              { "@type": "Person", name: "Manoj Daga", jobTitle: "Founding Director" },
-            ],
-            description:
-              "MONOPOLYMERS is a Mumbai-based distributor of plastic raw materials and polymers, founded in 1996 by the Daga family, building on a 50+ year family legacy in India's plastic industry. The company serves 1000+ B2B manufacturers with ₹100Cr+ annual turnover.",
-            numberOfEmployees: { "@type": "QuantitativeValue", minValue: 25 },
-            slogan: "Trusted polymer distribution since 1996",
-          },
-        }),
-      },
-      breadcrumbJsonLd("About", "/about"),
-    ],
-  }),
-  component: AboutPage,
-});
+import { Seo } from "@/lib/Seo";
 
 const VALUES = [
   { icon: Heart, t: "Relationships First", d: "30+ year customer relationships built on trust and accountability." },
@@ -62,9 +21,38 @@ const TIMELINE = [
   { y: "Today", t: "₹100Cr+ Enterprise", d: "1000+ active customers, growing turnover, and a next-generation team." },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <>
+      <Seo
+        title="About MONOPOLYMERS, A 50-Year Family Legacy in Polymers"
+        description="Founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga. A family legacy of more than 50 years in India's plastic industry."
+        canonical="https://monopoly-premium-flow.lovable.app/about"
+        ogUrl="https://monopoly-premium-flow.lovable.app/about"
+        ogImage={founders}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "About MONOPOLYMERS",
+            url: "https://monopoly-premium-flow.lovable.app/about",
+            mainEntity: {
+              "@type": "Organization",
+              name: "MONOPOLYMERS",
+              foundingDate: "1996",
+              foundingLocation: { "@type": "Place", name: "Mumbai, India" },
+              founder: [
+                { "@type": "Person", name: "Jitendra Daga", jobTitle: "Founding Director" },
+                { "@type": "Person", name: "Manoj Daga", jobTitle: "Founding Director" },
+              ],
+              description:
+                "MONOPOLYMERS is a Mumbai-based distributor of plastic raw materials and polymers, founded in 1996 by the Daga family, building on a 50+ year family legacy in India's plastic industry.",
+              slogan: "Trusted polymer distribution since 1996",
+            },
+          },
+          breadcrumbJsonLd("About", "/about"),
+        ]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">About Us</span>
@@ -128,7 +116,7 @@ function AboutPage() {
               align="left"
               eyebrow="Recognition"
               title="Recognised by HMEL for contributing to 2 Million MT Polymer Sales"
-              subtitle="A proud moment for MONOPOLYMERS, honoured by HMEL (HPCL-Mittal Energy Limited) as a valued channel partner for our contribution towards their 2 Million MT polymer sales milestone in 2024–25. A reflection of three decades of trust and partnership with India's leading producers."
+              subtitle="A proud moment for MONOPOLYMERS, honoured by HMEL (HPCL-Mittal Energy Limited) as a valued channel partner for our contribution towards their 2 Million MT polymer sales milestone in 2024–25."
             />
             <ul className="mt-8 space-y-3">
               {[
