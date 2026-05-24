@@ -45,7 +45,7 @@ export function Footer() {
               <div>
                 <a href="tel:+919322519925" className="block hover:text-primary">+91 93225 19925</a>
                 <a href="tel:+919322060428" className="block hover:text-primary">+91 93220 60428</a>
-                <a href="tel:+919004502225" className="block hover:text-primary">+91 90045 00225</a>
+                <a href="tel:+919004502225" className="block hover:text-primary">+91 90045 02225</a>
               </div>
             </li>
             <li className="flex gap-3">
