@@ -1,26 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import warehouseImg from "@/assets/warehouse.jpg";
 import logisticsImg from "@/assets/logistics.jpg";
 import { Building2, Warehouse, Truck, Clock, MapPin, ShieldCheck } from "lucide-react";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
-
-export const Route = createFileRoute("/infrastructure")({
-  head: () => ({
-    meta: [
-      { title: "Infrastructure & Logistics, MONOPOLYMERS" },
-      { name: "description", content: "Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution." },
-      { property: "og:title", content: "Infrastructure & Logistics, MONOPOLYMERS" },
-      { property: "og:description", content: "Strategic warehouses and logistics network across India, designed for high-volume polymer distribution." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/infrastructure" },
-      { property: "og:image", content: warehouseImg },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/infrastructure" }],
-    scripts: [breadcrumbJsonLd("Infrastructure", "/infrastructure")],
-  }),
-  component: InfraPage,
-});
+import { Seo } from "@/lib/Seo";
 
 const OFFICES = [
   { t: "Mumbai, Head Office", d: "Our corporate headquarters and primary commercial hub for South & Central India operations." },
@@ -36,9 +20,17 @@ const CAPS = [
   { icon: Building2, t: "Two Corporate Offices", d: "Mumbai HQ and Vasai operations office." },
 ];
 
-function InfraPage() {
+export default function InfraPage() {
   return (
     <>
+      <Seo
+        title="Infrastructure & Logistics, MONOPOLYMERS"
+        description="Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution."
+        canonical="https://monopoly-premium-flow.lovable.app/infrastructure"
+        ogUrl="https://monopoly-premium-flow.lovable.app/infrastructure"
+        ogImage={warehouseImg}
+        jsonLd={[breadcrumbJsonLd("Infrastructure", "/infrastructure")]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Infrastructure</span>
@@ -46,8 +38,8 @@ function InfraPage() {
             Built for <span className="text-primary">scale, speed, and reliability.</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-2xl">
-            Two corporate offices and multiple strategically located warehouses across India
-           , engineered to keep your production line running.
+            Two corporate offices and multiple strategically located warehouses across India,
+            engineered to keep your production line running.
           </p>
         </div>
       </section>
@@ -56,11 +48,7 @@ function InfraPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <img src={warehouseImg} alt="MONOPOLYMERS regional polymer warehouse interior" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
           <div>
-            <SectionHeading
-              align="left"
-              eyebrow="Our Offices"
-              title="Two corporate offices powering India-wide distribution"
-            />
+            <SectionHeading align="left" eyebrow="Our Offices" title="Two corporate offices powering India-wide distribution" />
             <div className="mt-8 grid gap-4">
               {OFFICES.map((o) => (
                 <div key={o.t} className="bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-shadow">

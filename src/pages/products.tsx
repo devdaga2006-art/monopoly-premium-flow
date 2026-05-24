@@ -1,55 +1,45 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import { POLYMERS } from "@/data/products";
 import ogProducts from "@/assets/og-products.jpg";
+import { Seo } from "@/lib/Seo";
 
-const URL = "https://monopoly-premium-flow.lovable.app/products";
+const PAGE_URL = "https://monopoly-premium-flow.lovable.app/products";
 
-export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
-      { name: "description", content: "PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic and PET, supplied across India by MONOPOLYMERS." },
-      { property: "og:title", content: "Products, Polymer Grades We Supply | MONOPOLYMERS" },
-      { property: "og:description", content: "Full range of commodity and engineering polymers supplied to manufacturers across India." },
-      { property: "og:url", content: URL },
-      { property: "og:image", content: ogProducts },
-    ],
-    links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "Polymer grades supplied by MONOPOLYMERS",
-          itemListElement: POLYMERS.map((p, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
-            item: {
-              "@type": "Product",
-              name: p.fullName,
-              description: p.shortDesc,
-              category: "Polymer raw material",
-              brand: { "@type": "Brand", name: "MONOPOLYMERS" },
-              url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
-            },
-          })),
-        }),
-      },
-      breadcrumbJsonLd("Products", "/products"),
-    ],
-  }),
-  component: ProductsPage,
-});
-
-function ProductsPage() {
+export default function ProductsPage() {
   return (
     <>
+      <Seo
+        title="Products, Polymer Grades We Supply | MONOPOLYMERS"
+        description="PP, LDPE, LLDPE, HDPE, ABS, EVA, HIPS, GPPS, PC, PVC, TPR, PA, POM, Acrylic and PET, supplied across India by MONOPOLYMERS."
+        canonical={PAGE_URL}
+        ogUrl={PAGE_URL}
+        ogImage={ogProducts}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Polymer grades supplied by MONOPOLYMERS",
+            itemListElement: POLYMERS.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
+              item: {
+                "@type": "Product",
+                name: p.fullName,
+                description: p.shortDesc,
+                category: "Polymer raw material",
+                brand: { "@type": "Brand", name: "MONOPOLYMERS" },
+                url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
+              },
+            })),
+          },
+          breadcrumbJsonLd("Products", "/products"),
+        ]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Products</span>
@@ -70,8 +60,7 @@ function ProductsPage() {
             {POLYMERS.map((p) => (
               <Link
                 key={p.slug}
-                to="/products/$slug"
-                params={{ slug: p.slug }}
+                to={`/products/${p.slug}`}
                 className="group bg-card border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-elegant transition-all flex flex-col"
               >
                 <div className="inline-flex items-center justify-center min-w-14 h-14 px-3 rounded-xl bg-red-gradient text-white font-display font-bold text-lg shadow-elegant group-hover:scale-105 transition-transform self-start">

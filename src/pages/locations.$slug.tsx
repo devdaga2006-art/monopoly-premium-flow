@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2, MapPin, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,33 +13,37 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { LOCATIONS, getLocationBySlug } from "@/data/locations";
 import { POLYMERS } from "@/data/products";
+import { Seo } from "@/lib/Seo";
 
 const SITE = "https://monopoly-premium-flow.lovable.app";
 
-export const Route = createFileRoute("/locations/$slug")({
-  loader: ({ params }) => {
-    const location = getLocationBySlug(params.slug);
-    if (!location) throw notFound();
-    return { location };
-  },
-  head: ({ params, loaderData }) => {
-    const l = loaderData?.location;
-    if (!l) return { meta: [{ title: "Location not found, MONOPOLYMERS" }] };
-    const url = `${SITE}/locations/${params.slug}`;
-    return {
-      meta: [
-        { title: l.title },
-        { name: "description", content: l.description },
-        { property: "og:title", content: l.title },
-        { property: "og:description", content: l.description },
-        { property: "og:url", content: url },
-        { property: "og:type", content: "website" },
-      ],
-      links: [{ rel: "canonical", href: url }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
+export default function LocationPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const l = slug ? getLocationBySlug(slug) : undefined;
+
+  if (!l) {
+    return (
+      <>
+        <Seo title="Location not found, MONOPOLYMERS" />
+        <div className="mx-auto max-w-3xl px-4 py-24 text-center">
+          <h1 className="text-3xl font-bold text-charcoal">Location not found</h1>
+          <Link to="/" className="mt-6 inline-block text-primary font-semibold">Back to home</Link>
+        </div>
+      </>
+    );
+  }
+
+  const url = `${SITE}/locations/${slug}`;
+
+  return (
+    <>
+      <Seo
+        title={l.title}
+        description={l.description}
+        canonical={url}
+        ogUrl={url}
+        jsonLd={[
+          {
             "@context": "https://schema.org",
             "@type": ["LocalBusiness", "Store"],
             "@id": `${url}#localbusiness`,
@@ -73,11 +77,8 @@ export const Route = createFileRoute("/locations/$slug")({
               { "@type": "ContactPoint", telephone: "+91-93225-19925", contactType: "sales", areaServed: "IN", availableLanguage: ["English", "Hindi", "Marathi", "Gujarati"] },
               { "@type": "ContactPoint", telephone: "+91-93220-60428", contactType: "sales", areaServed: "IN" },
             ],
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
+          },
+          {
             "@context": "https://schema.org",
             "@type": "Service",
             "@id": `${url}#service`,
@@ -100,36 +101,18 @@ export const Route = createFileRoute("/locations/$slug")({
                 },
               })),
             },
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
+          },
+          {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
               { "@type": "ListItem", position: 2, name: `Suppliers in ${l.city}`, item: url },
             ],
-          }),
-        },
-      ],
-    };
-  },
-  component: LocationPage,
-  notFoundComponent: () => (
-    <div className="mx-auto max-w-3xl px-4 py-24 text-center">
-      <h1 className="text-3xl font-bold text-charcoal">Location not found</h1>
-      <Link to="/" className="mt-6 inline-block text-primary font-semibold">Back to home</Link>
-    </div>
-  ),
-});
+          },
+        ]}
+      />
 
-function LocationPage() {
-  const { location: l } = Route.useLoaderData();
-
-  return (
-    <>
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb className="mb-6">
@@ -206,8 +189,7 @@ function LocationPage() {
             {POLYMERS.map((p) => (
               <Link
                 key={p.slug}
-                to="/products/$slug"
-                params={{ slug: p.slug }}
+                to={`/products/${p.slug}`}
                 className="group bg-card border border-border rounded-xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all"
               >
                 <div className="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-lg bg-red-gradient text-white font-display font-bold text-base shadow-elegant">
@@ -227,8 +209,7 @@ function LocationPage() {
             {LOCATIONS.filter((x) => x.slug !== l.slug).map((x) => (
               <Link
                 key={x.slug}
-                to="/locations/$slug"
-                params={{ slug: x.slug }}
+                to={`/locations/${x.slug}`}
                 className="px-5 py-2.5 rounded-full border border-border hover:border-primary/40 hover:bg-primary/5 text-charcoal font-medium transition-colors"
               >
                 {x.city} →

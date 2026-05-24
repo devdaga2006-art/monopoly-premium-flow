@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, CheckCircle2, Factory, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,36 +10,45 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { CtaBand } from "@/components/site/CtaBand";
-import { POLYMERS, getPolymerBySlug, type Polymer } from "@/data/products";
+import { POLYMERS, getPolymerBySlug } from "@/data/products";
+import { Seo } from "@/lib/Seo";
 
 const SITE = "https://monopoly-premium-flow.lovable.app";
 
-export const Route = createFileRoute("/products/$slug")({
-  loader: ({ params }) => {
-    const polymer = getPolymerBySlug(params.slug);
-    if (!polymer) throw notFound();
-    return { polymer };
-  },
-  head: ({ params, loaderData }) => {
-    const p = loaderData?.polymer;
-    if (!p) return { meta: [{ title: "Polymer not found, MONOPOLYMERS" }] };
-    const url = `${SITE}/products/${params.slug}`;
-    const title = `${p.fullName} Supplier in India | MONOPOLYMERS`;
-    const desc = `${p.shortDesc} Bulk ${p.code} supply across India by MONOPOLYMERS, trusted polymer distributor since 1996.`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: title },
-        { property: "og:description", content: desc },
-        { property: "og:url", content: url },
-        { property: "og:type", content: "product" },
-      ],
-      links: [{ rel: "canonical", href: url }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
+export default function ProductDetailPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const p = slug ? getPolymerBySlug(slug) : undefined;
+
+  if (!p) {
+    return (
+      <>
+        <Seo title="Polymer not found, MONOPOLYMERS" />
+        <div className="mx-auto max-w-3xl px-6 py-32 text-center">
+          <h1 className="text-3xl font-bold text-charcoal">Polymer not found</h1>
+          <p className="mt-3 text-muted-foreground">The polymer grade you're looking for isn't in our catalogue.</p>
+          <Button asChild className="mt-6 bg-red-gradient">
+            <Link to="/products">Back to Products</Link>
+          </Button>
+        </div>
+      </>
+    );
+  }
+
+  const url = `${SITE}/products/${slug}`;
+  const title = `${p.fullName} Supplier in India | MONOPOLYMERS`;
+  const desc = `${p.shortDesc} Bulk ${p.code} supply across India by MONOPOLYMERS, trusted polymer distributor since 1996.`;
+  const related = POLYMERS.filter((x) => x.slug !== p.slug).slice(0, 4);
+
+  return (
+    <>
+      <Seo
+        title={title}
+        description={desc}
+        canonical={url}
+        ogUrl={url}
+        ogType="product"
+        jsonLd={[
+          {
             "@context": "https://schema.org",
             "@type": "Product",
             "@id": `${url}#product`,
@@ -67,22 +76,15 @@ export const Route = createFileRoute("/products/$slug")({
                 valueAddedTaxIncluded: false,
                 description: "Bulk B2B pricing on request — contact MONOPOLYMERS for a quote.",
               },
-              seller: {
-                "@type": "Organization",
-                name: "MONOPOLYMERS",
-                url: SITE,
-              },
+              seller: { "@type": "Organization", name: "MONOPOLYMERS", url: SITE },
               areaServed: [
                 { "@type": "Country", name: "India" },
                 { "@type": "State", name: "Maharashtra" },
                 { "@type": "State", name: "Gujarat" },
               ],
             },
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
+          },
+          {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
@@ -90,31 +92,10 @@ export const Route = createFileRoute("/products/$slug")({
               { "@type": "ListItem", position: 2, name: "Products", item: `${SITE}/products` },
               { "@type": "ListItem", position: 3, name: p.fullName, item: url },
             ],
-          }),
-        },
-      ],
-    };
-  },
-  notFoundComponent: () => (
-    <div className="mx-auto max-w-3xl px-6 py-32 text-center">
-      <h1 className="text-3xl font-bold text-charcoal">Polymer not found</h1>
-      <p className="mt-3 text-muted-foreground">The polymer grade you're looking for isn't in our catalogue.</p>
-      <Button asChild className="mt-6 bg-red-gradient">
-        <Link to="/products">Back to Products</Link>
-      </Button>
-    </div>
-  ),
-  pendingComponent: PolymerDetailSkeleton,
-  pendingMs: 100,
-  component: PolymerDetailPage,
-});
+          },
+        ]}
+      />
 
-function PolymerDetailPage() {
-  const { polymer: p } = Route.useLoaderData() as { polymer: Polymer };
-  const related = POLYMERS.filter((x) => x.slug !== p.slug).slice(0, 4);
-
-  return (
-    <>
       <section className="bg-hero-gradient text-white py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb>
@@ -208,8 +189,7 @@ function PolymerDetailPage() {
             {related.map((r) => (
               <Link
                 key={r.slug}
-                to="/products/$slug"
-                params={{ slug: r.slug }}
+                to={`/products/${r.slug}`}
                 className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all"
               >
                 <div className="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-red-gradient text-white font-display font-bold shadow-elegant group-hover:scale-105 transition-transform">
@@ -223,44 +203,6 @@ function PolymerDetailPage() {
       </section>
 
       <CtaBand />
-    </>
-  );
-}
-
-function PolymerDetailSkeleton() {
-  return (
-    <>
-      <section className="bg-hero-gradient text-white py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 animate-pulse">
-          <div className="h-4 w-24 bg-white/20 rounded" />
-          <div className="mt-6 flex items-center gap-5">
-            <div className="h-16 w-20 rounded-2xl bg-white/20" />
-            <div className="flex-1">
-              <div className="h-3 w-28 bg-white/20 rounded" />
-              <div className="mt-3 h-10 w-3/4 bg-white/20 rounded" />
-            </div>
-          </div>
-          <div className="mt-8 space-y-3">
-            <div className="h-4 w-full bg-white/15 rounded" />
-            <div className="h-4 w-11/12 bg-white/15 rounded" />
-            <div className="h-4 w-2/3 bg-white/15 rounded" />
-          </div>
-        </div>
-      </section>
-      <section className="py-16 md:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 animate-pulse">
-          {[0, 1].map((i) => (
-            <div key={i}>
-              <div className="h-8 w-48 bg-muted rounded mb-6" />
-              <div className="space-y-3">
-                {[0, 1, 2, 3].map((j) => (
-                  <div key={j} className="h-4 w-full bg-muted rounded" />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

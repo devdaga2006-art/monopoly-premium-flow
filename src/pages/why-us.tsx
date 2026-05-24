@@ -1,24 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatCounter } from "@/components/site/StatCounter";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Users, TrendingUp, Warehouse, Truck, ShieldCheck, Award, Clock, Heart } from "lucide-react";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
-
-export const Route = createFileRoute("/why-us")({
-  head: () => ({
-    meta: [
-      { title: "Why Choose MONOPOLYMERS, Trusted Polymer Distributor" },
-      { name: "description", content: "1000+ customers, ₹100Cr+ turnover, 30+ year relationships, multiple warehouses, on-time delivery, built for high-volume B2B." },
-      { property: "og:title", content: "Why Choose MONOPOLYMERS" },
-      { property: "og:description", content: "What makes us India's most trusted polymer distribution partner." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/why-us" },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/why-us" }],
-    scripts: [breadcrumbJsonLd("Why Us", "/why-us")],
-  }),
-  component: WhyPage,
-});
+import { Seo } from "@/lib/Seo";
 
 const POINTS = [
   { icon: Users, t: "1000+ Active Customers", d: "Manufacturers across India trust us as their primary polymer source." },
@@ -31,9 +16,16 @@ const POINTS = [
   { icon: Heart, t: "Founder Accountability", d: "Direct access to the Daga family, every order matters." },
 ];
 
-function WhyPage() {
+export default function WhyPage() {
   return (
     <>
+      <Seo
+        title="Why Choose MONOPOLYMERS, Trusted Polymer Distributor"
+        description="1000+ customers, ₹100Cr+ turnover, 30+ year relationships, multiple warehouses, on-time delivery, built for high-volume B2B."
+        canonical="https://monopoly-premium-flow.lovable.app/why-us"
+        ogUrl="https://monopoly-premium-flow.lovable.app/why-us"
+        jsonLd={[breadcrumbJsonLd("Why Us", "/why-us")]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Why Us</span>

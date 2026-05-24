@@ -1,46 +1,31 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FAQS } from "@/components/site/data";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import { Seo } from "@/lib/Seo";
 
-export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ, MONOPOLYMERS" },
-      { name: "description", content: "Answers to common questions about our polymer products, supply, warehouses, and B2B services." },
-      { property: "og:title", content: "FAQ, MONOPOLYMERS" },
-      { property: "og:description", content: "Find answers about our polymer supply, bulk orders, industries served, and more." },
-      { property: "og:url", content: "https://monopoly-premium-flow.lovable.app/faq" },
-    ],
-    links: [{ rel: "canonical", href: "https://monopoly-premium-flow.lovable.app/faq" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          speakable: {
-            "@type": "SpeakableSpecification",
-            cssSelector: ["[data-speakable]"],
-          },
-          mainEntity: FAQS.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }),
-      },
-      breadcrumbJsonLd("FAQ", "/faq"),
-    ],
-  }),
-  component: FaqPage,
-});
-
-function FaqPage() {
+export default function FaqPage() {
   return (
     <>
+      <Seo
+        title="FAQ, MONOPOLYMERS"
+        description="Answers to common questions about our polymer products, supply, warehouses, and B2B services."
+        canonical="https://monopoly-premium-flow.lovable.app/faq"
+        ogUrl="https://monopoly-premium-flow.lovable.app/faq"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          },
+          breadcrumbJsonLd("FAQ", "/faq"),
+        ]}
+      />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">FAQs</span>
