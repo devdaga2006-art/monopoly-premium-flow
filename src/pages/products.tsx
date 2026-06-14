@@ -7,7 +7,7 @@ import { POLYMERS } from "@/data/products";
 import ogProducts from "@/assets/og-products.jpg";
 import { Seo } from "@/lib/Seo";
 
-const PAGE_URL = "https://monopoly-premium-flow.lovable.app/products";
+const PAGE_URL = "https://monopolymers.in/products";
 
 export default function ProductsPage() {
   return (
@@ -26,14 +26,14 @@ export default function ProductsPage() {
             itemListElement: POLYMERS.map((p, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
+              url: `https://monopolymers.in/products/${p.slug}`,
               item: {
                 "@type": "Product",
                 name: p.fullName,
                 description: p.shortDesc,
                 category: "Polymer raw material",
                 brand: { "@type": "Brand", name: "MONOPOLYMERS" },
-                url: `https://monopoly-premium-flow.lovable.app/products/${p.slug}`,
+                url: `https://monopolymers.in/products/${p.slug}`,
               },
             })),
           },

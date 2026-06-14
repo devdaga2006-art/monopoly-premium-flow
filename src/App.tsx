@@ -19,7 +19,7 @@ import LocationPage from "@/pages/locations.$slug";
 import WhyUsPage from "@/pages/why-us";
 import NotFoundPage from "@/pages/not-found";
 
-const SITE = "https://monopoly-premium-flow.lovable.app";
+const SITE = "https://monopolymers.in";
 
 const GLOBAL_JSONLD = {
   "@context": "https://schema.org",

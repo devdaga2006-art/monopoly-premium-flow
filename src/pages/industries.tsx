@@ -11,8 +11,8 @@ export default function IndustriesPage() {
       <Seo
         title="Industries We Serve, MONOPOLYMERS"
         description="We supply polymers to packaging, automotive, consumer goods, infrastructure, agriculture, electrical and more across India."
-        canonical="https://monopoly-premium-flow.lovable.app/industries"
-        ogUrl="https://monopoly-premium-flow.lovable.app/industries"
+        canonical="https://monopolymers.in/industries"
+        ogUrl="https://monopolymers.in/industries"
         ogImage={ogIndustries}
         jsonLd={[breadcrumbJsonLd("Industries", "/industries")]}
       />

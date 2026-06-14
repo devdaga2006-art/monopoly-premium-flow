@@ -27,15 +27,15 @@ export default function AboutPage() {
       <Seo
         title="About MONOPOLYMERS, A 50-Year Family Legacy in Polymers"
         description="Founded in 1996 in Mumbai by Mr. Jitendra Daga and Mr. Manoj Daga. A family legacy of more than 50 years in India's plastic industry."
-        canonical="https://monopoly-premium-flow.lovable.app/about"
-        ogUrl="https://monopoly-premium-flow.lovable.app/about"
+        canonical="https://monopolymers.in/about"
+        ogUrl="https://monopolymers.in/about"
         ogImage={founders}
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "AboutPage",
             name: "About MONOPOLYMERS",
-            url: "https://monopoly-premium-flow.lovable.app/about",
+            url: "https://monopolymers.in/about",
             mainEntity: {
               "@type": "Organization",
               name: "MONOPOLYMERS",

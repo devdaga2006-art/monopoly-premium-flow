@@ -11,8 +11,8 @@ export default function FaqPage() {
       <Seo
         title="FAQ, MONOPOLYMERS"
         description="Answers to common questions about our polymer products, supply, warehouses, and B2B services."
-        canonical="https://monopoly-premium-flow.lovable.app/faq"
-        ogUrl="https://monopoly-premium-flow.lovable.app/faq"
+        canonical="https://monopolymers.in/faq"
+        ogUrl="https://monopolymers.in/faq"
         jsonLd={[
           {
             "@context": "https://schema.org",

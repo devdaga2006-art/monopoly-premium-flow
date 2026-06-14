@@ -1,4 +1,4 @@
-const SITE = "https://monopoly-premium-flow.lovable.app";
+const SITE = "https://monopolymers.in";
 
 export function breadcrumbJsonLd(name: string, path: string) {
   return {

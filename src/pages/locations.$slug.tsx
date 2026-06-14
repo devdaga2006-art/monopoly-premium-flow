@@ -15,7 +15,7 @@ import { LOCATIONS, getLocationBySlug } from "@/data/locations";
 import { POLYMERS } from "@/data/products";
 import { Seo } from "@/lib/Seo";
 
-const SITE = "https://monopoly-premium-flow.lovable.app";
+const SITE = "https://monopolymers.in";
 
 export default function LocationPage() {
   const { slug } = useParams<{ slug: string }>();

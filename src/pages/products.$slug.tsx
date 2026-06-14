@@ -13,7 +13,7 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { POLYMERS, getPolymerBySlug } from "@/data/products";
 import { Seo } from "@/lib/Seo";
 
-const SITE = "https://monopoly-premium-flow.lovable.app";
+const SITE = "https://monopolymers.in";
 
 export default function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();

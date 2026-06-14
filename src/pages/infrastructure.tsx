@@ -26,8 +26,8 @@ export default function InfraPage() {
       <Seo
         title="Infrastructure & Logistics, MONOPOLYMERS"
         description="Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution."
-        canonical="https://monopoly-premium-flow.lovable.app/infrastructure"
-        ogUrl="https://monopoly-premium-flow.lovable.app/infrastructure"
+        canonical="https://monopolymers.in/infrastructure"
+        ogUrl="https://monopolymers.in/infrastructure"
         ogImage={warehouseImg}
         jsonLd={[breadcrumbJsonLd("Infrastructure", "/infrastructure")]}
       />

@@ -22,8 +22,8 @@ export default function WhyPage() {
       <Seo
         title="Why Choose MONOPOLYMERS, Trusted Polymer Distributor"
         description="1000+ customers, ₹100Cr+ turnover, 30+ year relationships, multiple warehouses, on-time delivery, built for high-volume B2B."
-        canonical="https://monopoly-premium-flow.lovable.app/why-us"
-        ogUrl="https://monopoly-premium-flow.lovable.app/why-us"
+        canonical="https://monopolymers.in/why-us"
+        ogUrl="https://monopolymers.in/why-us"
         jsonLd={[breadcrumbJsonLd("Why Us", "/why-us")]}
       />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
