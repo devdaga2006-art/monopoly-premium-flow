@@ -34,15 +34,15 @@ export default function ContactPage() {
       <Seo
         title="Contact MONOPOLYMERS, Get a Quote"
         description="Reach MONOPOLYMERS in Mumbai or Vasai. Call our directors, WhatsApp our team, or send a quick enquiry."
-        canonical="https://monopoly-premium-flow.lovable.app/contact"
-        ogUrl="https://monopoly-premium-flow.lovable.app/contact"
+        canonical="https://monopolymers.in/contact"
+        ogUrl="https://monopolymers.in/contact"
         ogImage={ogContact}
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "MONOPOLYMERS",
-            url: "https://monopoly-premium-flow.lovable.app/contact",
+            url: "https://monopolymers.in/contact",
             telephone: ["+91-93225-19925", "+91-93220-60428", "+91-90045-00225"],
             email: "monopolymers@yahoo.com",
             address: [

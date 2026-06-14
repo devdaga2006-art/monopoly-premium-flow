@@ -30,8 +30,8 @@ export default function HomePage() {
       <Seo
         title="MONOPOLYMERS, Trusted Polymer Distribution Since 1996"
         description="Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai."
-        canonical="https://monopoly-premium-flow.lovable.app/"
-        ogUrl="https://monopoly-premium-flow.lovable.app/"
+        canonical="https://monopolymers.in/"
+        ogUrl="https://monopolymers.in/"
         ogImage={heroImg}
         jsonLd={[
           {

@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
-const BASE_URL = "https://monopoly-premium-flow.lovable.app";
+const BASE_URL = "https://monopolymers.in";
 
 const POLYMER_SLUGS = [
   "polypropylene-pp",
