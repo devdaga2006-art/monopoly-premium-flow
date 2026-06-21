@@ -28,12 +28,79 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="MONOPOLYMERS, Trusted Polymer Distribution Since 1996"
-        description="Bulk polymer & plastic raw material distribution in India. 1000+ customers, ₹100Cr+ turnover, founded 1996 in Mumbai."
+        title="Plastic Raw Material & Polymer Supplier in India | Monopolymers"
+        description="Monopolymers is a trusted plastic raw material supplier & polymer distributor in India since 1996. Bulk PP, LDPE, LLDPE, HDPE, ABS, PVC, PET, EVA, PC & engineering polymers — same-day dispatch from Mumbai."
         canonical="https://monopolymers.in/"
         ogUrl="https://monopolymers.in/"
         ogImage={heroImg}
         jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Monopolymers",
+            alternateName: ["MONOPOLYMERS", "Mono Polymers"],
+            url: "https://monopolymers.in/",
+            logo: "https://monopolymers.in/favicon.png",
+            foundingDate: "1996",
+            description:
+              "Plastic raw material supplier and polymer distributor in India since 1996. Bulk PP, LDPE, LLDPE, HDPE, ABS, PVC, PET, EVA, PC and engineering polymers.",
+            email: "monopolymers@yahoo.com",
+            telephone: ["+91-93225-19925", "+91-93220-60428", "+91-90045-00225"],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Mumbai",
+              addressRegion: "Maharashtra",
+              addressCountry: "IN",
+            },
+            areaServed: { "@type": "Country", name: "India" },
+            knowsAbout: [
+              "Plastic raw materials",
+              "Polymer distribution",
+              "Polypropylene (PP)",
+              "LDPE", "LLDPE", "HDPE", "ABS", "PVC", "PET", "EVA", "Polycarbonate", "Nylon (PA)", "POM (Delrin)", "Acrylic (PMMA)", "HIPS", "GPPS", "TPR",
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://monopolymers.in/#localbusiness",
+            name: "Monopolymers",
+            image: "https://monopolymers.in/favicon.png",
+            url: "https://monopolymers.in/",
+            telephone: "+91-93225-19925",
+            priceRange: "₹₹",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Mumbai",
+              addressLocality: "Mumbai",
+              addressRegion: "Maharashtra",
+              postalCode: "400001",
+              addressCountry: "IN",
+            },
+            geo: { "@type": "GeoCoordinates", latitude: 19.076, longitude: 72.8777 },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                opens: "09:30",
+                closes: "18:30",
+              },
+            ],
+            areaServed: [
+              "Mumbai", "Vasai", "Thane", "Navi Mumbai", "Daman", "Vapi", "Silvassa", "Ahmedabad", "Pune", "India",
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            url: "https://monopolymers.in/",
+            name: "Monopolymers",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://monopolymers.in/products?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          },
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
