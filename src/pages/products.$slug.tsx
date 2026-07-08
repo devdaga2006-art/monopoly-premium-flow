@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, CheckCircle2, Factory, Layers } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Factory, Layers, Boxes, Package, Wrench, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
@@ -9,6 +9,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { POLYMERS, getPolymerBySlug } from "@/data/products";
 import { Seo } from "@/lib/Seo";
@@ -35,8 +36,8 @@ export default function ProductDetailPage() {
   }
 
   const url = `${SITE}/products/${slug}`;
-  const title = `${p.fullName} Supplier in India | MONOPOLYMERS`;
-  const desc = `${p.shortDesc} Bulk ${p.code} supply across India by MONOPOLYMERS, trusted polymer distributor since 1996.`;
+  const title = `${p.fullName} Supplier in India | Price, Grades & Specs | Monopolymers`;
+  const desc = `${p.shortDesc} Bulk ${p.code} granules with typical MFI, density & tensile specs. Same-day dispatch from Mumbai & Vasai. Since 1996.`;
   const related = POLYMERS.filter((x) => x.slug !== p.slug).slice(0, 4);
 
   return (
@@ -63,6 +64,12 @@ export default function ProductDetailPage() {
             additionalProperty: [
               { "@type": "PropertyValue", name: "Form", value: "Granules" },
               { "@type": "PropertyValue", name: "Polymer code", value: p.code },
+              ...p.specs.map((s) => ({
+                "@type": "PropertyValue",
+                name: s.property,
+                value: s.unit ? `${s.value} ${s.unit}` : s.value,
+                ...(s.method && s.method !== "-" ? { measurementTechnique: s.method } : {}),
+              })),
             ],
             offers: {
               "@type": "Offer",
@@ -83,6 +90,15 @@ export default function ProductDetailPage() {
                 { "@type": "State", name: "Gujarat" },
               ],
             },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: p.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
           },
           {
             "@context": "https://schema.org",
@@ -130,6 +146,16 @@ export default function ProductDetailPage() {
             </div>
           </div>
           <p className="mt-6 text-lg text-white/80 max-w-3xl leading-relaxed">{p.longDesc}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild size="lg" className="bg-red-gradient">
+              <Link to="/contact">Get a Quote</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 hover:text-white">
+              <a href="https://wa.me/919322060428" target="_blank" rel="noopener">
+                WhatsApp Sales
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -179,6 +205,117 @@ export default function ProductDetailPage() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section className="py-16 md:py-20 bg-muted/40 border-y border-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-10 w-10 rounded-lg bg-red-gradient flex items-center justify-center text-white">
+              <Boxes className="h-5 w-5" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal">Typical {p.code} Specifications</h2>
+          </div>
+          <p className="text-muted-foreground max-w-3xl">
+            Indicative ranges across commonly stocked {p.fullName} grades. Actual values depend on grade selection —
+            request a grade-specific Technical Data Sheet (TDS) for your application.
+          </p>
+
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-border bg-card shadow-sm">
+            <table className="w-full text-sm">
+              <thead className="bg-charcoal text-white">
+                <tr>
+                  <th className="text-left px-5 py-3 font-semibold">Property</th>
+                  <th className="text-left px-5 py-3 font-semibold">Typical Value</th>
+                  <th className="text-left px-5 py-3 font-semibold">Unit</th>
+                  <th className="text-left px-5 py-3 font-semibold hidden sm:table-cell">Test Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                {p.specs.map((s, i) => (
+                  <tr key={s.property} className={i % 2 === 0 ? "bg-background" : "bg-muted/30"}>
+                    <td className="px-5 py-3 font-medium text-charcoal">{s.property}</td>
+                    <td className="px-5 py-3 text-foreground">{s.value}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{s.unit ?? "-"}</td>
+                    <td className="px-5 py-3 text-muted-foreground hidden sm:table-cell">{s.method ?? "-"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {p.processing && p.processing.length > 0 && (
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Wrench className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-charcoal">Processing methods</h3>
+                </div>
+                <ul className="space-y-1.5 text-sm text-foreground">
+                  {p.processing.map((x) => (
+                    <li key={x}>• {x}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {p.brands && p.brands.length > 0 && (
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Factory className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-charcoal">Brands & producers stocked</h3>
+                </div>
+                <ul className="space-y-1.5 text-sm text-foreground">
+                  {p.brands.map((x) => (
+                    <li key={x}>• {x}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {p.packaging && (
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <Package className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-charcoal">Packaging & MOQ</h3>
+                </div>
+                <p className="text-sm text-foreground leading-relaxed">{p.packaging}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-10 w-10 rounded-lg bg-red-gradient flex items-center justify-center text-white">
+              <HelpCircle className="h-5 w-5" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-charcoal">{p.code} — Frequently Asked Questions</h2>
+          </div>
+          <p className="text-muted-foreground">
+            Answers to the most common buyer questions about {p.fullName}. Don't see yours?{" "}
+            <Link to="/contact" className="text-primary font-medium hover:underline">
+              Ask our sales team
+            </Link>
+            .
+          </p>
+
+          <Accordion type="single" collapsible className="mt-8 space-y-3">
+            {p.faqs.map((f, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="bg-card border border-border rounded-xl px-5 shadow-sm"
+              >
+                <AccordionTrigger className="text-left font-semibold text-charcoal hover:no-underline">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground leading-relaxed">{f.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
