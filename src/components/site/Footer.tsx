@@ -23,6 +23,7 @@ export function Footer() {
             <li><Link to="/industries" className="hover:text-primary">Industries</Link></li>
             <li><Link to="/infrastructure" className="hover:text-primary">Infrastructure</Link></li>
             <li><Link to="/why-us" className="hover:text-primary">Why Choose Us</Link></li>
+            <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
             <li><Link to="/faq" className="hover:text-primary">FAQ</Link></li>
           </ul>
           <h4 className="mt-6 text-sm font-semibold uppercase tracking-wider text-white">Service Areas</h4>
