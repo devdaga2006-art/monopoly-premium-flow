@@ -31,6 +31,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://monopolymers.in/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://monopolymers.in/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -149,5 +154,30 @@
     <loc>https://monopolymers.in/locations/gujarat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monopolymers.in/blog/ldpe-vs-lldpe-vs-hdpe-buyers-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monopolymers.in/blog/how-to-choose-polypropylene-pp-grade</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monopolymers.in/blog/plastic-raw-material-prices-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monopolymers.in/blog/polymer-suppliers-mumbai-what-to-look-for</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://monopolymers.in/blog/engineering-plastics-abs-pc-nylon-pom</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
