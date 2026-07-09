@@ -95,6 +95,8 @@ export default function App() {
           <Route path="/products/:slug" element={<ProductDetailPage />} />
           <Route path="/locations/:slug" element={<LocationPage />} />
           <Route path="/why-us" element={<WhyUsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
