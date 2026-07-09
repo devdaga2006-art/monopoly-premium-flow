@@ -10,6 +10,7 @@ const NAV: { to: string; label: string; end?: boolean }[] = [
   { to: "/industries", label: "Industries" },
   { to: "/infrastructure", label: "Infrastructure" },
   { to: "/why-us", label: "Why Us" },
+  { to: "/blog", label: "Blog" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ];
