@@ -23,6 +23,14 @@ const POLYMER_SLUGS = [
 
 const LOCATION_SLUGS = ["mumbai", "daman", "vapi", "vasai", "bhiwandi", "india", "gujarat"];
 
+const BLOG_SLUGS = [
+  "ldpe-vs-lldpe-vs-hdpe-buyers-guide",
+  "how-to-choose-polypropylene-pp-grade",
+  "plastic-raw-material-prices-india",
+  "polymer-suppliers-mumbai-what-to-look-for",
+  "engineering-plastics-abs-pc-nylon-pom",
+];
+
 const entries = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
@@ -30,10 +38,12 @@ const entries = [
   { path: "/industries", changefreq: "monthly", priority: "0.8" },
   { path: "/infrastructure", changefreq: "monthly", priority: "0.7" },
   { path: "/why-us", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/faq", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },
   ...POLYMER_SLUGS.map((s) => ({ path: `/products/${s}`, changefreq: "monthly", priority: "0.7" })),
   ...LOCATION_SLUGS.map((s) => ({ path: `/locations/${s}`, changefreq: "monthly", priority: "0.8" })),
+  ...BLOG_SLUGS.map((s) => ({ path: `/blog/${s}`, changefreq: "monthly", priority: "0.6" })),
 ];
 
 const urls = entries
