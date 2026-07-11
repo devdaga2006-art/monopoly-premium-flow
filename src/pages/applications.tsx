@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Seo } from "@/lib/Seo";
-import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/breadcrumb-jsonld";
 import { APPLICATIONS, APPLICATION_CATEGORIES } from "@/data/applications";
 import { POLYMERS } from "@/data/products";
 
@@ -12,18 +12,6 @@ const SITE = "https://monopolymers.in";
 export default function ApplicationsPage() {
   const polymerByslug = Object.fromEntries(POLYMERS.map((p) => [p.slug, p]));
 
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Polymer Applications",
-    itemListElement: APPLICATIONS.map((a, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: a.title,
-      url: `${SITE}/applications#${a.slug}`,
-    })),
-  };
-
   return (
     <>
       <Seo
@@ -31,8 +19,18 @@ export default function ApplicationsPage() {
         description="Find the right polymer grade for your application, packaging, automotive, pipes, agriculture, electrical, medical and more. Recommended PP, PE, PVC, ABS, PC, PA, POM grades from MONOPOLYMERS India."
         canonical={`${SITE}/applications`}
         ogUrl={`${SITE}/applications`}
-        jsonLd={[breadcrumbJsonLd("Applications", "/applications"), itemListJsonLd]}
+        jsonLd={[
+          breadcrumbJsonLd("Applications", "/applications"),
+          itemListJsonLd(
+            "Polymer Applications",
+            APPLICATIONS.map((a) => ({
+              name: a.title,
+              url: `/applications#${a.slug}`,
+            })),
+          ),
+        ]}
       />
+
 
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

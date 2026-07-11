@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import { INDUSTRIES } from "@/components/site/data";
-import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
+import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogIndustries from "@/assets/og-industries.jpg";
 import { Seo } from "@/lib/Seo";
 
@@ -14,8 +14,15 @@ export default function IndustriesPage() {
         canonical="https://monopolymers.in/industries"
         ogUrl="https://monopolymers.in/industries"
         ogImage={ogIndustries}
-        jsonLd={[breadcrumbJsonLd("Industries", "/industries")]}
+        jsonLd={[
+          breadcrumbJsonLd("Industries", "/industries"),
+          itemListJsonLd(
+            "Industries served by MONOPOLYMERS",
+            INDUSTRIES.map((i) => ({ name: i.title, url: "/industries" })),
+          ),
+        ]}
       />
+
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Industries</span>
