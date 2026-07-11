@@ -36,6 +36,7 @@ const entries = [
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/products", changefreq: "monthly", priority: "0.9" },
   { path: "/industries", changefreq: "monthly", priority: "0.8" },
+  { path: "/applications", changefreq: "monthly", priority: "0.9" },
   { path: "/infrastructure", changefreq: "monthly", priority: "0.7" },
   { path: "/why-us", changefreq: "monthly", priority: "0.7" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
