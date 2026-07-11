@@ -12,6 +12,7 @@ import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
 import FaqPage from "@/pages/faq";
 import IndustriesPage from "@/pages/industries";
+import ApplicationsPage from "@/pages/applications";
 import InfrastructurePage from "@/pages/infrastructure";
 import ProductsPage from "@/pages/products";
 import ProductDetailPage from "@/pages/products.$slug";
@@ -90,6 +91,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/applications" element={<ApplicationsPage />} />
           <Route path="/infrastructure" element={<InfrastructurePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:slug" element={<ProductDetailPage />} />
