@@ -15,8 +15,8 @@ export default function ApplicationsPage() {
   return (
     <>
       <Seo
-        title="Polymer Applications Hub | End-Use Guide | MONOPOLYMERS"
-        description="Find the right polymer grade for your application, packaging, automotive, pipes, agriculture, electrical, medical and more. Recommended PP, PE, PVC, ABS, PC, PA, POM grades from MONOPOLYMERS India."
+        title="Polymer Applications by Grade & Industry | MONOPOLYMERS India"
+        description="PP, LDPE, LLDPE, HDPE, PVC, ABS, PC, PA, POM, EVA & TPR grades mapped to 12 end-use applications. Bulk supply across Mumbai, Vasai, Bhiwandi, Vapi, Daman & Gujarat."
         canonical={`${SITE}/applications`}
         ogUrl={`${SITE}/applications`}
         jsonLd={[
@@ -25,11 +25,12 @@ export default function ApplicationsPage() {
             "Polymer Applications",
             APPLICATIONS.map((a) => ({
               name: a.title,
-              url: `/applications#${a.slug}`,
+              url: `/applications/${a.slug}`,
             })),
           ),
         ]}
       />
+
 
 
       <section className="bg-hero-gradient text-white py-24 md:py-28">
@@ -80,7 +81,12 @@ export default function ApplicationsPage() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                       {a.category}
                     </span>
-                    <h2 className="mt-1 text-xl font-semibold text-charcoal">{a.title}</h2>
+                    <h2 className="mt-1 text-xl font-semibold text-charcoal">
+                      <Link to={`/applications/${a.slug}`} className="hover:text-primary">
+                        {a.title}
+                      </Link>
+                    </h2>
+
                     <p className="mt-2 text-muted-foreground leading-relaxed">{a.longDesc}</p>
                   </div>
                 </div>
@@ -134,11 +140,12 @@ export default function ApplicationsPage() {
                     })}
                   </div>
                   <Link
-                    to="/contact"
+                    to={`/applications/${a.slug}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                   >
-                    Get grade recommendation <ArrowRight className="h-4 w-4" />
+                    View application details <ArrowRight className="h-4 w-4" />
                   </Link>
+
                 </div>
               </article>
             ))}

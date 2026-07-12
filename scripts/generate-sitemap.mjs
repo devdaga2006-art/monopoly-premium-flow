@@ -31,6 +31,21 @@ const BLOG_SLUGS = [
   "engineering-plastics-abs-pc-nylon-pom",
 ];
 
+const APPLICATION_SLUGS = [
+  "rigid-packaging",
+  "flexible-packaging",
+  "automotive-components",
+  "consumer-appliances",
+  "pipes-fittings",
+  "agriculture",
+  "electrical-cable",
+  "houseware-furniture",
+  "engineering-industrial",
+  "textiles-fibres",
+  "footwear-toys",
+  "medical-pharma",
+];
+
 const entries = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
@@ -43,9 +58,11 @@ const entries = [
   { path: "/faq", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },
   ...POLYMER_SLUGS.map((s) => ({ path: `/products/${s}`, changefreq: "monthly", priority: "0.7" })),
+  ...APPLICATION_SLUGS.map((s) => ({ path: `/applications/${s}`, changefreq: "monthly", priority: "0.8" })),
   ...LOCATION_SLUGS.map((s) => ({ path: `/locations/${s}`, changefreq: "monthly", priority: "0.8" })),
   ...BLOG_SLUGS.map((s) => ({ path: `/blog/${s}`, changefreq: "monthly", priority: "0.6" })),
 ];
+
 
 const urls = entries
   .map(
