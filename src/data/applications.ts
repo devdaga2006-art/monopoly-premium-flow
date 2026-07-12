@@ -18,7 +18,6 @@ export interface Application {
   seoDescription: string;
 }
 
-
 export const APPLICATIONS: Application[] = [
   {
     slug: "rigid-packaging",
@@ -31,6 +30,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["high-density-polyethylene-hdpe", "polypropylene-pp", "polyethylene-terephthalate-pet", "general-purpose-polystyrene-gpps", "high-impact-polystyrene-hips"],
     useCases: ["Milk and edible-oil bottles", "Shampoo and cosmetic containers", "Ice-cream and dairy tubs", "Caps, closures and dispensers"],
     keyProperties: ["Food-grade compliance", "ESCR", "High gloss", "Impact strength"],
+    seoTitle: "HDPE, PP & PET for Rigid Packaging | MONOPOLYMERS India",
+    seoDescription: "Food-grade HDPE, PP homopolymer, PET, GPPS and HIPS for bottles, jars, tubs, caps and closures. Bulk supply in Mumbai, Vasai and across India.",
   },
   {
     slug: "flexible-packaging",
@@ -43,6 +44,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["low-density-polyethylene-ldpe", "linear-low-density-polyethylene-lldpe", "polypropylene-pp", "ethylene-vinyl-acetate-eva"],
     useCases: ["Food and snack laminates", "Stretch and shrink film", "Lamination sealant layers", "Heavy-duty industrial sacks"],
     keyProperties: ["Puncture resistance", "Seal strength", "Optical clarity", "Consistent MFI"],
+    seoTitle: "LDPE, LLDPE & PP Film Grades for Flexible Packaging | India",
+    seoDescription: "Blown-film LDPE, butene/hexene/metallocene LLDPE, PP and EVA for laminates, shrink and stretch film. Supplied from Mumbai, Vasai, Bhiwandi and Daman.",
   },
   {
     slug: "automotive-components",
@@ -55,6 +58,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polypropylene-pp", "acrylonitrile-butadiene-styrene-abs", "polycarbonate-pc", "polyamide-pa-nylon", "polyoxymethylene-pom-acetal"],
     useCases: ["Bumpers and body panels", "Dashboards and door trims", "Under-hood connectors", "Gears, bushings and clips"],
     keyProperties: ["Impact strength", "Heat resistance", "Dimensional stability", "Low warpage"],
+    seoTitle: "PP, ABS, PC, Nylon & POM for Automotive Parts | India",
+    seoDescription: "Automotive-grade PP copolymer, ABS, PC/ABS, PA6/PA66 nylon and POM (Delrin) with COAs for OEMs across Mumbai, Vapi, Gujarat and India.",
   },
   {
     slug: "consumer-appliances",
@@ -67,6 +72,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["acrylonitrile-butadiene-styrene-abs", "high-impact-polystyrene-hips", "polycarbonate-pc", "polypropylene-pp"],
     useCases: ["TV and monitor housings", "Refrigerator liners", "Power tool bodies", "Small kitchen appliances"],
     keyProperties: ["Gloss finish", "Flame retardancy", "Impact strength", "Paintability"],
+    seoTitle: "ABS, HIPS, PC & PP for Appliances & Electronics | India",
+    seoDescription: "Flame-retardant ABS, HIPS, polycarbonate and PP for TV bezels, refrigerator, power tool and appliance housings. Supplied across India from Vasai.",
   },
   {
     slug: "pipes-fittings",
@@ -79,6 +86,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polyvinyl-chloride-pvc", "high-density-polyethylene-hdpe", "polypropylene-pp"],
     useCases: ["Water and gas pipes", "SWR and drainage", "Cable ducts and conduits", "Plumbing fittings"],
     keyProperties: ["Hydrostatic strength", "Chemical resistance", "UV stability", "Weldability"],
+    seoTitle: "PVC, HDPE & PP Pipe Grades for Plumbing | MONOPOLYMERS",
+    seoDescription: "Pipe-grade PVC, HDPE PE80/PE100 and PP-R for water, gas, drainage and irrigation. Distributed in Mumbai, Bhiwandi, Vapi, Daman and Gujarat.",
   },
   {
     slug: "agriculture",
@@ -91,6 +100,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["linear-low-density-polyethylene-lldpe", "low-density-polyethylene-ldpe", "high-density-polyethylene-hdpe", "polypropylene-pp"],
     useCases: ["Drip and sprinkler pipes", "Mulch and greenhouse films", "Storage tanks", "Agri crates and trays"],
     keyProperties: ["UV resistance", "Puncture resistance", "Chemical resistance", "Long service life"],
+    seoTitle: "LLDPE, LDPE & HDPE for Agri Films & Irrigation | India",
+    seoDescription: "UV-stabilised LLDPE, LDPE and HDPE for drip pipes, mulch and greenhouse films, tanks and crates. Bulk supply across Maharashtra and Gujarat.",
   },
   {
     slug: "electrical-cable",
@@ -103,6 +114,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["low-density-polyethylene-ldpe", "polyvinyl-chloride-pvc", "polyamide-pa-nylon", "polycarbonate-pc"],
     useCases: ["Cable insulation and sheath", "Switchgear housings", "Connectors and terminals", "Junction boxes"],
     keyProperties: ["Dielectric strength", "Flame retardancy", "Thermal endurance", "Colourability"],
+    seoTitle: "LDPE, PVC, Nylon & PC for Wire, Cable & Switchgear",
+    seoDescription: "Insulation LDPE, PVC compounds, PA nylon and polycarbonate for cables, sheathing, switchgear and junction boxes. Supplied to Mumbai, Vasai and Vapi.",
   },
   {
     slug: "houseware-furniture",
@@ -115,6 +128,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polypropylene-pp", "high-density-polyethylene-hdpe", "high-impact-polystyrene-hips", "general-purpose-polystyrene-gpps"],
     useCases: ["Moulded chairs and tables", "Buckets and storage bins", "Disposable cutlery", "Kitchen organisers"],
     keyProperties: ["Stiffness", "Impact strength", "Colourability", "Cost efficiency"],
+    seoTitle: "PP, HDPE, HIPS & GPPS for Moulded Furniture & Houseware",
+    seoDescription: "PP copolymer, HDPE, HIPS and GPPS for moulded chairs, buckets, storage and disposables. Bulk polymer supply in Mumbai, Bhiwandi and Vasai.",
   },
   {
     slug: "engineering-industrial",
@@ -127,6 +142,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polyoxymethylene-pom-acetal", "polyamide-pa-nylon", "polycarbonate-pc", "acrylonitrile-butadiene-styrene-abs"],
     useCases: ["Precision gears and cams", "Bearings and bushings", "Pump and valve housings", "Conveyor components"],
     keyProperties: ["Dimensional stability", "Low friction", "Fatigue resistance", "Chemical resistance"],
+    seoTitle: "Delrin POM, Nylon, PC & ABS for Engineering Parts | India",
+    seoDescription: "POM (Delrin), PA6/PA66 nylon, polycarbonate and ABS for gears, bearings and pump housings. Distributed across Mumbai, Vapi and Gujarat.",
   },
   {
     slug: "textiles-fibres",
@@ -139,6 +156,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polypropylene-pp", "polyethylene-terephthalate-pet"],
     useCases: ["Non-woven fabrics", "FIBC and woven sacks", "BOPP tapes", "Ropes and geotextiles"],
     keyProperties: ["Spinnability", "Tenacity", "UV stability", "Consistent MFI"],
+    seoTitle: "Fibre-grade PP & PET for Non-wovens & FIBC | India",
+    seoDescription: "Fibre-grade PP and PET chips for spun-bond non-wovens, BOPP tapes, FIBCs, ropes and geotextiles. Supplied across India from Vasai and Bhiwandi.",
   },
   {
     slug: "footwear-toys",
@@ -151,6 +170,8 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["thermoplastic-rubber-tpr", "ethylene-vinyl-acetate-eva", "polypropylene-pp", "acrylonitrile-butadiene-styrene-abs"],
     useCases: ["Footwear soles and straps", "Yoga mats and sports pads", "Rigid toy parts", "Bicycle and helmet parts"],
     keyProperties: ["Flexibility", "Cushioning", "Non-toxicity", "Bright colourability"],
+    seoTitle: "TPR, EVA, PP & ABS for Footwear, Sports & Toys | India",
+    seoDescription: "TPR, EVA, PP flex and ABS grades for soles, sports pads and rigid toys. Bulk polymer distribution across Mumbai, Vasai and Vapi.",
   },
   {
     slug: "medical-pharma",
@@ -163,7 +184,12 @@ export const APPLICATIONS: Application[] = [
     recommendedPolymers: ["polypropylene-pp", "high-density-polyethylene-hdpe", "polycarbonate-pc", "acrylic-pmma"],
     useCases: ["Pharma bottles and caps", "Syringe and IV components", "Device housings", "Diagnostic consumables"],
     keyProperties: ["Biocompatibility", "Sterilisability", "Clarity", "Low extractables"],
+    seoTitle: "Medical-grade PP, HDPE, PC & PMMA for Pharma Packaging",
+    seoDescription: "Sterilisable medical-grade PP, HDPE, polycarbonate and acrylic (PMMA) for pharma bottles, syringes and device housings. Delivered across India.",
   },
 ];
 
 export const APPLICATION_CATEGORIES = Array.from(new Set(APPLICATIONS.map((a) => a.category)));
+
+export const getApplicationBySlug = (slug: string) =>
+  APPLICATIONS.find((a) => a.slug === slug);
