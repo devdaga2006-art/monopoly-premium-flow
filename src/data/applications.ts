@@ -14,7 +14,10 @@ export interface Application {
   recommendedPolymers: string[]; // polymer slugs
   useCases: string[];
   keyProperties: string[];
+  seoTitle: string;
+  seoDescription: string;
 }
+
 
 export const APPLICATIONS: Application[] = [
   {
