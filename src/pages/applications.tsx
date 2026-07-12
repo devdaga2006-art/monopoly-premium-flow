@@ -81,7 +81,12 @@ export default function ApplicationsPage() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                       {a.category}
                     </span>
-                    <h2 className="mt-1 text-xl font-semibold text-charcoal">{a.title}</h2>
+                    <h2 className="mt-1 text-xl font-semibold text-charcoal">
+                      <Link to={`/applications/${a.slug}`} className="hover:text-primary">
+                        {a.title}
+                      </Link>
+                    </h2>
+
                     <p className="mt-2 text-muted-foreground leading-relaxed">{a.longDesc}</p>
                   </div>
                 </div>
@@ -135,11 +140,12 @@ export default function ApplicationsPage() {
                     })}
                   </div>
                   <Link
-                    to="/contact"
+                    to={`/applications/${a.slug}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                   >
-                    Get grade recommendation <ArrowRight className="h-4 w-4" />
+                    View application details <ArrowRight className="h-4 w-4" />
                   </Link>
+
                 </div>
               </article>
             ))}
