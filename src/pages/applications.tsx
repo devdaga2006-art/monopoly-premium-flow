@@ -15,8 +15,8 @@ export default function ApplicationsPage() {
   return (
     <>
       <Seo
-        title="Polymer Applications Hub | End-Use Guide | MONOPOLYMERS"
-        description="Find the right polymer grade for your application, packaging, automotive, pipes, agriculture, electrical, medical and more. Recommended PP, PE, PVC, ABS, PC, PA, POM grades from MONOPOLYMERS India."
+        title="Polymer Applications by Grade & Industry | MONOPOLYMERS India"
+        description="PP, LDPE, LLDPE, HDPE, PVC, ABS, PC, PA, POM, EVA & TPR grades mapped to 12 end-use applications. Bulk supply across Mumbai, Vasai, Bhiwandi, Vapi, Daman & Gujarat."
         canonical={`${SITE}/applications`}
         ogUrl={`${SITE}/applications`}
         jsonLd={[
@@ -25,11 +25,12 @@ export default function ApplicationsPage() {
             "Polymer Applications",
             APPLICATIONS.map((a) => ({
               name: a.title,
-              url: `/applications#${a.slug}`,
+              url: `/applications/${a.slug}`,
             })),
           ),
         ]}
       />
+
 
 
       <section className="bg-hero-gradient text-white py-24 md:py-28">
