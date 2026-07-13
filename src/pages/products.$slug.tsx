@@ -12,6 +12,7 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CtaBand } from "@/components/site/CtaBand";
 import { POLYMERS, getPolymerBySlug } from "@/data/products";
+import { APPLICATIONS } from "@/data/applications";
 import { Seo } from "@/lib/Seo";
 
 const SITE = "https://monopolymers.in";
@@ -39,6 +40,7 @@ export default function ProductDetailPage() {
   const title = `${p.fullName} Supplier in India | Price, Grades & Specs | Monopolymers`;
   const desc = `${p.shortDesc} Bulk ${p.code} granules with typical MFI, density & tensile specs. Same-day dispatch from Mumbai & Vasai. Since 1996.`;
   const related = POLYMERS.filter((x) => x.slug !== p.slug).slice(0, 4);
+  const relatedApplications = APPLICATIONS.filter((a) => a.recommendedPolymers.includes(p.slug));
 
   return (
     <>
@@ -206,6 +208,37 @@ export default function ProductDetailPage() {
             ))}
           </div>
         </div>
+
+        {relatedApplications.length > 0 && (
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mt-12">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+              {p.code} is used in these applications
+            </h3>
+            <p className="mt-3 text-muted-foreground max-w-3xl">
+              Explore the end-use applications where buyers specify {p.fullName} — each page lists typical use cases,
+              required properties and other complementary polymer grades.
+            </p>
+            <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {relatedApplications.map((a) => (
+                <Link
+                  key={a.slug}
+                  to={`/applications/${a.slug}`}
+                  className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-elegant transition-all"
+                >
+                  <div className="h-9 w-9 shrink-0 rounded-lg bg-red-gradient flex items-center justify-center text-white">
+                    <a.icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-primary">{a.category}</div>
+                    <div className="text-sm font-semibold text-charcoal group-hover:text-primary transition-colors">
+                      {a.title} →
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Technical Specifications */}
