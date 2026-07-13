@@ -170,6 +170,8 @@ export default function ApplicationDetailPage() {
               <Link
                 key={p.slug}
                 to={`/products/${p.slug}`}
+                aria-label={`View ${p.fullName} (${p.code}) polymer grade`}
+                title={`${p.fullName} (${p.code}) — polymer grade`}
                 className="group bg-card border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-elegant transition-all flex flex-col"
               >
                 <div className="inline-flex items-center justify-center min-w-14 h-14 px-3 rounded-xl bg-red-gradient text-white font-display font-bold text-lg shadow-elegant group-hover:scale-105 transition-transform self-start">
@@ -178,7 +180,7 @@ export default function ApplicationDetailPage() {
                 <h3 className="mt-6 text-xl font-semibold text-charcoal">{p.name}</h3>
                 <p className="mt-2 text-muted-foreground leading-relaxed flex-1">{p.shortDesc}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
-                  View grade <ArrowRight className="h-4 w-4" />
+                  View {p.code} grade <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
             ))}
@@ -210,10 +212,9 @@ export default function ApplicationDetailPage() {
                       {siblings.map((x) => {
                         const shared = x.recommendedPolymers.filter((s) => polymerSet.has(s));
                         return (
-                          <Link
+                          <article
                             key={x.slug}
-                            to={`/applications/${x.slug}`}
-                            className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all block"
+                            className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all"
                           >
                             <div className="flex items-start gap-3">
                               <div className="h-10 w-10 shrink-0 rounded-lg bg-red-gradient flex items-center justify-center text-white">
@@ -223,9 +224,16 @@ export default function ApplicationDetailPage() {
                                 <div className="text-xs font-semibold uppercase tracking-wider text-primary">
                                   {x.category}
                                 </div>
-                                <div className="text-base font-semibold text-charcoal group-hover:text-primary transition-colors">
-                                  {x.title}
-                                </div>
+                                <h3 className="text-base font-semibold text-charcoal">
+                                  <Link
+                                    to={`/applications/${x.slug}`}
+                                    aria-label={`View ${x.title} application details`}
+                                    title={`${x.title} — application`}
+                                    className="hover:text-primary transition-colors"
+                                  >
+                                    View {x.title} application
+                                  </Link>
+                                </h3>
                               </div>
                             </div>
                             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -233,16 +241,19 @@ export default function ApplicationDetailPage() {
                                 const poly = polymerBySlug[s];
                                 if (!poly) return null;
                                 return (
-                                  <span
+                                  <Link
                                     key={s}
-                                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-accent text-charcoal"
+                                    to={`/products/${s}`}
+                                    aria-label={`View ${poly.fullName} (${poly.code}) polymer grade`}
+                                    title={`${poly.fullName} (${poly.code}) — polymer grade`}
+                                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-accent text-charcoal hover:bg-red-gradient hover:text-white transition-colors"
                                   >
                                     {poly.code}
-                                  </span>
+                                  </Link>
                                 );
                               })}
                             </div>
-                          </Link>
+                          </article>
                         );
                       })}
                     </div>

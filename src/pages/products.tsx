@@ -61,6 +61,8 @@ export default function ProductsPage() {
               <Link
                 key={p.slug}
                 to={`/products/${p.slug}`}
+                aria-label={`View ${p.fullName} (${p.code}) polymer grade`}
+                title={`${p.fullName} (${p.code}) — polymer grade`}
                 className="group bg-card border border-border rounded-2xl p-7 hover:border-primary/40 hover:shadow-elegant transition-all flex flex-col"
               >
                 <div className="inline-flex items-center justify-center min-w-14 h-14 px-3 rounded-xl bg-red-gradient text-white font-display font-bold text-lg shadow-elegant group-hover:scale-105 transition-transform self-start">
@@ -69,7 +71,7 @@ export default function ProductsPage() {
                 <h3 className="mt-6 text-xl font-semibold text-charcoal">{p.name}</h3>
                 <p className="mt-2 text-muted-foreground leading-relaxed flex-1">{p.shortDesc}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all">
-                  View details <ArrowRight className="h-4 w-4" />
+                  View {p.code} grade <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
             ))}

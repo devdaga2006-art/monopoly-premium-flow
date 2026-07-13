@@ -223,6 +223,8 @@ export default function ProductDetailPage() {
                 <Link
                   key={a.slug}
                   to={`/applications/${a.slug}`}
+                  aria-label={`View ${a.title} application details`}
+                  title={`${a.title} — application`}
                   className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-elegant transition-all"
                 >
                   <div className="h-9 w-9 shrink-0 rounded-lg bg-red-gradient flex items-center justify-center text-white">
@@ -231,7 +233,7 @@ export default function ProductDetailPage() {
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wider text-primary">{a.category}</div>
                     <div className="text-sm font-semibold text-charcoal group-hover:text-primary transition-colors">
-                      {a.title} →
+                      View {a.title} application →
                     </div>
                   </div>
                 </Link>
@@ -360,12 +362,17 @@ export default function ProductDetailPage() {
               <Link
                 key={r.slug}
                 to={`/products/${r.slug}`}
-                className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all"
+                aria-label={`View ${r.fullName} (${r.code}) polymer grade`}
+                title={`${r.fullName} (${r.code}) — polymer grade`}
+                className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all flex flex-col"
               >
-                <div className="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-red-gradient text-white font-display font-bold shadow-elegant group-hover:scale-105 transition-transform">
+                <div className="inline-flex items-center justify-center min-w-12 h-12 px-3 rounded-xl bg-red-gradient text-white font-display font-bold shadow-elegant group-hover:scale-105 transition-transform self-start">
                   {r.code}
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-charcoal">{r.name}</h3>
+                <span className="mt-3 text-sm font-semibold text-primary group-hover:underline">
+                  View {r.code} grade →
+                </span>
               </Link>
             ))}
           </div>

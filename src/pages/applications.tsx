@@ -132,6 +132,8 @@ export default function ApplicationsPage() {
                         <Link
                           key={slug}
                           to={`/products/${slug}`}
+                          aria-label={`View ${p.fullName} (${p.code}) polymer grade`}
+                          title={`${p.fullName} (${p.code}) — polymer grade`}
                           className="text-xs font-semibold px-3 py-1.5 rounded-full bg-accent text-charcoal hover:bg-red-gradient hover:text-white transition-colors"
                         >
                           {p.code}
@@ -141,9 +143,10 @@ export default function ApplicationsPage() {
                   </div>
                   <Link
                     to={`/applications/${a.slug}`}
+                    aria-label={`View ${a.title} application details`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                   >
-                    View application details <ArrowRight className="h-4 w-4" />
+                    View {a.title} application <ArrowRight className="h-4 w-4" />
                   </Link>
 
                 </div>
