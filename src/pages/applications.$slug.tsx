@@ -188,18 +188,86 @@ export default function ApplicationDetailPage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-charcoal">Explore other applications</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {APPLICATIONS.filter((x) => x.slug !== a.slug).map((x) => (
-              <Link
-                key={x.slug}
-                to={`/applications/${x.slug}`}
-                className="px-5 py-2.5 rounded-full border border-border hover:border-primary/40 hover:bg-primary/5 text-charcoal font-medium transition-colors"
-              >
-                {x.title} →
-              </Link>
-            ))}
-          </div>
+          {(() => {
+            const polymerSet = new Set(a.recommendedPolymers);
+            const siblings = APPLICATIONS
+              .filter((x) => x.slug !== a.slug && x.recommendedPolymers.some((s) => polymerSet.has(s)));
+            const others = APPLICATIONS.filter(
+              (x) => x.slug !== a.slug && !siblings.find((s) => s.slug === x.slug),
+            );
+            return (
+              <>
+                {siblings.length > 0 && (
+                  <>
+                    <h2 className="text-2xl font-bold text-charcoal">
+                      Related applications that use the same polymer grades
+                    </h2>
+                    <p className="mt-2 text-muted-foreground max-w-3xl">
+                      These end-uses share one or more recommended grades with {a.title.toLowerCase()} — useful when
+                      you're comparing options or consolidating polymer purchases.
+                    </p>
+                    <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {siblings.map((x) => {
+                        const shared = x.recommendedPolymers.filter((s) => polymerSet.has(s));
+                        return (
+                          <Link
+                            key={x.slug}
+                            to={`/applications/${x.slug}`}
+                            className="group bg-card border border-border rounded-2xl p-5 hover:border-primary/40 hover:shadow-elegant transition-all block"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className="h-10 w-10 shrink-0 rounded-lg bg-red-gradient flex items-center justify-center text-white">
+                                <x.icon className="h-5 w-5" />
+                              </div>
+                              <div>
+                                <div className="text-xs font-semibold uppercase tracking-wider text-primary">
+                                  {x.category}
+                                </div>
+                                <div className="text-base font-semibold text-charcoal group-hover:text-primary transition-colors">
+                                  {x.title}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="mt-4 flex flex-wrap gap-1.5">
+                              {shared.map((s) => {
+                                const poly = polymerBySlug[s];
+                                if (!poly) return null;
+                                return (
+                                  <span
+                                    key={s}
+                                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-accent text-charcoal"
+                                  >
+                                    {poly.code}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+
+                {others.length > 0 && (
+                  <>
+                    <h2 className="mt-12 text-xl font-bold text-charcoal">Explore other applications</h2>
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      {others.map((x) => (
+                        <Link
+                          key={x.slug}
+                          to={`/applications/${x.slug}`}
+                          className="px-5 py-2.5 rounded-full border border-border hover:border-primary/40 hover:bg-primary/5 text-charcoal font-medium transition-colors"
+                        >
+                          {x.title} →
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
