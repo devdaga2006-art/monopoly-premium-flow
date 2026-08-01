@@ -29,6 +29,7 @@ const BLOG_SLUGS = [
   "plastic-raw-material-prices-india",
   "polymer-suppliers-mumbai-what-to-look-for",
   "engineering-plastics-abs-pc-nylon-pom",
+  "eva-tpr-tpe-footwear-injection-guide",
 ];
 
 const APPLICATION_SLUGS = [

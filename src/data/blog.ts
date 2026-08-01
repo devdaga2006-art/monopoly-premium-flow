@@ -249,6 +249,73 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "eva-tpr-tpe-footwear-injection-guide",
+    title: "EVA, TPR and TPE: Choosing the Right Material for Footwear & Injection Moulding",
+    description:
+      "A practical guide to EVA, TPR and TPE for footwear, grips and soft-touch parts. Compare hardness, bounce, bonding and cost before you order polymer raw material in India.",
+    excerpt:
+      "Footwear and soft-touch parts live or die on material choice. Here's how EVA, TPR and TPE stack up — and which one fits your mould.",
+    date: "2026-04-10",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 7,
+    tags: ["EVA", "TPR", "TPE", "Footwear", "Injection Moulding"],
+    sections: [
+      {
+        paragraphs: [
+          "Soft, grippy, lightweight parts — soles, grips, seals, over-moulded handles — almost always come from one of three material families: EVA, TPR or TPE. They feel similar on a datasheet but behave very differently in a mould. Pick the wrong one and you get sole slippage, poor bonding, or a part that degrades in the sun within a season.",
+        ],
+      },
+      {
+        heading: "EVA — the foam specialist",
+        paragraphs: [
+          "Ethylene-Vinyl Acetate (EVA) is the backbone of the midsole. Foamed EVA is ultralight, cushions well and keeps its bounce over thousands of cycles — that's why virtually every running-shoe midsole starts here. EVA can also be moulded solid for clear, soft applications and bonds cleanly to a wide range of outsole rubbers.",
+        ],
+        bullets: [
+          "Best for: shoe midsoles, insoles, sports protection, foam toys.",
+          "Hardness: solid ~40A–95A; foamed can range very low.",
+          "Key advantage: lightest weight-to-cushion ratio of the three.",
+          "Watch out for: compression set over time in very high-load soles.",
+        ],
+      },
+      {
+        heading: "TPR — the traditional sole rubber",
+        paragraphs: [
+          "Thermoplastic Rubber (TPR) is the workhorse of everyday footwear soles — school shoes, sandals, casuals. It grips well, resists abrasion better than EVA foam, and processes on standard injection moulding machines without vulcanisation. TPR is heavier than EVA but far more durable under rough, outdoor use.",
+        ],
+        bullets: [
+          "Best for: outsoles, heavy-duty soles, shoe covers, floor grips.",
+          "Hardness: typically 45A–75A.",
+          "Key advantage: abrasion resistance and wet grip at a low cost.",
+          "Watch out for: heavier than EVA; can yellow if UV-stabilised grades aren't specified.",
+        ],
+      },
+      {
+        heading: "TPE — the versatile soft-touch family",
+        paragraphs: [
+          "Thermoplastic Elastomer (TPE) is a broad family that includes SEBS/TPV compounds. TPE is chosen when you need a soft, skin-friendly touch — over-moulded toothbrush grips, tool handles, seals, medical tubing. It over-moulds beautifully onto rigid substrates like PP and ABS, which makes it the default for two-shot and insert moulded parts.",
+        ],
+        bullets: [
+          "Best for: over-moulded grips, seals, gaskets, medical and baby products.",
+          "Hardness: very wide, from gel-soft (~000A) up to 90A.",
+          "Key advantage: excellent adhesion to rigid plastics in multi-shot moulding.",
+          "Watch out for: cost is higher than TPR; grade selection is critical for chemical and UV exposure.",
+        ],
+      },
+      {
+        heading: "Quick selection rule of thumb",
+        paragraphs: [
+          "If weight and bounce matter most, reach for EVA. If durability and grip on rough ground are the priority, choose TPR. If you're over-moulding a soft feel onto a rigid plastic, TPE is almost always the answer. For India's footwear clusters around Mumbai, Vasai and Bhiwandi, the three grades are usually stocked side by side so you can trial two before committing tonnage.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps",
+        paragraphs: [
+          "We supply EVA (insole and solid grades), TPR sole compounds and TPE/SEBS over-moulding grades from leading Indian and imported makers, with the hardness, colour and UV options your design needs. Tell us your part, your mould and your cost target and we'll shortlist two or three grades to trial across Mumbai, Vasai, Bhiwandi, Daman and Vapi.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
