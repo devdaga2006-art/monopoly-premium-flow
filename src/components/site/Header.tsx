@@ -63,12 +63,6 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <a
-            href="tel:+919322519925"
-            className="hidden xl:inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-primary"
-          >
-            <Phone className="h-4 w-4" /> +91 93225 19925
-          </a>
           <Button asChild className="bg-red-gradient text-primary-foreground hover:opacity-95 shadow-elegant">
             <Link to="/contact">Get a Quote</Link>
           </Button>
