@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Truck, Warehouse, Users, TrendingUp, ShieldCheck, Award, Clock } from "lucide-react";
 import heroImg from "@/assets/hero-pellets.jpg";
 import warehouseImg from "@/assets/warehouse.jpg";
-import logisticsImg from "@/assets/logistics.jpg";
+import logisticsAsset from "@/assets/logistics-yard.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
