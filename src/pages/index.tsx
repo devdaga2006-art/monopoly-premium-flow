@@ -294,11 +294,11 @@ export default function HomePage() {
           </div>
           <div className="relative">
             <img
-              src={logisticsImg}
-              alt="MONOPOLYMERS logistics fleet"
+              src={logisticsAsset.url}
+              alt="MONOPOLYMERS logistics yard with container trucks loading polymer raw material at warehouse docks"
               loading="lazy"
-              width={1600}
-              height={1024}
+              width={1408}
+              height={768}
               className="rounded-3xl shadow-elegant w-full"
             />
           </div>
