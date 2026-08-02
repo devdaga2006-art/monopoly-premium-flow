@@ -293,13 +293,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative">
+            <div className="absolute -inset-4 bg-red-gradient rounded-3xl opacity-20 blur-2xl" />
             <img
               src={logisticsYardImg}
               alt="MONOPOLYMERS logistics yard with container trucks loading polymer raw material at warehouse docks"
               loading="lazy"
               width={1408}
               height={768}
-              className="rounded-3xl shadow-elegant w-full"
+              className="relative rounded-3xl shadow-elegant w-full"
             />
           </div>
         </div>
