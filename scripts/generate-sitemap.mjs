@@ -34,6 +34,8 @@ const BLOG_SLUGS = [
   "pet-bottle-grade-supplier-india",
   "pvc-pipe-fitting-compound-india",
   "polymer-supplier-gujarat-vapi-daman",
+  "abs-vs-pc-vs-abs-pc-alloy-guide",
+  "masterbatch-vs-natural-polymer-guide",
 ];
 
 const APPLICATION_SLUGS = [
