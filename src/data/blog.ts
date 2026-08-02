@@ -502,6 +502,104 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "abs-vs-pc-vs-abs-pc-alloy-guide",
+    title: "ABS vs Polycarbonate vs ABS-PC Alloy: Which Engineering Plastic for Your Part?",
+    description:
+      "Compare ABS, PC and ABS-PC alloy by impact strength, heat resistance, cost and processability. A grade-selection guide for automotive and appliance moulders in India.",
+    excerpt:
+      "Three engineering plastics, three different jobs. Here's how to decide between ABS, PC and ABS-PC alloy before you tool a mould.",
+    date: "2026-07-14",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 7,
+    tags: ["ABS", "PC", "Engineering Plastics", "Moulding"],
+    sections: [
+      {
+        paragraphs: [
+          "When a part needs more than commodity PP or PE can give — impact, heat, a Class-A surface — ABS, polycarbonate (PC) and the ABS-PC alloy family are the three most-specified engineering plastics. They overlap enough to confuse buyers, but the wrong choice shows up as brittleness, sink marks or cost overruns. Here's a clean way to pick.",
+        ],
+      },
+      {
+        heading: "ABS — cost-effective toughness and finish",
+        bullets: [
+          "Impact: good, drops sharply below 0°C unless impact-modified.",
+          "Heat: ~85–100°C HDT, not for hot environments.",
+          "Surface: excellent, plates and paints well.",
+          "Cost: lowest of the three; the default for cosmetic housings.",
+        ],
+      },
+      {
+        heading: "Polycarbonate (PC) — clarity and extreme impact",
+        bullets: [
+          "Impact: virtually unbreakable, far above ABS.",
+          "Heat: ~130–140°C HDT, suits under-hood and lighting.",
+          "Clarity: glass-clear; the only choice for lenses and guards.",
+          "Cost: highest; watch stress cracking with aggressive chemicals.",
+        ],
+      },
+      {
+        heading: "ABS-PC alloy — the best of both",
+        paragraphs: [
+          "ABS-PC alloy blends PC's impact and heat resistance with ABS's processability and cost. It is the standard for laptop shells, power-tool housings, automotive interior trim and appliance bodies that must survive drops, heat and daily handling. Most moulders who try ABS-PC for a tough, structural cosmetic part never go back to plain ABS.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps",
+        paragraphs: [
+          "We stock ABS (natural, pre-coloured and high-impact), PC and ABS-PC alloy from leading Indian and imported brands, with glass-filled and UV-stabilised options on request. Tell us your part, your drop-test and heat requirement and your cost ceiling, and we'll shortlist grades to trial across Mumbai, Vasai, Bhiwandi, Daman and Gujarat.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "masterbatch-vs-natural-polymer-guide",
+    title: "Masterbatch vs Pre-Coloured Polymer: What's Cheaper and When It Isn't",
+    description:
+      "A practical cost and quality comparison of masterbatch dosing versus pre-coloured polymer for injection, blow and film processors in India.",
+    excerpt:
+      "Pre-coloured pellets are convenient but masterbatch can halve your colour cost — if your dosing and dispersion are right.",
+    date: "2026-07-30",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 6,
+    tags: ["Masterbatch", "Colour", "Processing", "India"],
+    sections: [
+      {
+        paragraphs: [
+          "Every moulder and film maker faces the same question: buy pre-coloured polymer straight from the producer, or buy natural polymer and dose colour with a masterbatch? The right answer depends on volume, colour changeovers, dispersion quality and the tolerances your customer demands.",
+        ],
+      },
+      {
+        heading: "Pre-coloured polymer — consistency at a price",
+        bullets: [
+          "Locked-in, lot-consistent colour — no dosing variation.",
+          "No need for a dosing unit or feeder maintenance.",
+          "Higher per-kilo cost; long changeover waste when switching colours.",
+          "Best for: high-volume single-colour runs and regulated colour specs.",
+        ],
+      },
+      {
+        heading: "Masterbatch dosing — flexibility that saves money",
+        bullets: [
+          "Buy cheaper natural polymer and add 1–4% masterbatch.",
+          "Fast colour changeovers — clean the feed hopper, swap the masterbatch.",
+          "Risk: streaking or shade variation if dispersion or dosing is off.",
+          "Best for: multi-colour product ranges and mid-volume runs.",
+        ],
+      },
+      {
+        heading: "Where it goes wrong",
+        paragraphs: [
+          "Masterbatch savings evaporate when dosing is inaccurate — under-dosing fades the shade, over-dosing raises cost and can shift mechanicals. A worn feeder, wrong let-down ratio or incompatible carrier resin all cause rejects. Pre-coloured polymer avoids all of this but at a premium price per kilo that adds up fast on large tonnage.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps",
+        paragraphs: [
+          "We supply both natural and pre-coloured polymer across commodity and engineering grades, plus colour and additive masterbatches matched to your carrier resin. Our technical desk helps you size the let-down ratio and pick a dispersion strategy so masterbatch actually saves you money. Stock held in Mumbai, Vasai, Bhiwandi, Daman and Gujarat for fast delivery.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
