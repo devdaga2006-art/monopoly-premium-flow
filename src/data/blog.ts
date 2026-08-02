@@ -316,6 +316,192 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "hdpe-pipe-grade-supplier-india",
+    title: "HDPE Pipe Grade Raw Material: A Buyer's Guide for Pipe Manufacturers in India",
+    description:
+      "How to choose HDPE pipe grade (PE80, PE100) by MFI, density and ESCR. A sourcing guide for HDPE pipe raw material suppliers in Mumbai, Gujarat and Daman.",
+    excerpt:
+      "Water, gas and drainage pipe all run on PE80 or PE100 HDPE. Get the grade, density and ESCR wrong and pipe fails QC before it leaves the yard.",
+    date: "2026-05-02",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 7,
+    tags: ["HDPE", "Pipe", "PE100", "Gujarat"],
+    sections: [
+      {
+        paragraphs: [
+          "India's water, irrigation and gas infrastructure boom has made HDPE pipe one of the fastest-growing polymer applications in the country. But pipe grade HDPE is not commodity HDPE — it is engineered for 50-year hydrostatic service. Specifying the wrong grade produces pipe that passes short-term QC but fails in the field within months.",
+        ],
+      },
+      {
+        heading: "PE80 vs PE100 — what it means",
+        bullets: [
+          "PE80: 8.0 MPa minimum required strength (MRS) at 20°C / 50 years. Standard for water and drainage.",
+          "PE100: 10.0 MPa MRS. Higher pressure rating lets you down-gauge wall thickness and save material cost.",
+          "Both come as black compound with carbon black for UV protection.",
+        ],
+      },
+      {
+        heading: "Density, MFI and ESCR",
+        paragraphs: [
+          "Pipe grade HDPE runs at a density of 0.945–0.955 g/cc and a melt flow index around 0.2–0.5 g/10 min (190°C/5kg). The low MFI gives strong melt strength for thick extrusion. Environmental Stress Crack Resistance (ESCR) is the single most important pipe property — it predicts how the pipe survives slow crack growth from point loading, scratches or rock impingement. Insist on an ESCR F50 well above your specification minimum.",
+        ],
+      },
+      {
+        heading: "Sourcing HDPE pipe grade in India",
+        paragraphs: [
+          "Reliance, GAIL, Indian Oil and several imported brands supply PE100 pipe compound into India. Stock availability swings with road-project cycles, so lead times can stretch. Pipe clusters around Mumbai, Vasai and Gujarat's Rajkot-Ahmedabad belt buy in bulk and benefit from a distributor who holds stock across multiple warehouses.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps pipe makers",
+        paragraphs: [
+          "We supply PE80 and PE100 HDPE pipe compound in natural and black, with full COA documentation including density, MFI and ESCR. Multi-warehouse stock across Mumbai, Vasai, Bhiwandi and Gujarat keeps your extrusion line running. Share your pipe diameter, pressure class and standard (IS 4984 / ISO 4427) and we'll match the grade.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pet-bottle-grade-supplier-india",
+    title: "PET Bottle Grade Resin: Choosing IV, Colour and Additives for Preforms",
+    description:
+      "A buyer's guide to PET bottle grade resin — intrinsic viscosity, colour, acetaldehyde and additive selection for beverage and pharma preforms in India.",
+    excerpt:
+      "PET preform quality starts with the resin. Pick the wrong IV or skip the additive and bottles fail top-load, drop or CO2-retention tests.",
+    date: "2026-05-20",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 6,
+    tags: ["PET", "Bottle", "Packaging", "Mumbai"],
+    sections: [
+      {
+        paragraphs: [
+          "PET is the resin behind virtually every clear beverage bottle in India. Preform and bottle makers buy PET in chip form, dry it, and injection mould preforms that are later blow-moulded into bottles. The resin you choose decides clarity, strength, CO2 retention and shelf life — so grade selection is not optional.",
+        ],
+      },
+      {
+        heading: "Intrinsic viscosity (IV) — the key number",
+        bullets: [
+          "Water and CSD bottles: 0.78–0.82 dl/g IV.",
+          "Edible oil and hot-fill: 0.80–0.84 dl/g for better heat resistance.",
+          "Wide-mouth jars and 5-gallon: 0.80 dl/g with higher crystallinity.",
+          "Higher IV means stronger but slower preform moulding — balance IV against cycle time.",
+        ],
+      },
+      {
+        heading: "Colour and additive packages",
+        paragraphs: [
+          "Bottle-grade PET is usually supplied clear (natural). For tinted bottles — green, amber, light blue — you add colour masterbatch at the preform stage. Pharma and sensitive beverage applications need low acetaldehyde (AA) grades to prevent taste transfer; specify AA-suppressed resin explicitly. UV barriers are added for juices and dairy drinks stored under retail lighting.",
+        ],
+      },
+      {
+        heading: "Drying — the step that ruins PET",
+        paragraphs: [
+          "PET is hygroscopic. Moisture in the chip causes hydrolysis during melt processing, dropping IV and clarity. Dry to below 50 ppm moisture at 160–170°C. A faulty dryer is the #1 cause of brittle preforms — check dewpoint and residence time weekly, not just at startup.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps PET buyers",
+        paragraphs: [
+          "We stock bottle-grade PET chip in IV ranges suited to water, CSD, oil and custom containers, from leading Indian and imported producers. COA supplied with every batch. Order from our Mumbai or Vasai warehouse for next-day preform line feed, or from Daman and Gujarat for western India clusters. Tell us your bottle type and we'll shortlist the right IV and additive package.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pvc-pipe-fitting-compound-india",
+    title: "PVC Compound for Pipes & Fittings: Lead-Free Grades and Application Fit",
+    description:
+      "A guide to PVC pipe and fitting compound in India — lead-free stabilisation, K-value, and grade selection for water, conduit and CPVC applications.",
+    excerpt:
+      "Lead-free is now mandatory in India. Here's how to pick PVC compound by K-value, stabiliser and application without trial-and-error.",
+    date: "2026-06-08",
+    author: "Monopolymers Technical Desk",
+    readMinutes: 6,
+    tags: ["PVC", "Pipe", "Fittings", "India"],
+    sections: [
+      {
+        paragraphs: [
+          "PVC is the highest-volume polymer in India's pipe and fittings sector, used for water supply, electrical conduit, agriculture and drainage. Since lead stabilisers were restricted, every pipe and fitting maker has had to switch to calcium-zinc or organic stabiliser systems. The grade you buy now must be specified for both the application and the new stabiliser chemistry.",
+        ],
+      },
+      {
+        heading: "K-value and application",
+        bullets: [
+          "K-67 / K-68: pressure water pipes (IS 4985). Good balance of strength and processability.",
+          "K-66: electrical conduit and foam-core sewer pipe.",
+          "K-70: fittings where higher melt strength fills complex moulds.",
+          "K-55 / K-57: rigid profiles and injection fittings.",
+        ],
+      },
+      {
+        heading: "Lead-free stabilisation",
+        paragraphs: [
+          "Calcium-zinc (CaZn) stabilised PVC compound is the standard lead-free option for potable water pipes. Organic-based stabilisers (OBS) suit conduit and non-pressure applications. Confirm your compound carries the required regulatory certificate — potable water pipe in particular needs a health-effect clearance, not just a mechanical property sheet.",
+        ],
+      },
+      {
+        heading: "CPVC vs UPVC",
+        paragraphs: [
+          "Chlorinated PVC (CPVC) handles hot water up to 93°C and is used for plumbing and industrial piping. UPVC handles ambient temperature water and conduit. They are not interchangeable — CPVC compound has higher chlorine content (~67%) and needs different processing temperatures. Specify which system you run before you quote.",
+        ],
+      },
+      {
+        heading: "How Monopolymers helps PVC buyers",
+        paragraphs: [
+          "We supply lead-free PVC compound and CPVC compound across K-values for pipe, fittings and profiles, with COA and regulatory documentation. Stock held in Mumbai, Vasai, Bhiwandi, Daman and Gujarat serves India's major pipe clusters. Tell us your pipe standard, diameter and stabiliser requirement and we'll match a lead-free grade.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "polymer-supplier-gujarat-vapi-daman",
+    title: "Choosing a Polymer Supplier in Gujarat, Vapi and Daman: What Manufacturers Should Check",
+    description:
+      "A practical checklist for evaluating polymer raw material suppliers in Gujarat, Vapi and Daman — stock depth, lead time, technical support and documentation.",
+    excerpt:
+      "Gujarat is India's polymer manufacturing heartland. Here's how to pick a supplier who keeps your line running instead of just quoting cheap.",
+    date: "2026-06-28",
+    author: "Monopolymers Sales Desk",
+    readMinutes: 6,
+    tags: ["Gujarat", "Vapi", "Daman", "Sourcing"],
+    sections: [
+      {
+        paragraphs: [
+          "Gujarat — anchored by Vapi, Daman, Valsad and the Reliance Jamnagar complex — is the densest plastics manufacturing belt in India. With hundreds of processors competing for the same polymer grades, raw material supply reliability is what separates a line that runs at 95% OEE from one that stops every other week. Here is what to evaluate before you commit tonnage to a supplier.",
+        ],
+      },
+      {
+        heading: "Stock you can actually walk into",
+        paragraphs: [
+          "A quote is not stock. The best suppliers in the Gujarat belt physically hold the grades you use in local warehouses so a same-day or next-day truck can reach Vapi, Daman, Valsad or Daman's industrial estates. Ask for a warehouse address and current stock position before you place a first order — vague 'we can arrange' answers mean lead time risk.",
+        ],
+      },
+      {
+        heading: "Brand consistency and COA",
+        paragraphs: [
+          "Mixing brands within a grade shifts colour, shrinkage and cycle time. Insist on a supplier who commits to a primary brand per grade and ships a Certificate of Analysis with every batch. For exported moulded parts, full traceability from polymer batch to finished good is increasingly a customer audit requirement.",
+        ],
+      },
+      {
+        heading: "Technical support, not just price",
+        paragraphs: [
+          "Grade selection errors cost far more than a 2% price difference. A good supplier helps you pick the right MFI, copolymer type and additive package for your machine and end product. If your supplier cannot answer a grade-selection question, they are a trader, not a partner.",
+        ],
+      },
+      {
+        heading: "Credit, delivery and documentation",
+        paragraphs: [
+          "On-time-in-full delivery, sensible credit terms and clean GST invoicing with e-way bills matter as much as price. Delayed deliveries and missing paperwork cost machine hours and compliance headaches that wipe out any per-kilo saving.",
+        ],
+      },
+      {
+        heading: "How Monopolymers serves Gujarat",
+        paragraphs: [
+          "Monopolymers has supplied Gujarat, Vapi and Daman processors since 1996 from warehouses in Mumbai, Vasai, Bhiwandi and Daman. We hold stock across commodity and engineering polymers, ship COAs with every batch, and back every order with a technical team that helps you specify — not just quote. Call us with your grade, your machine and your volume and we'll match a supply plan to your line.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {

@@ -30,6 +30,10 @@ const BLOG_SLUGS = [
   "polymer-suppliers-mumbai-what-to-look-for",
   "engineering-plastics-abs-pc-nylon-pom",
   "eva-tpr-tpe-footwear-injection-guide",
+  "hdpe-pipe-grade-supplier-india",
+  "pet-bottle-grade-supplier-india",
+  "pvc-pipe-fitting-compound-india",
+  "polymer-supplier-gujarat-vapi-daman",
 ];
 
 const APPLICATION_SLUGS = [
