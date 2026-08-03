@@ -605,3 +605,38 @@ export const BLOG_POSTS: BlogPost[] = [
 export function getPostBySlug(slug: string) {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
+
+export const BLOG_CATEGORIES = [
+  "Buyer Guides",
+  "Commodity Polymers",
+  "Engineering Plastics",
+  "Market & Pricing",
+  "Sourcing & Locations",
+] as const;
+
+export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
+
+const CATEGORY_BY_SLUG: Record<string, BlogCategory> = {
+  "ldpe-vs-lldpe-vs-hdpe-buyers-guide": "Buyer Guides",
+  "how-to-choose-polypropylene-pp-grade": "Commodity Polymers",
+  "plastic-raw-material-prices-india": "Market & Pricing",
+  "polymer-suppliers-mumbai-what-to-look-for": "Sourcing & Locations",
+  "engineering-plastics-abs-pc-nylon-pom": "Engineering Plastics",
+  "eva-tpr-tpe-footwear-injection-guide": "Buyer Guides",
+  "hdpe-pipe-grade-supplier-india": "Commodity Polymers",
+  "pet-bottle-grade-supplier-india": "Commodity Polymers",
+  "pvc-pipe-fitting-compound-india": "Commodity Polymers",
+  "polymer-supplier-gujarat-vapi-daman": "Sourcing & Locations",
+  "abs-vs-pc-vs-abs-pc-alloy-guide": "Engineering Plastics",
+  "masterbatch-vs-natural-polymer-guide": "Buyer Guides",
+};
+
+export function getPostCategory(post: BlogPost): BlogCategory {
+  return CATEGORY_BY_SLUG[post.slug] ?? "Buyer Guides";
+}
+
+export function getAllTags(): string[] {
+  const set = new Set<string>();
+  BLOG_POSTS.forEach((p) => p.tags.forEach((t) => set.add(t)));
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
+}

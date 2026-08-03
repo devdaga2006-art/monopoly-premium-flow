@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
-import { BLOG_POSTS, getPostBySlug } from "@/data/blog";
+import { BLOG_POSTS, getPostBySlug, getPostCategory } from "@/data/blog";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -27,8 +27,21 @@ export default function BlogPostPage() {
         jsonLd={[
           {
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            "@type": "Article",
             headline: post.title,
+            name: post.title,
+            articleSection: getPostCategory(post),
+            inLanguage: "en-IN",
+            wordCount: post.sections.reduce(
+              (n, sec) =>
+                n +
+                (sec.paragraphs ?? []).concat(sec.bullets ?? []).join(" ").split(/\s+/)
+                  .length,
+              0,
+            ),
+            timeRequired: `PT${post.readMinutes}M`,
+            url: `${SITE}/blog/${post.slug}`,
+            isAccessibleForFree: true,
             description: post.description,
             datePublished: post.date,
             dateModified: post.date,
@@ -36,9 +49,11 @@ export default function BlogPostPage() {
             publisher: {
               "@type": "Organization",
               name: "MONOPOLYMERS",
+              url: SITE,
               logo: { "@type": "ImageObject", url: `${SITE}/favicon.png` },
             },
             mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}/blog/${post.slug}` },
+            about: post.tags.map((t) => ({ "@type": "Thing", name: t })),
             keywords: post.tags.join(", "),
           },
           {
