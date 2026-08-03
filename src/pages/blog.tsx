@@ -67,18 +67,23 @@ export default function BlogPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Latest posts" title="Fresh from the desk" />
 
-          <div className="mt-10 space-y-5">
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter posts by category">
+          <div className="mt-10 space-y-4">
+            {/* Category bar — compact, horizontally scrollable on small screens */}
+            <div
+              className="flex flex-nowrap gap-1.5 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              role="group"
+              aria-label="Filter posts by category"
+            >
               {["All", ...BLOG_CATEGORIES].map((c) => (
                 <button
                   key={c}
                   type="button"
                   onClick={() => setCategory(c)}
                   aria-pressed={category === c}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition ${
+                  className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold transition whitespace-nowrap ${
                     category === c
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card text-muted-foreground hover:text-foreground hover:border-primary/40"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/60"
                   }`}
                 >
                   {c}
@@ -86,17 +91,22 @@ export default function BlogPage() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter posts by tag">
+            {/* Tag chips — compact */}
+            <div
+              className="flex flex-nowrap gap-1.5 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              role="group"
+              aria-label="Filter posts by tag"
+            >
               {allTags.map((t) => (
                 <button
                   key={t}
                   type="button"
                   onClick={() => setTag(tag === t ? null : t)}
                   aria-pressed={tag === t}
-                  className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider transition ${
+                  className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-medium tracking-wide transition whitespace-nowrap ${
                     tag === t
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border text-muted-foreground hover:text-foreground"
+                      ? "bg-primary/10 text-primary ring-1 ring-primary"
+                      : "text-muted-foreground/80 hover:text-foreground hover:bg-muted/60"
                   }`}
                 >
                   {t}
@@ -104,8 +114,10 @@ export default function BlogPage() {
               ))}
             </div>
 
-            <p className="text-sm text-muted-foreground">
-              Showing {filtered.length} of {posts.length} articles
+            <div className="flex items-center text-xs text-muted-foreground">
+              <span>
+                Showing {filtered.length} of {posts.length} articles
+              </span>
               {(category !== "All" || tag) && (
                 <button
                   type="button"
@@ -113,12 +125,12 @@ export default function BlogPage() {
                     setCategory("All");
                     setTag(null);
                   }}
-                  className="ml-3 font-semibold text-primary hover:underline"
+                  className="ml-2 font-semibold text-primary hover:underline"
                 >
-                  Clear filters
+                  Clear filters ✕
                 </button>
               )}
-            </p>
+            </div>
           </div>
 
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
