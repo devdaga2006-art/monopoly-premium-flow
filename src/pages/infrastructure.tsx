@@ -28,7 +28,7 @@ export default function InfraPage() {
         description="Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution."
         canonical="https://monopolymers.in/infrastructure"
         ogUrl="https://monopolymers.in/infrastructure"
-        ogImage={warehouseImg}
+        ogImage={logisticsYardImg}
         jsonLd={[breadcrumbJsonLd("Infrastructure", "/infrastructure")]}
       />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
