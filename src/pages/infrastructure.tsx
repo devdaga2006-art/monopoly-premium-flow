@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
 import warehouseImg from "@/assets/warehouse.jpg";
-import logisticsImg from "@/assets/logistics.jpg";
+import logisticsYardImg from "@/assets/logistics-yard.jpg";
 import { Building2, Warehouse, Truck, Clock, MapPin, ShieldCheck } from "lucide-react";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import { Seo } from "@/lib/Seo";
@@ -28,7 +28,7 @@ export default function InfraPage() {
         description="Two corporate offices in Mumbai and Vasai, plus multiple warehouses across India. Built for fast, reliable polymer distribution."
         canonical="https://monopolymers.in/infrastructure"
         ogUrl="https://monopolymers.in/infrastructure"
-        ogImage={warehouseImg}
+        ogImage={logisticsYardImg}
         jsonLd={[breadcrumbJsonLd("Infrastructure", "/infrastructure")]}
       />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
@@ -46,7 +46,7 @@ export default function InfraPage() {
 
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
-          <img src={warehouseImg} alt="MONOPOLYMERS regional polymer warehouse interior" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
+          <img src={logisticsYardImg} alt="MONOPOLYMERS regional polymer warehouse interior" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
           <div>
             <SectionHeading align="left" eyebrow="Our Offices" title="Two corporate offices powering India-wide distribution" />
             <div className="mt-8 grid gap-4">
@@ -85,7 +85,7 @@ export default function InfraPage() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <img src={logisticsImg} alt="MONOPOLYMERS logistics fleet delivering polymer raw materials" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
+          <img src={logisticsYardImg} alt="MONOPOLYMERS logistics fleet delivering polymer raw materials" loading="lazy" width={1600} height={1024} className="rounded-3xl shadow-elegant w-full" />
         </div>
       </section>
 
