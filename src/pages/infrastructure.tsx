@@ -1,6 +1,5 @@
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CtaBand } from "@/components/site/CtaBand";
-import warehouseImg from "@/assets/warehouse.jpg";
 import logisticsYardImg from "@/assets/logistics-yard.jpg";
 import { Building2, Warehouse, Truck, Clock, MapPin, ShieldCheck } from "lucide-react";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
