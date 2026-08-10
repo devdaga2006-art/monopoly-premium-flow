@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import { BLOG_POSTS, BLOG_CATEGORIES, getAllTags, getPostCategory, type BlogPost } from "@/data/blog";
+import { getBlogCover } from "@/data/blog-covers";
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,7 @@ function CardSkeleton() {
 
 function PostCard({ post }: { post: BlogPost }) {
   const category = getPostCategory(post);
+  const cover = getBlogCover(post.slug);
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
       <Link
@@ -61,12 +63,24 @@ function PostCard({ post }: { post: BlogPost }) {
         className="relative block aspect-[16/9] w-full overflow-hidden"
       >
         <div className={`absolute inset-0 bg-gradient-to-br ${coverClass(post.slug)}`} />
+        {cover && (
+          <img
+            src={cover}
+            alt={post.title}
+            width={1280}
+            height={720}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
         <div className="absolute inset-0 flex items-end p-4">
           <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
             {category}
           </span>
         </div>
       </Link>
+
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap gap-1.5">
