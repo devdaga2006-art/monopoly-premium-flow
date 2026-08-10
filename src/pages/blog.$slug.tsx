@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { BLOG_POSTS, getPostBySlug, getPostCategory } from "@/data/blog";
+import { getBlogCover } from "@/data/blog-covers";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ export default function BlogPostPage() {
   if (!post) return <NotFoundPage />;
 
   const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const cover = getBlogCover(post.slug);
 
   return (
     <>
@@ -112,7 +114,20 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      {cover && (
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-10 md:-mt-14 relative">
+          <img
+            src={cover}
+            alt={post.title}
+            width={1280}
+            height={720}
+            className="aspect-[16/9] w-full rounded-2xl object-cover shadow-xl ring-1 ring-border"
+          />
+        </div>
+      )}
+
       <article className="py-16 md:py-20">
+
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose-neutral">
           {post.sections.map((s, i) => (
             <section key={i} className="mb-10">
