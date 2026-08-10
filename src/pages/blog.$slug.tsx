@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { BLOG_POSTS, getPostBySlug, getPostCategory } from "@/data/blog";
+import { getBlogCover } from "@/data/blog-covers";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ export default function BlogPostPage() {
   if (!post) return <NotFoundPage />;
 
   const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const cover = getBlogCover(post.slug);
 
   return (
     <>
