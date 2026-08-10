@@ -112,7 +112,20 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      {cover && (
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-10 md:-mt-14 relative">
+          <img
+            src={cover}
+            alt={post.title}
+            width={1280}
+            height={720}
+            className="aspect-[16/9] w-full rounded-2xl object-cover shadow-xl ring-1 ring-border"
+          />
+        </div>
+      )}
+
       <article className="py-16 md:py-20">
+
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose-neutral">
           {post.sections.map((s, i) => (
             <section key={i} className="mb-10">
