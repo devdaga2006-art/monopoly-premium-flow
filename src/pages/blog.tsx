@@ -15,26 +15,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 const SITE = "https://monopolymers.in";
 
 const ALL = "All";
 const ALL_TAGS = "__all_tags__";
 
-/** Deterministic cover treatment so every card has an identical aspect ratio and a stable look. */
-const COVERS = [
-  "from-charcoal via-charcoal to-primary/40",
-  "from-primary/70 via-charcoal to-charcoal",
-  "from-charcoal via-primary/30 to-charcoal",
-  "from-charcoal to-primary/60",
-];
 
-function coverClass(slug: string) {
-  let h = 0;
-  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) % 9973;
-  return COVERS[h % COVERS.length];
-}
 
 function CardSkeleton() {
   return (
