@@ -38,15 +38,15 @@ function coverClass(slug: string) {
 
 function CardSkeleton() {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-      <Skeleton className="aspect-[16/9] w-full rounded-none" />
-      <div className="flex flex-1 flex-col p-5">
-        <Skeleton className="h-4 w-24 rounded-full" />
-        <Skeleton className="mt-4 h-5 w-full" />
+    <article className="flex flex-col border-b border-border pb-6">
+      <Skeleton className="aspect-[16/10] w-full rounded-md" />
+      <div className="flex flex-1 flex-col pt-4">
+        <Skeleton className="h-3 w-32" />
+        <Skeleton className="mt-3 h-5 w-full" />
         <Skeleton className="mt-2 h-5 w-3/4" />
         <Skeleton className="mt-4 h-3 w-full" />
         <Skeleton className="mt-2 h-3 w-5/6" />
-        <Skeleton className="mt-6 h-3 w-1/2" />
+        <Skeleton className="mt-5 h-3 w-1/2" />
       </div>
     </article>
   );
@@ -56,45 +56,32 @@ function PostCard({ post }: { post: BlogPost }) {
   const category = getPostCategory(post);
   const cover = getBlogCover(post.slug);
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+    <article className="group flex flex-col border-b border-border pb-6">
       <Link
         to={`/blog/${post.slug}`}
         aria-label={post.title}
-        className="relative block aspect-[16/9] w-full overflow-hidden"
+        className="relative block aspect-[16/10] w-full overflow-hidden rounded-md bg-muted"
       >
-        <div className={`absolute inset-0 bg-gradient-to-br ${coverClass(post.slug)}`} />
         {cover && (
           <img
             src={cover}
             alt={post.title}
             width={1280}
-            height={720}
+            height={800}
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
-        <div className="absolute inset-0 flex items-end p-4">
-          <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-            {category}
-          </span>
-        </div>
       </Link>
 
-
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex flex-wrap gap-1.5">
-          {post.tags.slice(0, 2).map((t) => (
-            <span
-              key={t}
-              className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary"
-            >
-              {t}
-            </span>
-          ))}
+      <div className="flex flex-1 flex-col pt-4">
+        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">
+          <span>{category}</span>
+          <span className="h-px w-6 bg-primary/40" />
+          <span className="text-muted-foreground">{post.readMinutes} min read</span>
         </div>
 
-        <h2 className="mt-3 text-lg font-bold leading-snug">
+        <h2 className="mt-2 text-[1.35rem] font-bold leading-tight tracking-tight">
           <Link to={`/blog/${post.slug}`} className="hover:text-primary">
             {post.title}
           </Link>
@@ -104,8 +91,8 @@ function PostCard({ post }: { post: BlogPost }) {
           {post.excerpt}
         </p>
 
-        <div className="mt-4 flex items-center gap-4 border-t border-border pt-4 text-xs text-muted-foreground">
-          <span className="inline-flex items-center gap-1">
+        <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
             <Calendar className="h-3.5 w-3.5" />
             {new Date(post.date).toLocaleDateString("en-IN", {
               year: "numeric",
@@ -113,21 +100,18 @@ function PostCard({ post }: { post: BlogPost }) {
               day: "numeric",
             })}
           </span>
-          <span className="inline-flex items-center gap-1">
-            <Clock className="h-3.5 w-3.5" />
-            {post.readMinutes} min
-          </span>
           <Link
             to={`/blog/${post.slug}`}
-            className="ml-auto inline-flex items-center gap-1 font-semibold text-primary transition-all group-hover:gap-2"
+            className="ml-auto inline-flex items-center gap-1 font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-4 transition-colors hover:text-primary"
           >
-            Read <ArrowRight className="h-4 w-4" />
+            Read article <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
       </div>
     </article>
   );
 }
+
 
 export default function BlogPage() {
   const posts = useMemo(
