@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import { BLOG_POSTS, BLOG_CATEGORIES, getAllTags, getPostCategory, type BlogPost } from "@/data/blog";
-import { getBlogCover } from "@/data/blog-covers";
+import { getBlogCover, absoluteCoverUrl } from "@/data/blog-covers";
+import { BlogCover } from "@/components/site/BlogCover";
+
 import { CtaBand } from "@/components/site/CtaBand";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Button } from "@/components/ui/button";
