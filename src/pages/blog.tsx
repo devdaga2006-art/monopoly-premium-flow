@@ -64,15 +64,14 @@ function PostCard({ post }: { post: BlogPost }) {
       >
         <div className={`absolute inset-0 bg-gradient-to-br ${coverClass(post.slug)}`} />
         {cover && (
-          <img
-            src={cover}
-            alt={post.title}
-            width={1280}
-            height={720}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          <BlogCover
+            cover={cover}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            wrapperClassName="absolute inset-0 h-full w-full"
+            className="h-full w-full transition duration-500 group-hover:scale-105"
           />
         )}
+
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
         <div className="absolute inset-0 flex items-end p-4">
           <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
