@@ -9,6 +9,12 @@ interface SeoProps {
   ogImage?: string;
   ogUrl?: string;
   ogType?: string;
+  preloadImage?: {
+    href: string;
+    srcSet?: string;
+    sizes?: string;
+    type?: string;
+  };
   jsonLd?: object[];
 }
 
@@ -21,6 +27,7 @@ export function Seo({
   ogImage,
   ogUrl,
   ogType = "website",
+  preloadImage,
   jsonLd,
 }: SeoProps) {
   const t = ogTitle ?? title;
@@ -30,6 +37,16 @@ export function Seo({
       <title>{title}</title>
       {description && <meta name="description" content={description} />}
       {canonical && <link rel="canonical" href={canonical} />}
+      {preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage.href}
+          imageSrcSet={preloadImage.srcSet}
+          imageSizes={preloadImage.sizes}
+          type={preloadImage.type}
+        />
+      )}
       <meta property="og:title" content={t} />
       {d && <meta property="og:description" content={d} />}
       {ogUrl && <meta property="og:url" content={ogUrl} />}
