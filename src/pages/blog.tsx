@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
-import { BLOG_POSTS, BLOG_CATEGORIES, getAllTags, getPostCategory, type BlogPost } from "@/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostCategory, type BlogPost } from "@/data/blog";
 import { getBlogCover, absoluteCoverUrl } from "@/data/blog-covers";
 import { BlogCover } from "@/components/site/BlogCover";
 
@@ -135,7 +135,14 @@ export default function BlogPage() {
     () => [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1)),
     [],
   );
-  const allTags = useMemo(() => getAllTags(), []);
+  // Tags are scoped to the selected category so the chip row stays tidy
+  const tagsFor = (cat: string) => {
+    const set = new Set<string>();
+    posts
+      .filter((p) => cat === ALL || getPostCategory(p) === cat)
+      .forEach((p) => p.tags.forEach((t) => set.add(t)));
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  };
 
   // Applied filters (drive the grid)
   const [category, setCategory] = useState<string>(ALL);
@@ -156,14 +163,15 @@ export default function BlogPage() {
 
   const applyPending = () => {
     setCategory(pendingCategory);
-    setTag(pendingTag);
+    setTag(pendingTag && tagsFor(pendingCategory).includes(pendingTag) ? pendingTag : null);
   };
 
   const setBoth = (c: string, t: string | null) => {
+    const valid = t && tagsFor(c).includes(t) ? t : null;
     setCategory(c);
-    setTag(t);
+    setTag(valid);
     setPendingCategory(c);
-    setPendingTag(t);
+    setPendingTag(valid);
   };
 
   const filtered = posts.filter(
@@ -225,7 +233,13 @@ export default function BlogPage() {
         {/* Mobile: sticky filter bar with dropdowns + single apply button */}
         <div className="sticky top-16 z-40 mt-8 border-y border-border bg-background/95 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3">
-            <Select value={pendingCategory} onValueChange={setPendingCategory}>
+            <Select
+              value={pendingCategory}
+              onValueChange={(c) => {
+                setPendingCategory(c);
+                if (pendingTag && !tagsFor(c).includes(pendingTag)) setPendingTag(null);
+              }}
+            >
               <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by category">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
@@ -249,7 +263,7 @@ export default function BlogPage() {
                 <SelectItem value={ALL_TAGS} className="text-xs">
                   All tags
                 </SelectItem>
-                {allTags.map((t) => (
+                {tagsFor(pendingCategory).map((t) => (
                   <SelectItem key={t} value={t} className="text-xs">
                     {t}
                   </SelectItem>
@@ -291,7 +305,7 @@ export default function BlogPage() {
             </div>
 
             <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter posts by tag">
-              {allTags.map((t) => (
+              {tagsFor(category).map((t) => (
                 <button
                   key={t}
                   type="button"
