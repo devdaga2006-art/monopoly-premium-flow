@@ -45,6 +45,17 @@ export default function BlogPostPage() {
             "@type": "Article",
             headline: post.title,
             name: post.title,
+            ...(cover
+              ? {
+                  image: {
+                    "@type": "ImageObject",
+                    url: absoluteCoverUrl(SITE, cover.src),
+                    width: cover.width,
+                    height: cover.height,
+                    caption: cover.alt,
+                  },
+                }
+              : {}),
             articleSection: getPostCategory(post),
             inLanguage: "en-IN",
             wordCount: post.sections.reduce(
