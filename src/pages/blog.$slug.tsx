@@ -183,6 +183,8 @@ export default function BlogPostPage() {
         </div>
       </article>
 
+      <BlogComments postSlug={post.slug} />
+
       {related.length > 0 && (
         <section className="py-16 bg-muted/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
