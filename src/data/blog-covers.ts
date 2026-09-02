@@ -6,22 +6,20 @@
  * so each cover ships as a `<picture>` with three srcsets instead of one 1.6k-wide JPEG.
  */
 
-const WIDTHS = "480;800;1200;1600";
-
 const avif = import.meta.glob("/src/assets/blog/*.jpg", {
-  query: { w: WIDTHS, format: "avif", as: "srcset" },
+  query: { w: "480;800;1200;1600", format: "avif", as: "srcset" },
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
 const webp = import.meta.glob("/src/assets/blog/*.jpg", {
-  query: { w: WIDTHS, format: "webp", as: "srcset" },
+  query: { w: "480;800;1200;1600", format: "webp", as: "srcset" },
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
 const jpeg = import.meta.glob("/src/assets/blog/*.jpg", {
-  query: { w: WIDTHS, format: "jpg", as: "srcset" },
+  query: { w: "480;800;1200;1600", format: "jpg", as: "srcset" },
   eager: true,
   import: "default",
 }) as Record<string, string>;
