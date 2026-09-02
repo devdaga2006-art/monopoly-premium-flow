@@ -135,7 +135,14 @@ export default function BlogPage() {
     () => [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1)),
     [],
   );
-  const allTags = useMemo(() => getAllTags(), []);
+  // Tags are scoped to the selected category so the chip row stays tidy
+  const tagsFor = (cat: string) => {
+    const set = new Set<string>();
+    posts
+      .filter((p) => cat === ALL || getPostCategory(p) === cat)
+      .forEach((p) => p.tags.forEach((t) => set.add(t)));
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  };
 
   // Applied filters (drive the grid)
   const [category, setCategory] = useState<string>(ALL);
