@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/lib/Seo";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
-import { BLOG_POSTS, BLOG_CATEGORIES, getAllTags, getPostCategory, type BlogPost } from "@/data/blog";
+import { BLOG_POSTS, BLOG_CATEGORIES, getPostCategory, type BlogPost } from "@/data/blog";
 import { getBlogCover, absoluteCoverUrl } from "@/data/blog-covers";
 import { BlogCover } from "@/components/site/BlogCover";
 
@@ -163,14 +163,15 @@ export default function BlogPage() {
 
   const applyPending = () => {
     setCategory(pendingCategory);
-    setTag(pendingTag);
+    setTag(pendingTag && tagsFor(pendingCategory).includes(pendingTag) ? pendingTag : null);
   };
 
   const setBoth = (c: string, t: string | null) => {
+    const valid = t && tagsFor(c).includes(t) ? t : null;
     setCategory(c);
-    setTag(t);
+    setTag(valid);
     setPendingCategory(c);
-    setPendingTag(t);
+    setPendingTag(valid);
   };
 
   const filtered = posts.filter(
@@ -256,7 +257,7 @@ export default function BlogPage() {
                 <SelectItem value={ALL_TAGS} className="text-xs">
                   All tags
                 </SelectItem>
-                {allTags.map((t) => (
+                {tagsFor(pendingCategory).map((t) => (
                   <SelectItem key={t} value={t} className="text-xs">
                     {t}
                   </SelectItem>
@@ -298,7 +299,7 @@ export default function BlogPage() {
             </div>
 
             <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter posts by tag">
-              {allTags.map((t) => (
+              {tagsFor(category).map((t) => (
                 <button
                   key={t}
                   type="button"
