@@ -3,6 +3,7 @@ import { Seo } from "@/lib/Seo";
 import { BLOG_POSTS, getPostBySlug, getPostCategory } from "@/data/blog";
 import { getBlogCover, absoluteCoverUrl } from "@/data/blog-covers";
 import { BlogCover } from "@/components/site/BlogCover";
+import { BlogComments } from "@/components/site/BlogComments";
 
 import { CtaBand } from "@/components/site/CtaBand";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
