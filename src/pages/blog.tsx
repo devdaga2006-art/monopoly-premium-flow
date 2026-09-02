@@ -181,6 +181,10 @@ export default function BlogPage() {
         description="Expert guides, market commentary and buyer advice on LDPE, LLDPE, HDPE, PP, engineering plastics and polymer sourcing in India."
         canonical={`${SITE}/blog`}
         ogUrl={`${SITE}/blog`}
+        ogImage={(() => {
+          const c = posts[0] && getBlogCover(posts[0].slug);
+          return c ? absoluteCoverUrl(SITE, c.src) : undefined;
+        })()}
         jsonLd={[
           {
             "@context": "https://schema.org",
