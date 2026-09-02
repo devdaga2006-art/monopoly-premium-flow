@@ -28,6 +28,17 @@ export default function BlogPostPage() {
         canonical={`${SITE}/blog/${post.slug}`}
         ogUrl={`${SITE}/blog/${post.slug}`}
         ogType="article"
+        ogImage={cover ? absoluteCoverUrl(SITE, cover.src) : undefined}
+        preloadImage={
+          cover
+            ? {
+                href: cover.src,
+                srcSet: cover.webpSrcSet || cover.jpegSrcSet,
+                sizes: "(max-width: 896px) 100vw, 896px",
+                type: cover.webpSrcSet ? "image/webp" : "image/jpeg",
+              }
+            : undefined
+        }
         jsonLd={[
           {
             "@context": "https://schema.org",
