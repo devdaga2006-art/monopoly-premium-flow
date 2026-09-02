@@ -28,12 +28,34 @@ export default function BlogPostPage() {
         canonical={`${SITE}/blog/${post.slug}`}
         ogUrl={`${SITE}/blog/${post.slug}`}
         ogType="article"
+        ogImage={cover ? absoluteCoverUrl(SITE, cover.src) : undefined}
+        preloadImage={
+          cover
+            ? {
+                href: cover.src,
+                srcSet: cover.webpSrcSet || cover.jpegSrcSet,
+                sizes: "(max-width: 896px) 100vw, 896px",
+                type: cover.webpSrcSet ? "image/webp" : "image/jpeg",
+              }
+            : undefined
+        }
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: post.title,
             name: post.title,
+            ...(cover
+              ? {
+                  image: {
+                    "@type": "ImageObject",
+                    url: absoluteCoverUrl(SITE, cover.src),
+                    width: cover.width,
+                    height: cover.height,
+                    caption: cover.alt,
+                  },
+                }
+              : {}),
             articleSection: getPostCategory(post),
             inLanguage: "en-IN",
             wordCount: post.sections.reduce(
