@@ -233,7 +233,13 @@ export default function BlogPage() {
         {/* Mobile: sticky filter bar with dropdowns + single apply button */}
         <div className="sticky top-16 z-40 mt-8 border-y border-border bg-background/95 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3">
-            <Select value={pendingCategory} onValueChange={setPendingCategory}>
+            <Select
+              value={pendingCategory}
+              onValueChange={(c) => {
+                setPendingCategory(c);
+                if (pendingTag && !tagsFor(c).includes(pendingTag)) setPendingTag(null);
+              }}
+            >
               <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by category">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
