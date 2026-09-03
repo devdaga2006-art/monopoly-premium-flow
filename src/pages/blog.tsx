@@ -265,7 +265,7 @@ export default function BlogPage() {
             {hasFilters && (
               <button
                 type="button"
-                onClick={() => setBoth(ALL, null)}
+                onClick={() => setCategory(ALL)}
                 className="ml-2 font-semibold text-primary hover:underline"
               >
                 Clear filters ✕
