@@ -22,7 +22,6 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 const SITE = "https://monopolymers.in";
 
 const ALL = "All";
-const ALL_TAGS = "__all_tags__";
 
 /** Deterministic cover treatment so every card has an identical aspect ratio and a stable look. */
 const COVERS = [
