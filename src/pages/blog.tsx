@@ -22,7 +22,6 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 const SITE = "https://monopolymers.in";
 
 const ALL = "All";
-const ALL_TAGS = "__all_tags__";
 
 /** Deterministic cover treatment so every card has an identical aspect ratio and a stable look. */
 const COVERS = [
@@ -135,52 +134,25 @@ export default function BlogPage() {
     () => [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1)),
     [],
   );
-  // Tags are scoped to the selected category so the chip row stays tidy
-  const tagsFor = (cat: string) => {
-    const set = new Set<string>();
-    posts
-      .filter((p) => cat === ALL || getPostCategory(p) === cat)
-      .forEach((p) => p.tags.forEach((t) => set.add(t)));
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
-  };
 
-  // Applied filters (drive the grid)
   const [category, setCategory] = useState<string>(ALL);
-  const [tag, setTag] = useState<string | null>(null);
-  // Pending filters (mobile: applied only on "Show results")
   const [pendingCategory, setPendingCategory] = useState<string>(ALL);
-  const [pendingTag, setPendingTag] = useState<string | null>(null);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     const t = window.setTimeout(() => setLoading(false), 350);
     return () => window.clearTimeout(t);
-  }, [category, tag]);
+  }, [category]);
 
-  const dirty = pendingCategory !== category || pendingTag !== tag;
-
-  const applyPending = () => {
-    setCategory(pendingCategory);
-    setTag(pendingTag && tagsFor(pendingCategory).includes(pendingTag) ? pendingTag : null);
-  };
-
-  const setBoth = (c: string, t: string | null) => {
-    const valid = t && tagsFor(c).includes(t) ? t : null;
-    setCategory(c);
-    setTag(valid);
-    setPendingCategory(c);
-    setPendingTag(valid);
-  };
+  const applyPending = () => setCategory(pendingCategory);
 
   const filtered = posts.filter(
-    (p) =>
-      (category === ALL || getPostCategory(p) === category) &&
-      (!tag || p.tags.includes(tag)),
+    (p) => category === ALL || getPostCategory(p) === category,
   );
 
-  const hasFilters = category !== ALL || !!tag;
+  const hasFilters = category !== ALL;
+
 
   return (
     <>
@@ -230,15 +202,12 @@ export default function BlogPage() {
           <SectionHeading eyebrow="Latest posts" title="Fresh from the desk" />
         </div>
 
-        {/* Mobile: sticky filter bar with dropdowns + single apply button */}
+        {/* Mobile: sticky category filter bar with single apply button */}
         <div className="sticky top-16 z-40 mt-8 border-y border-border bg-background/95 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3">
             <Select
               value={pendingCategory}
-              onValueChange={(c) => {
-                setPendingCategory(c);
-                if (pendingTag && !tagsFor(c).includes(pendingTag)) setPendingTag(null);
-              }}
+              onValueChange={(c) => setPendingCategory(c)}
             >
               <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by category">
                 <SelectValue placeholder="Category" />
@@ -252,30 +221,11 @@ export default function BlogPage() {
               </SelectContent>
             </Select>
 
-            <Select
-              value={pendingTag ?? ALL_TAGS}
-              onValueChange={(v) => setPendingTag(v === ALL_TAGS ? null : v)}
-            >
-              <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by tag">
-                <SelectValue placeholder="Tag" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={ALL_TAGS} className="text-xs">
-                  All tags
-                </SelectItem>
-                {tagsFor(pendingCategory).map((t) => (
-                  <SelectItem key={t} value={t} className="text-xs">
-                    {t}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
             <Button
               type="button"
               size="sm"
               onClick={applyPending}
-              disabled={!dirty}
+              disabled={pendingCategory === category}
               className="h-9 shrink-0 bg-red-gradient px-3 text-xs"
             >
               Show results
@@ -284,17 +234,17 @@ export default function BlogPage() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Desktop: pills */}
+          {/* Desktop: category pills only */}
           <div
             className="mt-10 hidden flex-wrap items-center gap-1.5 md:flex"
             role="group"
-            aria-label="Filter posts by category and tag"
+            aria-label="Filter posts by category"
           >
             {[ALL, ...BLOG_CATEGORIES].map((c) => (
               <button
                 key={c}
                 type="button"
-                onClick={() => setBoth(c, tag)}
+                onClick={() => setCategory(c)}
                 aria-pressed={category === c}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
                   category === c
@@ -303,26 +253,6 @@ export default function BlogPage() {
                 }`}
               >
                 {c}
-              </button>
-            ))}
-
-            {tagsFor(category).length > 0 && (
-              <span aria-hidden className="mx-1 h-5 w-px bg-border" />
-            )}
-
-            {tagsFor(category).map((t) => (
-              <button
-                key={t}
-                type="button"
-                onClick={() => setBoth(category, tag === t ? null : t)}
-                aria-pressed={tag === t}
-                className={`rounded-full px-3 py-1 text-xs font-medium tracking-wide transition ${
-                  tag === t
-                    ? "bg-primary/10 text-primary ring-1 ring-primary"
-                    : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
-                }`}
-              >
-                {t}
               </button>
             ))}
           </div>
@@ -334,7 +264,7 @@ export default function BlogPage() {
             {hasFilters && (
               <button
                 type="button"
-                onClick={() => setBoth(ALL, null)}
+                onClick={() => setCategory(ALL)}
                 className="ml-2 font-semibold text-primary hover:underline"
               >
                 Clear filters ✕
