@@ -285,42 +285,46 @@ export default function BlogPage() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Desktop: pills */}
-          <div className="mt-10 hidden space-y-3 md:block">
-            <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter posts by category">
-              {[ALL, ...BLOG_CATEGORIES].map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => setBoth(c, tag)}
-                  aria-pressed={category === c}
-                  className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
-                    category === c
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
+          <div
+            className="mt-10 hidden flex-wrap items-center gap-1.5 md:flex"
+            role="group"
+            aria-label="Filter posts by category and tag"
+          >
+            {[ALL, ...BLOG_CATEGORIES].map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setBoth(c, tag)}
+                aria-pressed={category === c}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+                  category === c
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
 
-            <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter posts by tag">
-              {tagsFor(category).map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  onClick={() => setBoth(category, tag === t ? null : t)}
-                  aria-pressed={tag === t}
-                  className={`rounded-full px-2.5 py-0.5 text-[11px] font-medium tracking-wide transition ${
-                    tag === t
-                      ? "bg-primary/10 text-primary ring-1 ring-primary"
-                      : "text-muted-foreground/80 hover:bg-muted/60 hover:text-foreground"
-                  }`}
-                >
-                  {t}
-                </button>
-              ))}
-            </div>
+            {tagsFor(category).length > 0 && (
+              <span aria-hidden className="mx-1 h-5 w-px bg-border" />
+            )}
+
+            {tagsFor(category).map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setBoth(category, tag === t ? null : t)}
+                aria-pressed={tag === t}
+                className={`rounded-full px-3 py-1 text-xs font-medium tracking-wide transition ${
+                  tag === t
+                    ? "bg-primary/10 text-primary ring-1 ring-primary"
+                    : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                {t}
+              </button>
+            ))}
           </div>
 
           <div className="mt-6 flex items-center text-xs text-muted-foreground">
