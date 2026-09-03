@@ -203,15 +203,12 @@ export default function BlogPage() {
           <SectionHeading eyebrow="Latest posts" title="Fresh from the desk" />
         </div>
 
-        {/* Mobile: sticky filter bar with dropdowns + single apply button */}
+        {/* Mobile: sticky category filter bar with single apply button */}
         <div className="sticky top-16 z-40 mt-8 border-y border-border bg-background/95 backdrop-blur md:hidden">
           <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3">
             <Select
               value={pendingCategory}
-              onValueChange={(c) => {
-                setPendingCategory(c);
-                if (pendingTag && !tagsFor(c).includes(pendingTag)) setPendingTag(null);
-              }}
+              onValueChange={(c) => setPendingCategory(c)}
             >
               <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by category">
                 <SelectValue placeholder="Category" />
@@ -225,30 +222,11 @@ export default function BlogPage() {
               </SelectContent>
             </Select>
 
-            <Select
-              value={pendingTag ?? ALL_TAGS}
-              onValueChange={(v) => setPendingTag(v === ALL_TAGS ? null : v)}
-            >
-              <SelectTrigger className="h-9 flex-1 text-xs" aria-label="Filter posts by tag">
-                <SelectValue placeholder="Tag" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={ALL_TAGS} className="text-xs">
-                  All tags
-                </SelectItem>
-                {tagsFor(pendingCategory).map((t) => (
-                  <SelectItem key={t} value={t} className="text-xs">
-                    {t}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
             <Button
               type="button"
               size="sm"
               onClick={applyPending}
-              disabled={!dirty}
+              disabled={pendingCategory === category}
               className="h-9 shrink-0 bg-red-gradient px-3 text-xs"
             >
               Show results
