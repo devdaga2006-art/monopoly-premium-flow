@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { CallFab } from "@/components/site/CallFab";
 import { Toaster } from "@/components/ui/sonner";
+import { useAnalytics } from "@/hooks/use-analytics";
 
 import HomePage from "@/pages/index";
 import AboutPage from "@/pages/about";
@@ -79,6 +80,7 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useAnalytics();
   return (
     <>
       <Helmet>
