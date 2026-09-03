@@ -135,52 +135,25 @@ export default function BlogPage() {
     () => [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1)),
     [],
   );
-  // Tags are scoped to the selected category so the chip row stays tidy
-  const tagsFor = (cat: string) => {
-    const set = new Set<string>();
-    posts
-      .filter((p) => cat === ALL || getPostCategory(p) === cat)
-      .forEach((p) => p.tags.forEach((t) => set.add(t)));
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
-  };
 
-  // Applied filters (drive the grid)
   const [category, setCategory] = useState<string>(ALL);
-  const [tag, setTag] = useState<string | null>(null);
-  // Pending filters (mobile: applied only on "Show results")
   const [pendingCategory, setPendingCategory] = useState<string>(ALL);
-  const [pendingTag, setPendingTag] = useState<string | null>(null);
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     const t = window.setTimeout(() => setLoading(false), 350);
     return () => window.clearTimeout(t);
-  }, [category, tag]);
+  }, [category]);
 
-  const dirty = pendingCategory !== category || pendingTag !== tag;
-
-  const applyPending = () => {
-    setCategory(pendingCategory);
-    setTag(pendingTag && tagsFor(pendingCategory).includes(pendingTag) ? pendingTag : null);
-  };
-
-  const setBoth = (c: string, t: string | null) => {
-    const valid = t && tagsFor(c).includes(t) ? t : null;
-    setCategory(c);
-    setTag(valid);
-    setPendingCategory(c);
-    setPendingTag(valid);
-  };
+  const applyPending = () => setCategory(pendingCategory);
 
   const filtered = posts.filter(
-    (p) =>
-      (category === ALL || getPostCategory(p) === category) &&
-      (!tag || p.tags.includes(tag)),
+    (p) => category === ALL || getPostCategory(p) === category,
   );
 
-  const hasFilters = category !== ALL || !!tag;
+  const hasFilters = category !== ALL;
+
 
   return (
     <>
