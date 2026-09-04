@@ -81,7 +81,7 @@
     "sharp": "^0.35.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.2.2",
+    "vite": "^8.0.0",
     "vite-imagetools": "^12.0.1",
     "vite-tsconfig-paths": "^6.0.2"
   }
