@@ -17,14 +17,22 @@ export default function FaqPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQS.map((f) => ({
+            "@id": "https://monopolymers.in/faq#faq",
+            url: "https://monopolymers.in/faq",
+            name: "MONOPOLYMERS Frequently Asked Questions",
+            inLanguage: "en-IN",
+            isPartOf: { "@id": "https://monopolymers.in/#website" },
+            publisher: { "@id": "https://monopolymers.in/#organization" },
+            mainEntity: FAQS.map((f, i) => ({
               "@type": "Question",
+              "@id": `https://monopolymers.in/faq#q${i + 1}`,
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
           },
           breadcrumbJsonLd("FAQ", "/faq"),
         ]}
+
       />
       <section className="bg-hero-gradient text-white py-24 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
