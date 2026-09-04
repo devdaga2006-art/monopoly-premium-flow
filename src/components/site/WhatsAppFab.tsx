@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { trackConversion } from "@/lib/analytics";
 
 export function WhatsAppFab() {
   return (
@@ -7,6 +8,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      onClick={() => trackConversion("contact_whatsapp", { location: "fab" })}
       className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] text-white px-4 py-3 shadow-elegant hover:scale-105 transition-transform"
     >
       <MessageCircle className="h-5 w-5" />
