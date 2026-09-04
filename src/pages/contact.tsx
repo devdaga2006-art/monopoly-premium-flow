@@ -8,6 +8,8 @@ import { toast } from "sonner";
 import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogContact from "@/assets/og-contact.jpg";
 import { Seo } from "@/lib/Seo";
+import { trackConversion } from "@/lib/analytics";
+
 
 const CONTACTS = [
   { name: "Mr. Jitendra K. Daga", role: "Co-founder & Director", phone: "+91 93225 19925", tel: "+919322519925" },
@@ -25,9 +27,11 @@ export default function ContactPage() {
       return;
     }
     const text = `Hi MONOPOLYMERS,%0A%0AName: ${form.name}%0ACompany: ${form.company}%0APhone: ${form.phone}%0AEmail: ${form.email}%0A%0A${form.message}`;
+    trackConversion("generate_lead", { method: "whatsapp_form", has_company: Boolean(form.company) });
     window.open(`https://wa.me/919326287420?text=${text}`, "_blank");
     toast.success("Opening WhatsApp with your enquiry…");
   };
+
 
   return (
     <>

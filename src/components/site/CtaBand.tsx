@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { trackConversion } from "@/lib/analytics";
+
 
 export function CtaBand() {
   return (
@@ -20,13 +22,14 @@ export function CtaBand() {
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Button asChild size="lg" className="bg-red-gradient hover:opacity-95">
-                <Link to="/contact">
+                <Link to="/contact" onClick={() => trackConversion("quote_request", { location: "cta_band" })}>
                   Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white hover:text-charcoal">
-                <a href="tel:+919322519925">Talk to Sales</a>
+                <a href="tel:+919322519925" onClick={() => trackConversion("contact_call", { location: "cta_band" })}>Talk to Sales</a>
               </Button>
+
             </div>
           </div>
         </div>
