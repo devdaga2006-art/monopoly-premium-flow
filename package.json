@@ -83,6 +83,10 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.0",
     "vite-imagetools": "^12.0.1",
-    "vite-tsconfig-paths": "^6.0.2"
+    "vite-tsconfig-paths": "^6.0.2",
+    "postcss": "8.5.26"
+  },
+  "overrides": {
+    "postcss": "8.5.26"
   }
 }
