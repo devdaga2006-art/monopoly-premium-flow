@@ -96,10 +96,21 @@ export default function ProductDetailPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: p.faqs.map((f) => ({
+            "@id": `${url}#faq`,
+            name: `${p.fullName} — Frequently Asked Questions`,
+            inLanguage: "en-IN",
+            isPartOf: { "@id": `${SITE}/#website` },
+            publisher: { "@id": `${SITE}/#organization` },
+            mainEntity: p.faqs.map((f, i) => ({
               "@type": "Question",
+              "@id": `${url}#faq-q${i + 1}`,
               name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
+              author: { "@type": "Organization", name: "MONOPOLYMERS", "@id": `${SITE}/#organization` },
+              acceptedAnswer: {
+                "@type": "Answer",
+                "@id": `${url}#faq-q${i + 1}-answer`,
+                text: f.a,
+              },
             })),
           },
           {
