@@ -27,7 +27,12 @@ export default function FaqPage() {
               "@type": "Question",
               "@id": `https://monopolymers.in/faq#q${i + 1}`,
               name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
+              author: { "@type": "Organization", name: "MONOPOLYMERS", "@id": "https://monopolymers.in/#organization" },
+              acceptedAnswer: {
+                "@type": "Answer",
+                "@id": `https://monopolymers.in/faq#q${i + 1}-answer`,
+                text: f.a,
+              },
             })),
           },
           breadcrumbJsonLd("FAQ", "/faq"),
