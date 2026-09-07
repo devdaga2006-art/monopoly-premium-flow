@@ -22,10 +22,22 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
+  const [mode, setMode] = useState<"signin" | "signup">("signin");
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setBusy(true);
+    if (mode === "signup") {
+      const { error } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+        options: { emailRedirectTo: `${window.location.origin}/admin` },
+      });
+      setBusy(false);
+      if (error) toast.error(error.message);
+      else toast.success("Account created. Check your email if confirmation is required.");
+      return;
+    }
     const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
     setBusy(false);
     if (error) toast.error(error.message);
@@ -33,15 +45,25 @@ function SignIn() {
 
   return (
     <form onSubmit={submit} className="mx-auto max-w-sm space-y-4 py-24">
-      <h1 className="text-2xl font-bold text-charcoal">Admin sign in</h1>
+      <h1 className="text-2xl font-bold text-charcoal">
+        {mode === "signin" ? "Admin sign in" : "Create admin account"}
+      </h1>
       <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
       <Button type="submit" disabled={busy} className="w-full bg-red-gradient hover:opacity-95">
-        {busy ? "Signing in…" : "Sign in"}
+        {busy ? "Please wait…" : mode === "signin" ? "Sign in" : "Create account"}
       </Button>
+      <button
+        type="button"
+        onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+        className="text-sm text-muted-foreground hover:text-primary w-full text-center"
+      >
+        {mode === "signin" ? "Need an account? Create one" : "Already have an account? Sign in"}
+      </button>
     </form>
   );
 }
+
 
 export default function AdminPage() {
   const [session, setSession] = useState<Session | null>(null);
