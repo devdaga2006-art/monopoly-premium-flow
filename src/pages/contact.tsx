@@ -9,6 +9,8 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogContact from "@/assets/og-contact.jpg";
 import { Seo } from "@/lib/Seo";
 import { trackConversion } from "@/lib/analytics";
+import { saveLead } from "@/lib/leads";
+
 
 
 const CONTACTS = [
