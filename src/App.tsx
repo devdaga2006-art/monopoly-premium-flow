@@ -23,6 +23,7 @@ import LocationPage from "@/pages/locations.$slug";
 import WhyUsPage from "@/pages/why-us";
 import BlogPage from "@/pages/blog";
 import BlogPostPage from "@/pages/blog.$slug";
+import AdminPage from "@/pages/admin";
 import NotFoundPage from "@/pages/not-found";
 
 const SITE = "https://monopolymers.in";
@@ -192,6 +193,7 @@ export default function App() {
           <Route path="/why-us" element={<WhyUsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

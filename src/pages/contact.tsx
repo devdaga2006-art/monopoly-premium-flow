@@ -9,6 +9,8 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumb-jsonld";
 import ogContact from "@/assets/og-contact.jpg";
 import { Seo } from "@/lib/Seo";
 import { trackConversion } from "@/lib/analytics";
+import { saveLead } from "@/lib/leads";
+
 
 
 const CONTACTS = [
@@ -19,18 +21,23 @@ const CONTACTS = [
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", message: "" });
+  const [busy, setBusy] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.phone) {
+    if (form.name.trim().length < 2 || form.phone.trim().length < 6) {
       toast.error("Please share your name and phone.");
       return;
     }
+    setBusy(true);
+    await saveLead({ ...form, source: "contact_form" });
+    setBusy(false);
     const text = `Hi MONOPOLYMERS,%0A%0AName: ${form.name}%0ACompany: ${form.company}%0APhone: ${form.phone}%0AEmail: ${form.email}%0A%0A${form.message}`;
     trackConversion("generate_lead", { method: "whatsapp_form", has_company: Boolean(form.company) });
     window.open(`https://wa.me/919326287420?text=${text}`, "_blank");
-    toast.success("Opening WhatsApp with your enquiry…");
+    toast.success("Thanks! Opening WhatsApp with your enquiry…");
   };
+
 
 
   return (
@@ -107,9 +114,10 @@ export default function ContactPage() {
                 <Input placeholder="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               </div>
               <Textarea rows={5} placeholder="Tell us about your requirement, polymer type, grade, quantity…" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <Button type="submit" size="lg" className="w-full bg-red-gradient hover:opacity-95">
-                Send Enquiry via WhatsApp
+              <Button type="submit" size="lg" disabled={busy} className="w-full bg-red-gradient hover:opacity-95">
+                {busy ? "Sending…" : "Send Enquiry via WhatsApp"}
               </Button>
+
             </form>
           </div>
 
