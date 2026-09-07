@@ -114,9 +114,10 @@ export default function ContactPage() {
                 <Input placeholder="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               </div>
               <Textarea rows={5} placeholder="Tell us about your requirement, polymer type, grade, quantity…" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <Button type="submit" size="lg" className="w-full bg-red-gradient hover:opacity-95">
-                Send Enquiry via WhatsApp
+              <Button type="submit" size="lg" disabled={busy} className="w-full bg-red-gradient hover:opacity-95">
+                {busy ? "Sending…" : "Send Enquiry via WhatsApp"}
               </Button>
+
             </form>
           </div>
 
