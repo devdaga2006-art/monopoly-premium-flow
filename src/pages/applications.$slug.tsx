@@ -83,10 +83,8 @@ export default function ApplicationDetailPage() {
               itemListElement: recommended.map((p) => ({
                 "@type": "Offer",
                 itemOffered: {
-                  "@type": "Product",
+                  "@type": "Thing",
                   name: p.fullName,
-                  sku: p.code,
-                  category: "Plastic raw material / Polymer granules",
                   url: `${SITE}/products/${p.slug}`,
                 },
               })),

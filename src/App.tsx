@@ -121,7 +121,7 @@ const GLOBAL_JSONLD = {
           {
             "@type": "Offer",
             itemOffered: {
-              "@type": "Product",
+              "@type": "Thing",
               name: "Polymer granules and plastic raw materials",
               description: "Bulk PP, LDPE, LLDPE, HDPE, ABS, PVC, PET, EVA, HIPS, GPPS, PC, PA, POM, TPR, PMMA and more.",
               url: `${SITE}/products`,
