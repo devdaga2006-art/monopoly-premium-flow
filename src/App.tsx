@@ -114,40 +114,6 @@ const GLOBAL_JSONLD = {
         "Acrylic PMMA supplier",
         "Polymer supplier Daman Vapi Gujarat",
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Plastic raw materials and polymer distribution",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Thing",
-              name: "Polymer granules and plastic raw materials",
-              description: "Bulk PP, LDPE, LLDPE, HDPE, ABS, PVC, PET, EVA, HIPS, GPPS, PC, PA, POM, TPR, PMMA and more.",
-              url: `${SITE}/products`,
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "B2B polymer supply and application consulting",
-              description: "Same-day dispatch, grade recommendation, and technical support for manufacturers across India.",
-              url: `${SITE}/applications`,
-            },
-          },
-        ],
-      },
-      makesOffer: {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Bulk polymer distribution across India",
-          description: "Wholesale supply of polymer granules with warehousing in Mumbai, Vasai, Bhiwandi, Vapi and Daman.",
-        },
-        areaServed: { "@id": `${SITE}/#area-in` },
-        seller: { "@id": `${SITE}/#organization` },
-      },
     },
     {
       "@type": "WebSite",

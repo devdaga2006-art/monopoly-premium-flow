@@ -87,18 +87,11 @@ export default function LocationPage() {
             description: l.intro,
             provider: { "@type": "Organization", name: "MONOPOLYMERS", url: SITE },
             areaServed: { "@type": "Place", name: `${l.city}, ${l.region}, India` },
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: `Polymer grades supplied in ${l.city}`,
-              itemListElement: POLYMERS.map((p) => ({
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Thing",
-                  name: p.fullName,
-                  url: `${SITE}/products/${p.slug}`,
-                },
-              })),
-            },
+            mentions: POLYMERS.map((p) => ({
+              "@type": "Thing",
+              name: p.fullName,
+              url: `${SITE}/products/${p.slug}`,
+            })),
           },
           {
             "@context": "https://schema.org",

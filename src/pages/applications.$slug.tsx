@@ -77,18 +77,11 @@ export default function ApplicationDetailPage() {
               { "@type": "City", name: "Vapi" },
               { "@type": "City", name: "Daman" },
             ],
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: `Recommended grades for ${a.title}`,
-              itemListElement: recommended.map((p) => ({
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Thing",
-                  name: p.fullName,
-                  url: `${SITE}/products/${p.slug}`,
-                },
-              })),
-            },
+            mentions: recommended.map((p) => ({
+              "@type": "Thing",
+              name: p.fullName,
+              url: `${SITE}/products/${p.slug}`,
+            })),
           },
         ]}
       />
