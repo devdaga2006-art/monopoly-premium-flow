@@ -26,15 +26,8 @@ export default function ProductsPage() {
             itemListElement: POLYMERS.map((p, i) => ({
               "@type": "ListItem",
               position: i + 1,
+              name: p.fullName,
               url: `https://monopolymers.in/products/${p.slug}`,
-              item: {
-                "@type": "Product",
-                name: p.fullName,
-                description: p.shortDesc,
-                category: "Polymer raw material",
-                brand: { "@type": "Brand", name: "MONOPOLYMERS" },
-                url: `https://monopolymers.in/products/${p.slug}`,
-              },
             })),
           },
           breadcrumbJsonLd("Products", "/products"),
