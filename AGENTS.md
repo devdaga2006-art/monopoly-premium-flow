@@ -1,0 +1,1 @@
+- Public routes are prerendered to static HTML at build time by prerender.ts (Vite plugin); add new routes/data there too — crawlers don't run JS and otherwise see only the SPA shell.
