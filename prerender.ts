@@ -123,7 +123,7 @@ export function prerender(): Plugin {
       const template = fs.readFileSync(path.join(outDir, "index.html"), "utf8");
       const pages = getPrerenderPages();
       for (const m of pages) {
-        const file = m.path === "/" ? path.join(outDir, "index.html") : path.join(outDir, m.path.slice(1), "index.html");
+        const file = m.path === "/" ? path.join(outDir, "index.html") : path.join(outDir, `${m.path.slice(1)}.html`);
         fs.mkdirSync(path.dirname(file), { recursive: true });
         fs.writeFileSync(file, render(template, m));
       }
